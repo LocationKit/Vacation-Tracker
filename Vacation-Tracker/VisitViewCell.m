@@ -10,20 +10,20 @@
 
 @implementation VisitViewCell
 
-- (void)setVisit:(VTVisit *)visit {
+- (void)setVisit:(LKVisit *)visit {
+    [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     [_placeName setText:[visit place].venue.name];
     // SET DATE/TIME TEXT SOMEHOW
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"HH:mm";
+    dateFormatter.dateFormat = @"h:mm a";
     
-    NSString *dateString = [dateFormatter stringFromDate: [visit location].timestamp];
+    NSString *dateString = [dateFormatter stringFromDate: [visit arrivalDate]];
     [_time setText:dateString];
     
     dateFormatter.dateFormat = @"MM/dd/yyyy";
-    dateString = [dateFormatter stringFromDate:[visit location].timestamp];
-    [_date setText:dateString];
-    
+    dateString = [dateFormatter stringFromDate:[visit arrivalDate]];
+    [_date setText:dateString];    
 }
 
 @end

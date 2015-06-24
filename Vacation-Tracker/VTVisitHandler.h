@@ -15,7 +15,10 @@ extern NSString * const VTVisitsChangedNotification;
 
 + (void)registerObserver:(void (^)(NSNotification *))block;
 
-+ (void)addVisitWithPlace:(LKPlace *)place Location:(CLLocation *)location;
+//+ (void)addVisitWithPlace:(LKPlace *)place Location:(CLLocation *)location;
++ (void)adddVisit:(LKVisit *)visit;
+
++ (void)removeVisitAtIndex:(NSUInteger)index;
 
 + (NSMutableArray *)visits;
 

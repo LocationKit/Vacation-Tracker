@@ -12,20 +12,27 @@
 @implementation VTLKDelegate
 
 - (void)locationKit:(LocationKit *)locationKit didUpdateLocation:(CLLocation *)location {
+    NSLog(@"Location update.");
     [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
         if (error == nil && location != nil && place != nil) {
             NSLog(@"User is in %@", place.venue.name);
-            [VTVisitHandler addVisitWithPlace:place Location:location];
+            LKVisit *visit = [[LKVisit alloc] init];
+            [visit setPlace:place];
+            if (visit.place.venue.name != nil) {
+                [VTVisitHandler adddVisit:visit];
+            }
+            //[VTVisitHandler addVisitWithPlace:place Location:location];
         }
     }];
 }
 
 - (void)locationKit:(LocationKit *)locationKit didStartVisit:(LKVisit *)visit {
-    
+    NSLog(@"Visit started.");
+    [VTVisitHandler adddVisit:visit];
 }
 
 - (void)locationKit:(LocationKit *)locationKit didEndVisit:(LKVisit *)visit {
-    
+    NSLog(@"Visit ended.");
 }
 
 - (void)locationKit:(LocationKit *)locationKit didFailWithError:(NSError *)error {
