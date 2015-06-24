@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self addAnnotation];
+    
     [_locationLabel setText:_visit.place.venue.name];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -25,10 +27,21 @@
     NSString *dateString = [dateFormatter stringFromDate:[_visit arrivalDate]];
     [_dateLabel setText:dateString];
     
-    dateFormatter.dateFormat = @"HH:mm";
+    dateFormatter.dateFormat = @"h:mm a";
     dateString = [dateFormatter stringFromDate: [_visit arrivalDate]];
     [_timeLabel setText:dateString];
+    
+    [_localityLabel setText:_visit.place.address.locality];
     // Do any additional setup after loading the view.
+}
+
+- (void)addAnnotation {
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [annotation setTitle:_visit.place.venue.name];
+    [annotation setCoordinate:_visit.place.address.coordinate];
+    [_mapView setCenterCoordinate:annotation.coordinate];
+    [_mapView setRegion:MKCoordinateRegionMakeWithDistance([_mapView centerCoordinate], 5.0f * 0.000621371192, 5.0f * 0.000621371192)];
+    [_mapView addAnnotation:annotation];
 }
 
 - (void)didReceiveMemoryWarning {

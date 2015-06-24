@@ -45,13 +45,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"TableCellID";
-    
-    VisitViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+        
+    VisitViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         [_tableView registerNib:[UINib nibWithNibName:@"VisitViewCell" bundle:nil] forCellReuseIdentifier:cellID];
         cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
-        [cell setVisit:[self getVisitForIndex:indexPath.row]];
     }
+    [cell setVisit:[self getVisitForIndex:indexPath.row]];
     return cell;
 }
 
@@ -62,7 +62,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"VisitDetailSegueID"]) {
         LKVisit *visit = [self getVisitForIndex:[sender indexPathForSelectedRow].row];
+        [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
         [[segue destinationViewController] setVisit:visit];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [VTVisitHandler removeVisitAtIndex:indexPath.row];
     }
 }
 

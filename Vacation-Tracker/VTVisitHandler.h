@@ -18,6 +18,8 @@ extern NSString * const VTVisitsChangedNotification;
 //+ (void)addVisitWithPlace:(LKPlace *)place Location:(CLLocation *)location;
 + (void)adddVisit:(LKVisit *)visit;
 
++ (void)removeVisitAtIndex:(NSUInteger)index;
+
 + (NSMutableArray *)visits;
 
 @end

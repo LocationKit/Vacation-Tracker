@@ -17,6 +17,7 @@
 		FD3CBF1C1B3AF08C007C47C2 /* VisitViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD3CBF1A1B3AF08C007C47C2 /* VisitViewCell.xib */; };
 		FD3CBF221B3B110A007C47C2 /* VisitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF211B3B110A007C47C2 /* VisitDetailViewController.m */; };
 		FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF241B3B1A02007C47C2 /* TabBarViewController.m */; };
+		FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF271B3B4799007C47C2 /* MapViewController.m */; };
 		FD813CD11B3A513800219108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD01B3A513800219108 /* main.m */; };
 		FD813CD41B3A513800219108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD31B3A513800219108 /* AppDelegate.m */; };
 		FD813CDA1B3A513800219108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD813CD81B3A513800219108 /* Main.storyboard */; };
@@ -54,6 +55,8 @@
 		FD3CBF211B3B110A007C47C2 /* VisitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitDetailViewController.m; sourceTree = "<group>"; };
 		FD3CBF231B3B1A02007C47C2 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		FD3CBF241B3B1A02007C47C2 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		FD3CBF261B3B4799007C47C2 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		FD3CBF271B3B4799007C47C2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		FD813CCB1B3A513800219108 /* Vacation-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vacation-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD813CCF1B3A513800219108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD813CD01B3A513800219108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				FD813CD31B3A513800219108 /* AppDelegate.m */,
 				FD3CBF231B3B1A02007C47C2 /* TabBarViewController.h */,
 				FD3CBF241B3B1A02007C47C2 /* TabBarViewController.m */,
+				FD3CBF261B3B4799007C47C2 /* MapViewController.h */,
+				FD3CBF271B3B4799007C47C2 /* MapViewController.m */,
 				FD3CBF0F1B3AEE4C007C47C2 /* VTListViewController.h */,
 				FD3CBF101B3AEE4D007C47C2 /* VTListViewController.m */,
 				FD3CBF201B3B110A007C47C2 /* VisitDetailViewController.h */,
@@ -323,6 +328,7 @@
 				FD3CBF1B1B3AF08C007C47C2 /* VisitViewCell.m in Sources */,
 				FD3CBF141B3AEEA7007C47C2 /* VTVisitHandler.m in Sources */,
 				FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */,
+				FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
 				FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */,
 				FD3CBF111B3AEE4D007C47C2 /* VTListViewController.m in Sources */,

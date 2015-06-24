@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <LocationKit/LocationKit.h>
+#import <MapKit/MapKit.h>
 
-@interface VisitDetailViewController : UIViewController
+@interface VisitDetailViewController : UIViewController <MKMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (strong, nonatomic) LKVisit *visit;
 
@@ -18,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *localityLabel;
 
 @end

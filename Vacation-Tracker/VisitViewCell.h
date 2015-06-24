@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <LocationKit/LocationKit.h>
-//#import "VTVisit.h"
+
+@class VisitViewCell;
 
 @interface VisitViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *placeName;

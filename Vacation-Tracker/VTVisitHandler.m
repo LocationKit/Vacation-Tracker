@@ -45,6 +45,11 @@ static NSMutableArray *visits;
     [VTVisitHandler notifyChange:visits];
 }
 
++ (void)removeVisitAtIndex:(NSUInteger)index {
+    [visits removeObjectAtIndex:index];
+    [VTVisitHandler notifyChange:visits];
+}
+
 + (NSMutableArray *)visits {
     return visits;
 }
