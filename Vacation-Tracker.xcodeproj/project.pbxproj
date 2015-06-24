@@ -11,9 +11,13 @@
 		FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */; };
 		FD3CBF0C1B3A5BD3007C47C2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */; };
 		FD3CBF0E1B3A5BDA007C47C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CBF0D1B3A5BDA007C47C2 /* CoreLocation.framework */; };
+		FD3CBF111B3AEE4D007C47C2 /* VTListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF101B3AEE4D007C47C2 /* VTListViewController.m */; };
+		FD3CBF141B3AEEA7007C47C2 /* VTVisitHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF131B3AEEA7007C47C2 /* VTVisitHandler.m */; };
+		FD3CBF1B1B3AF08C007C47C2 /* VisitViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF191B3AF08C007C47C2 /* VisitViewCell.m */; };
+		FD3CBF1C1B3AF08C007C47C2 /* VisitViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD3CBF1A1B3AF08C007C47C2 /* VisitViewCell.xib */; };
+		FD3CBF1F1B3AFF98007C47C2 /* VTVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF1E1B3AFF98007C47C2 /* VTVisit.m */; };
 		FD813CD11B3A513800219108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD01B3A513800219108 /* main.m */; };
 		FD813CD41B3A513800219108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD31B3A513800219108 /* AppDelegate.m */; };
-		FD813CD71B3A513800219108 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD61B3A513800219108 /* ViewController.m */; };
 		FD813CDA1B3A513800219108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD813CD81B3A513800219108 /* Main.storyboard */; };
 		FD813CDC1B3A513800219108 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDB1B3A513800219108 /* Images.xcassets */; };
 		FD813CDF1B3A513800219108 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDD1B3A513800219108 /* LaunchScreen.xib */; };
@@ -38,13 +42,20 @@
 		FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTLKDelegate.m; sourceTree = "<group>"; };
 		FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FD3CBF0D1B3A5BDA007C47C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FD3CBF0F1B3AEE4C007C47C2 /* VTListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTListViewController.h; sourceTree = SOURCE_ROOT; };
+		FD3CBF101B3AEE4D007C47C2 /* VTListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTListViewController.m; sourceTree = SOURCE_ROOT; };
+		FD3CBF121B3AEEA7007C47C2 /* VTVisitHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisitHandler.h; sourceTree = "<group>"; };
+		FD3CBF131B3AEEA7007C47C2 /* VTVisitHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisitHandler.m; sourceTree = "<group>"; };
+		FD3CBF181B3AF08C007C47C2 /* VisitViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitViewCell.h; sourceTree = "<group>"; };
+		FD3CBF191B3AF08C007C47C2 /* VisitViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitViewCell.m; sourceTree = "<group>"; };
+		FD3CBF1A1B3AF08C007C47C2 /* VisitViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitViewCell.xib; sourceTree = "<group>"; };
+		FD3CBF1D1B3AFF98007C47C2 /* VTVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisit.h; sourceTree = "<group>"; };
+		FD3CBF1E1B3AFF98007C47C2 /* VTVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisit.m; sourceTree = "<group>"; };
 		FD813CCB1B3A513800219108 /* Vacation-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vacation-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD813CCF1B3A513800219108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD813CD01B3A513800219108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD813CD21B3A513800219108 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD813CD31B3A513800219108 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FD813CD51B3A513800219108 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FD813CD61B3A513800219108 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FD813CD91B3A513800219108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD813CDB1B3A513800219108 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD813CDE1B3A513800219108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -118,10 +129,17 @@
 			children = (
 				FD813CD21B3A513800219108 /* AppDelegate.h */,
 				FD813CD31B3A513800219108 /* AppDelegate.m */,
-				FD813CD51B3A513800219108 /* ViewController.h */,
-				FD813CD61B3A513800219108 /* ViewController.m */,
 				FD3CBF081B3A59BA007C47C2 /* VTLKDelegate.h */,
 				FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */,
+				FD3CBF121B3AEEA7007C47C2 /* VTVisitHandler.h */,
+				FD3CBF131B3AEEA7007C47C2 /* VTVisitHandler.m */,
+				FD3CBF1D1B3AFF98007C47C2 /* VTVisit.h */,
+				FD3CBF1E1B3AFF98007C47C2 /* VTVisit.m */,
+				FD3CBF0F1B3AEE4C007C47C2 /* VTListViewController.h */,
+				FD3CBF101B3AEE4D007C47C2 /* VTListViewController.m */,
+				FD3CBF181B3AF08C007C47C2 /* VisitViewCell.h */,
+				FD3CBF191B3AF08C007C47C2 /* VisitViewCell.m */,
+				FD3CBF1A1B3AF08C007C47C2 /* VisitViewCell.xib */,
 				FD813CDD1B3A513800219108 /* LaunchScreen.xib */,
 				FD813CDB1B3A513800219108 /* Images.xcassets */,
 				FD813CD81B3A513800219108 /* Main.storyboard */,
@@ -243,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3CBF1C1B3AF08C007C47C2 /* VisitViewCell.xib in Resources */,
 				FD813CDA1B3A513800219108 /* Main.storyboard in Resources */,
 				FD813CDF1B3A513800219108 /* LaunchScreen.xib in Resources */,
 				FD813CDC1B3A513800219108 /* Images.xcassets in Resources */,
@@ -296,9 +315,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD813CD71B3A513800219108 /* ViewController.m in Sources */,
+				FD3CBF1F1B3AFF98007C47C2 /* VTVisit.m in Sources */,
+				FD3CBF1B1B3AF08C007C47C2 /* VisitViewCell.m in Sources */,
+				FD3CBF141B3AEEA7007C47C2 /* VTVisitHandler.m in Sources */,
 				FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
+				FD3CBF111B3AEE4D007C47C2 /* VTListViewController.m in Sources */,
 				FD813CD11B3A513800219108 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

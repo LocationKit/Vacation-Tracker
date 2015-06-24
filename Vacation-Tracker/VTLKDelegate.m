@@ -7,11 +7,17 @@
 //
 
 #import "VTLKDelegate.h"
+#import "VTVisitHandler.h"
 
 @implementation VTLKDelegate
 
 - (void)locationKit:(LocationKit *)locationKit didUpdateLocation:(CLLocation *)location {
-    
+    [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
+        if (error == nil && location != nil && place != nil) {
+            NSLog(@"User is in %@", place.venue.name);
+            [VTVisitHandler addVisitWithPlace:place Location:location];
+        }
+    }];
 }
 
 - (void)locationKit:(LocationKit *)locationKit didStartVisit:(LKVisit *)visit {

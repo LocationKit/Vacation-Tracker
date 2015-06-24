@@ -1,0 +1,20 @@
+//
+//  VisitViewCell.h
+//  Vacation-Tracker
+//
+//  Created by Spencer Atkin on 6/24/15.
+//  Copyright (c) 2015 Spencer Atkin. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <LocationKit/LocationKit.h>
+#import "VTVisit.h"
+
+@interface VisitViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *placeName;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+
+- (void)setVisit:(VTVisit *)visit;
+
+@end
