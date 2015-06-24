@@ -55,6 +55,17 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"VisitDetailSegueID" sender:tableView];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"VisitDetailSegueID"]) {
+        LKVisit *visit = [self getVisitForIndex:[sender indexPathForSelectedRow].row];
+        [[segue destinationViewController] setVisit:visit];
+    }
+}
+
 - (LKVisit *)getVisitForIndex:(NSUInteger)index {
     return [_visits objectAtIndex:index];
 }
