@@ -55,7 +55,7 @@
     return cell;
 }
 
-- (VTVisit *)getVisitForIndex:(NSUInteger)index {
+- (LKVisit *)getVisitForIndex:(NSUInteger)index {
     return [_visits objectAtIndex:index];
 }
 

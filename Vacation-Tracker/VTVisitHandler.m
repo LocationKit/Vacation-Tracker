@@ -7,7 +7,7 @@
 //
 
 #import "VTVisitHandler.h"
-#import "VTVisit.h"
+//#import "VTVisit.h"
 
 
 NSString *const VTVisitsChangedNotification = @"VTVisitsChangedNotification";
@@ -29,11 +29,19 @@ static NSMutableArray *visits;
     [center postNotificationName:VTVisitsChangedNotification object:visits];
 }
 
-+ (void)addVisitWithPlace:(LKPlace *)place Location:(CLLocation *)location {
+/*+ (void)addVisitWithPlace:(LKPlace *)place Location:(CLLocation *)location {
     if (visits == nil) {
         visits = [[NSMutableArray alloc] init];
     }
     [visits addObject:[VTVisit initWithPlace:place Location:location]];
+    [VTVisitHandler notifyChange:visits];
+}*/
+
++ (void)adddVisit:(LKVisit *)visit {
+    if (visits == nil) {
+        visits = [[NSMutableArray alloc] init];
+    }
+    [visits addObject:visit];
     [VTVisitHandler notifyChange:visits];
 }
 

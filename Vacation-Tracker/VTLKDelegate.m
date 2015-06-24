@@ -15,13 +15,14 @@
     [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
         if (error == nil && location != nil && place != nil) {
             NSLog(@"User is in %@", place.venue.name);
-            [VTVisitHandler addVisitWithPlace:place Location:location];
+            //[VTVisitHandler addVisitWithPlace:place Location:location];
         }
     }];
 }
 
 - (void)locationKit:(LocationKit *)locationKit didStartVisit:(LKVisit *)visit {
-    
+    NSLog(@"Visit added.");
+    [VTVisitHandler adddVisit:visit];
 }
 
 - (void)locationKit:(LocationKit *)locationKit didEndVisit:(LKVisit *)visit {
