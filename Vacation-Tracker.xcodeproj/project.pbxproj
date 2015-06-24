@@ -109,9 +109,9 @@
 				FD813CD31B3A513800219108 /* AppDelegate.m */,
 				FD813CD51B3A513800219108 /* ViewController.h */,
 				FD813CD61B3A513800219108 /* ViewController.m */,
-				FD813CD81B3A513800219108 /* Main.storyboard */,
-				FD813CDB1B3A513800219108 /* Images.xcassets */,
 				FD813CDD1B3A513800219108 /* LaunchScreen.xib */,
+				FD813CDB1B3A513800219108 /* Images.xcassets */,
+				FD813CD81B3A513800219108 /* Main.storyboard */,
 				FD813CCE1B3A513800219108 /* Supporting Files */,
 			);
 			path = "Vacation-Tracker";
