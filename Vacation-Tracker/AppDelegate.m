@@ -16,8 +16,36 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    _locationDelegate = [[VTLKDelegate alloc] init];
+    NSString *apiToken = @"d735e0f01bef83d5";
+    [[LocationKit sharedInstance] startWithApiToken:apiToken andDelegate:_locationDelegate];
+    [self checkAlwaysAuthorization];
     // Override point for customization after application launch.
     return YES;
+}
+
+- (void)checkAlwaysAuthorization
+{
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    
+    // If the status is denied or only granted for when in use, display an alert
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
+        NSString *title =  (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
+        NSString *message = @"To use background location you must turn on 'Always' in the Location Services Settings";
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Settings", nil];
+        alertView.delegate = self;
+        [alertView show];
+    }  else if (status == kCLAuthorizationStatusNotDetermined) {
+        CLLocationManager *manager = [[CLLocationManager alloc] init];
+        if([manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [manager requestAlwaysAuthorization];
+        }
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

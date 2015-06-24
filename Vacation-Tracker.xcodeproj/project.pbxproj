@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BFC5787DB8A8805A01AFE6CC /* libPods-Vacation-Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E39CD944BF078D820401D8 /* libPods-Vacation-Tracker.a */; };
+		FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */; };
+		FD3CBF0C1B3A5BD3007C47C2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */; };
+		FD3CBF0E1B3A5BDA007C47C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CBF0D1B3A5BDA007C47C2 /* CoreLocation.framework */; };
 		FD813CD11B3A513800219108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD01B3A513800219108 /* main.m */; };
 		FD813CD41B3A513800219108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD31B3A513800219108 /* AppDelegate.m */; };
 		FD813CD71B3A513800219108 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD61B3A513800219108 /* ViewController.m */; };
@@ -31,6 +34,10 @@
 		2516996F131D29B4BC74A83A /* Pods-Vacation-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker/Pods-Vacation-Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		EF0817CACE09C390A466199F /* Pods-Vacation-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker/Pods-Vacation-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		F2E39CD944BF078D820401D8 /* libPods-Vacation-Tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vacation-Tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD3CBF081B3A59BA007C47C2 /* VTLKDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTLKDelegate.h; sourceTree = "<group>"; };
+		FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTLKDelegate.m; sourceTree = "<group>"; };
+		FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FD3CBF0D1B3A5BDA007C47C2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FD813CCB1B3A513800219108 /* Vacation-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vacation-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD813CCF1B3A513800219108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD813CD01B3A513800219108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3CBF0E1B3A5BDA007C47C2 /* CoreLocation.framework in Frameworks */,
+				FD3CBF0C1B3A5BD3007C47C2 /* MapKit.framework in Frameworks */,
 				BFC5787DB8A8805A01AFE6CC /* libPods-Vacation-Tracker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +77,8 @@
 		1BECEB9B030F8B17EC2B3E1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD3CBF0D1B3A5BDA007C47C2 /* CoreLocation.framework */,
+				FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */,
 				F2E39CD944BF078D820401D8 /* libPods-Vacation-Tracker.a */,
 			);
 			name = Frameworks;
@@ -109,6 +120,8 @@
 				FD813CD31B3A513800219108 /* AppDelegate.m */,
 				FD813CD51B3A513800219108 /* ViewController.h */,
 				FD813CD61B3A513800219108 /* ViewController.m */,
+				FD3CBF081B3A59BA007C47C2 /* VTLKDelegate.h */,
+				FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */,
 				FD813CDD1B3A513800219108 /* LaunchScreen.xib */,
 				FD813CDB1B3A513800219108 /* Images.xcassets */,
 				FD813CD81B3A513800219108 /* Main.storyboard */,
@@ -194,6 +207,11 @@
 				TargetAttributes = {
 					FD813CCA1B3A513800219108 = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					FD813CE31B3A513900219108 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -279,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD813CD71B3A513800219108 /* ViewController.m in Sources */,
+				FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
 				FD813CD11B3A513800219108 /* main.m in Sources */,
 			);
