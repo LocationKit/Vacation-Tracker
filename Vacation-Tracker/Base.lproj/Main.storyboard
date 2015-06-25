@@ -89,7 +89,7 @@
             </objects>
             <point key="canvasLocation" x="904" y="719"/>
         </scene>
-        <!--Visits-->
+        <!--Visits in <trip location>-->
         <scene sceneID="RRE-t5-Iby">
             <objects>
                 <viewController id="pHW-44-aCg" customClass="VTListViewController" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Visits" id="ZoN-Hp-JBJ"/>
+                    <navigationItem key="navigationItem" title="Visits in &lt;trip location&gt;" id="ZoN-Hp-JBJ"/>
                     <connections>
                         <outlet property="tableView" destination="N1E-GX-qgf" id="T0r-Iy-lDQ"/>
                         <segue destination="yAT-P0-jYe" kind="push" identifier="VisitDetailSegueID" id="7Pz-0z-d1K"/>
@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="1310" y="719"/>
         </scene>
-        <!--Visit Details-->
+        <!--Visit to <trip location>-->
         <scene sceneID="JVm-R6-A7v">
             <objects>
                 <viewController id="yAT-P0-jYe" customClass="VisitDetailViewController" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="vxN-Hx-Ynj">
-                                <rect key="frame" x="126.00000037087335" y="103" width="178" height="21"/>
+                                <rect key="frame" x="126.00000037087329" y="103" width="178" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -156,14 +156,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MnJ-BI-CJ2">
-                                <rect key="frame" x="157" y="161" width="145" height="21"/>
+                                <rect key="frame" x="159.00000037087335" y="161" width="145" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z11-Cy-GpL">
-                                <rect key="frame" x="157" y="132" width="147" height="21"/>
+                                <rect key="frame" x="157.00000037087335" y="132" width="147" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -183,11 +183,34 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dbd-6B-bat">
+                                <rect key="frame" x="16" y="189" width="68" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUMBER" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="Jjf-cq-pbk">
+                                <rect key="frame" x="126.00000037087329" y="189" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY/STATE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="bIT-8O-fzX">
+                                <rect key="frame" x="126.00000037087329" y="206" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Visit Details" id="hgG-q7-Zzj"/>
+                    <navigationItem key="navigationItem" title="Visit to &lt;trip location&gt;" id="hgG-q7-Zzj"/>
                     <connections>
+                        <outlet property="address_0" destination="Jjf-cq-pbk" id="n4X-ig-Nf8"/>
+                        <outlet property="address_1" destination="bIT-8O-fzX" id="j1I-9x-3fZ"/>
                         <outlet property="dateLabel" destination="z11-Cy-GpL" id="77K-ne-M85"/>
                         <outlet property="localityLabel" destination="5Sg-ci-Nyg" id="btG-7E-kS7"/>
                         <outlet property="locationLabel" destination="vxN-Hx-Ynj" id="J6w-2N-DXW"/>

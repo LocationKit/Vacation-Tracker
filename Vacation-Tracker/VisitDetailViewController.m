@@ -26,9 +26,11 @@ NSString *placeName;
     
     if (placeName == nil) {
         [_locationLabel setText:@"Unregistered Place"];
+        [self.navigationItem setTitle:@"Unregistered Place"];
     }
     else {
         [_locationLabel setText:placeName];
+        [self.navigationItem setTitle:[NSString stringWithFormat:@"Visit to %@", [placeName capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visits in <locale>'
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -40,6 +42,10 @@ NSString *placeName;
     dateFormatter.dateFormat = @"h:mm a";
     dateString = [dateFormatter stringFromDate: [_visit arrivalDate]];
     [_timeLabel setText:dateString];
+    
+    LKAddress *address = _visit.place.address;
+    [_address_0 setText:[NSString stringWithFormat:@"%@ %@", address.streetNumber, address.streetName]];
+    [_address_1 setText:[NSString stringWithFormat:@"%@, %@", [address.locality capitalizedStringWithLocale:[NSLocale currentLocale]], address.region]];
     
     [_localityLabel setText:_visit.place.address.locality];
     // Do any additional setup after loading the view.

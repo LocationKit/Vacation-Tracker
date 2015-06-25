@@ -22,6 +22,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *address_0;
+
+@property (weak, nonatomic) IBOutlet UILabel *address_1;
+
 @property (weak, nonatomic) IBOutlet UILabel *localityLabel;
 
 @end
