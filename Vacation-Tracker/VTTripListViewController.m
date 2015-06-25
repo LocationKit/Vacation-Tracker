@@ -20,7 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [VTTripHandler registerObserver:^(NSNotification *note) {
+    [_tableView reloadData];
+    
+    [VTTripHandler registerTripObserver:^(NSNotification *note) {
         if(note.name != VTTripsChangedNotification) {
             return;
         }
@@ -41,9 +43,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"TripCellID";
-    
-    NSLog(@"Cell required");
-    
+        
     TripViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         [_tableView registerNib:[UINib nibWithNibName:@"TripViewCell" bundle:nil] forCellReuseIdentifier:cellID];
@@ -70,6 +70,7 @@
         NSMutableArray *visits = [self getVisitsForIndex:[sender indexPathForSelectedRow].row];
         [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
         [[segue destinationViewController] setVisits:visits];
+        [[segue destinationViewController] setTripName:[[self getTripForIndex:[sender indexPathForSelectedRow].row] tripName]];
     }
 }
 

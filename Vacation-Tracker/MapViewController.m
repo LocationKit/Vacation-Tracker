@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-#import "VTVisitHandler.h"
+#import "VTTripHandler.h"
 
 @interface MapViewController ()
 
@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [VTVisitHandler registerObserver:^(NSNotification *note) {
+    [VTTripHandler registerVisitObserver:^(NSNotification *note) {
         if(note.name != VTVisitsChangedNotification) {
             return;
         }

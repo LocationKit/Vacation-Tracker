@@ -12,7 +12,7 @@
 
 - (instancetype)initWithName:(NSString *)name {
     if (self = [super init]) {
-        _tripName = name;
+        _tripName = [name capitalizedStringWithLocale:[NSLocale currentLocale]];
     }
     return self;
 }
@@ -20,6 +20,7 @@
 - (void)addVisit:(LKVisit *)visit {
     if (_visitHandler == nil) {
         _visitHandler = [[VTVisitHandler alloc] init];
+        [_visitHandler setTripName:_tripName];
     }
     [_visitHandler addVisit:visit];
 }

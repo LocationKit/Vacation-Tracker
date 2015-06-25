@@ -7,7 +7,7 @@
 //
 
 #import "VTListViewController.h"
-#import "VTVisitHandler.h"
+#import "VTTripHandler.h"
 #import "VisitViewCell.h"
 
 @interface VTListViewController ()
@@ -19,15 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationItem setTitle:[NSString stringWithFormat:@"Visits in %@", [_tripName capitalizedStringWithLocale:[NSLocale currentLocale]]]];
+    
     [_tableView reloadData];
     
-    /*[VTVisitHandler registerObserver:^(NSNotification *note) {
+    [VTTripHandler registerVisitObserver:^(NSNotification *note) {
         if(note.name != VTVisitsChangedNotification) {
             return;
         }
-        _visits = note.object;
+        if ([[note.object objectAtIndex:0] isEqualToString:_tripName]) {
+            _visits = [note.object objectAtIndex:1];
+        }
         [_tableView reloadData];
-    }];*/
+    }];
     // Do any additional setup after loading the view.
 }
 

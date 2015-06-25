@@ -11,11 +11,13 @@
 
 @interface VTVisitHandler : NSObject
 
-extern NSString * const VTVisitsChangedNotification;
+//extern NSString * const VTVisitsChangedNotification;
 
 @property (strong, nonatomic) NSMutableArray *visits;
 
-+ (void)registerObserver:(void (^)(NSNotification *))block;
+@property (strong, nonatomic) NSString *tripName;
+
+//+ (void)registerObserver:(void (^)(NSNotification *))block;
 
 - (void)addVisit:(LKVisit *)visit;
 

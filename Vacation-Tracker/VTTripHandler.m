@@ -10,12 +10,14 @@
 
 NSString *const VTTripsChangedNotification = @"VTTripsChangedNotification";
 
+NSString *const VTVisitsChangedNotification = @"VTVisitsChangedNotification";
+
 @implementation VTTripHandler
 
 static NSMutableArray *trips;
 static NSMutableArray *tripNames;
 
-+ (void)registerObserver:(void (^)(NSNotification *))block {
++ (void)registerTripObserver:(void (^)(NSNotification *))block {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserverForName:VTTripsChangedNotification
                         object:nil
@@ -23,9 +25,22 @@ static NSMutableArray *tripNames;
                     usingBlock:block];
 }
 
-+ (void)notifyChange:(NSArray *)visits {
++ (void)registerVisitObserver:(void (^)(NSNotification *))block {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:VTVisitsChangedNotification object:visits];
+    [center addObserverForName:VTVisitsChangedNotification
+                        object:nil
+                         queue:nil
+                    usingBlock:block];
+}
+
++ (void)notifyTripChange:(NSArray *)visits {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:VTTripsChangedNotification object:visits];
+}
+
++ (void)notifyVisitChange:(NSArray *)data {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:VTVisitsChangedNotification object:data];
 }
 
 + (void)addVisit:(LKVisit *)visit forTrip:(VTTrip *)trip {
@@ -38,14 +53,13 @@ static NSMutableArray *tripNames;
     if ([tripNames indexOfObject:[trip tripName]] == NSNotFound) {
         [trips addObject:trip];
         [tripNames addObject:[trip tripName]];
-        NSLog(@"2");
     }
     NSUInteger lastIndex = [trips count] - 1;
     VTTrip *mostRecentTrip = [trips objectAtIndex:lastIndex];
     
     [mostRecentTrip addVisit:visit];
     [trips setObject:mostRecentTrip atIndexedSubscript:lastIndex];
-    [VTTripHandler notifyChange:trips];
+    [VTTripHandler notifyTripChange:trips];
 }
 
 + (NSMutableArray *)trips {

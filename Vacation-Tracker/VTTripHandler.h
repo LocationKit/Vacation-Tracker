@@ -13,7 +13,13 @@
 
 extern NSString * const VTTripsChangedNotification;
 
-+ (void)registerObserver:(void (^)(NSNotification *))block;
+extern NSString * const VTVisitsChangedNotification;
+
++ (void)registerTripObserver:(void (^)(NSNotification *))block;
+
++ (void)registerVisitObserver:(void (^)(NSNotification *))block;
+
++ (void)notifyVisitChange:(NSArray *)data;
 
 + (void)addVisit:(LKVisit *)visit forTrip:(VTTrip *)trip;
 

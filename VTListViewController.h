@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) NSMutableArray *visits;
 
+@property (strong, nonatomic) NSString *tripName;
+
 @end
