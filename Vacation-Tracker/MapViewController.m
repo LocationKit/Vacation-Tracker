@@ -28,14 +28,6 @@
         [self reloadAnnotations];
     }];
     
-    [[LocationKit sharedInstance] getCurrentLocationWithHandler:^(CLLocation *location, NSError *error) {
-        if (error == nil) {
-            [_mapView setRegion:MKCoordinateRegionMakeWithDistance([location coordinate], 15.0f * 0.000621371192, 15.0f * 0.000621371192)];
-        }
-        else {
-            NSLog(@"Error: %@", error);
-        }
-    }];
     // Do any additional setup after loading the view.
 }
 

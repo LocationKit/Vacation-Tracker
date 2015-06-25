@@ -8,6 +8,8 @@
 
 #import "VisitDetailViewController.h"
 
+#define MILE_TO_METER 0.00062137f
+
 @interface VisitDetailViewController ()
 
 @end
@@ -53,7 +55,7 @@ NSString *placeName;
     }
     [annotation setCoordinate:_visit.place.address.coordinate];
     [_mapView setCenterCoordinate:annotation.coordinate];
-    [_mapView setRegion:MKCoordinateRegionMakeWithDistance([_mapView centerCoordinate], 5.0f * 0.000621371192, 5.0f * 0.000621371192)];
+    [_mapView setRegion:MKCoordinateRegionMakeWithDistance([_mapView centerCoordinate], 1.0f / MILE_TO_METER, 1.0f / MILE_TO_METER)];
     [_mapView addAnnotation:annotation];
 }
 
