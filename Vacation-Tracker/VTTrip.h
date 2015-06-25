@@ -19,7 +19,7 @@
 
 @property (strong, nonatomic) VTVisitHandler *visitHandler;
 
-- (void)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name;
 
 - (void)addVisit:(LKVisit *)visit;
 

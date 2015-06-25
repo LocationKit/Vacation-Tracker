@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VTVisitHandler.h"
 
 @interface VTListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSMutableArray *visits;
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "VTLKDelegate.h"
-#import "VTVisitHandler.h"
+#import "VTTripHandler.h"
+#import "VTTrip.h"
 
 @implementation VTLKDelegate
 
@@ -19,7 +20,7 @@
             LKVisit *visit = [[LKVisit alloc] init];
             [visit setPlace:place];
             if (visit.place.venue.name != nil) {
-                [VTVisitHandler adddVisit:visit];
+                [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
             }
             //[VTVisitHandler addVisitWithPlace:place Location:location];
         }
@@ -28,7 +29,7 @@
 
 - (void)locationKit:(LocationKit *)locationKit didStartVisit:(LKVisit *)visit {
     NSLog(@"Visit started.");
-    [VTVisitHandler adddVisit:visit];
+    [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
 }
 
 - (void)locationKit:(LocationKit *)locationKit didEndVisit:(LKVisit *)visit {

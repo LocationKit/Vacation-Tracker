@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VTTripHandler.h"
 
 @interface VTTripListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

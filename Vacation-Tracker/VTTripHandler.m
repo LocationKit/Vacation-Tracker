@@ -8,11 +8,12 @@
 
 #import "VTTripHandler.h"
 
-NSString *const VTVisitsChangedNotification = @"VTTripsChangedNotification";
+NSString *const VTTripsChangedNotification = @"VTTripsChangedNotification";
 
 @implementation VTTripHandler
 
 static NSMutableArray *trips;
+static NSMutableArray *tripNames;
 
 + (void)registerObserver:(void (^)(NSNotification *))block {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
@@ -22,12 +23,29 @@ static NSMutableArray *trips;
                     usingBlock:block];
 }
 
-+ (void)addTrip:(VTTrip *)trip {
-    [trips addObject:trip];
++ (void)notifyChange:(NSArray *)visits {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:VTVisitsChangedNotification object:visits];
 }
 
-+ (void)removeTripAtIndex:(NSUInteger)index {
++ (void)addVisit:(LKVisit *)visit forTrip:(VTTrip *)trip {
+    if (trips == nil) {
+        trips = [[NSMutableArray alloc] init];
+    }
+    if (tripNames == nil) {
+        tripNames = [[NSMutableArray alloc] init];
+    }
+    if ([tripNames indexOfObject:[trip tripName]] == NSNotFound) {
+        [trips addObject:trip];
+        [tripNames addObject:[trip tripName]];
+        NSLog(@"2");
+    }
+    NSUInteger lastIndex = [trips count] - 1;
+    VTTrip *mostRecentTrip = [trips objectAtIndex:lastIndex];
     
+    [mostRecentTrip addVisit:visit];
+    [trips setObject:mostRecentTrip atIndexedSubscript:lastIndex];
+    [VTTripHandler notifyChange:trips];
 }
 
 + (NSMutableArray *)trips {

@@ -15,9 +15,7 @@ extern NSString * const VTTripsChangedNotification;
 
 + (void)registerObserver:(void (^)(NSNotification *))block;
 
-+ (void)addTrip:(VTTrip *)trip;
-
-+ (void)removeTripAtIndex:(NSUInteger)index;
++ (void)addVisit:(LKVisit *)visit forTrip:(VTTrip *)trip;
 
 + (NSMutableArray *)trips;
 

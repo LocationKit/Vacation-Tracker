@@ -7,8 +7,11 @@
 //
 
 #import "VTTripListViewController.h"
+#import "TripViewCell.h"
 
 @interface VTTripListViewController ()
+
+@property (strong, nonatomic) NSMutableArray *trips;
 
 @end
 
@@ -16,12 +19,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [VTTripHandler registerObserver:^(NSNotification *note) {
+        if(note.name != VTTripsChangedNotification) {
+            return;
+        }
+        _trips = note.object;
+        [_tableView reloadData];
+    }];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[VTTripHandler trips] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellID = @"TripCellID";
+    
+    NSLog(@"Cell required");
+    
+    TripViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        [_tableView registerNib:[UINib nibWithNibName:@"TripViewCell" bundle:nil] forCellReuseIdentifier:cellID];
+        cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
+    }
+    [cell setTrip:[self getTripForIndex:indexPath.row]];
+    return cell;
+}
+
+- (VTTrip *)getTripForIndex:(NSUInteger)index {
+    return [[VTTripHandler trips] objectAtIndex:index];
+}
+
+- (NSMutableArray *)getVisitsForIndex:(NSUInteger)index {
+    return [[[[VTTripHandler trips] objectAtIndex:index] visitHandler] visits];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"ShowTripVisitsID" sender:tableView];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ShowTripVisitsID"]) {
+        NSMutableArray *visits = [self getVisitsForIndex:[sender indexPathForSelectedRow].row];
+        [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
+        [[segue destinationViewController] setVisits:visits];
+    }
 }
 
 /*

@@ -49,7 +49,7 @@
 }
 
 - (void)showVisitsOnMap {
-    _visits = [VTVisitHandler visits];
+    //_visits = [VTVisitHandler visits];
     for (NSUInteger x = 0; x < [_visits count]; x++) {
         LKVisit *visit = [_visits objectAtIndex:x];
         

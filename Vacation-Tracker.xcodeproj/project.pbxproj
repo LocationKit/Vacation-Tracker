@@ -11,6 +11,8 @@
 		FD199BA61B3C429D00BC756D /* VTTripHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BA51B3C429D00BC756D /* VTTripHandler.m */; };
 		FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BA81B3C42AE00BC756D /* VTTrip.m */; };
 		FD199BAC1B3C438A00BC756D /* VTTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BAB1B3C438A00BC756D /* VTTripListViewController.m */; };
+		FD199BB01B3C49E300BC756D /* TripViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BAE1B3C49E300BC756D /* TripViewCell.m */; };
+		FD199BB11B3C49E300BC756D /* TripViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD199BAF1B3C49E300BC756D /* TripViewCell.xib */; };
 		FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */; };
 		FD3CBF0C1B3A5BD3007C47C2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */; };
 		FD3CBF0E1B3A5BDA007C47C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CBF0D1B3A5BDA007C47C2 /* CoreLocation.framework */; };
@@ -49,6 +51,9 @@
 		FD199BA81B3C42AE00BC756D /* VTTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTrip.m; sourceTree = "<group>"; };
 		FD199BAA1B3C438A00BC756D /* VTTripListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTripListViewController.h; sourceTree = "<group>"; };
 		FD199BAB1B3C438A00BC756D /* VTTripListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTripListViewController.m; sourceTree = "<group>"; };
+		FD199BAD1B3C49E300BC756D /* TripViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripViewCell.h; sourceTree = "<group>"; };
+		FD199BAE1B3C49E300BC756D /* TripViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewCell.m; sourceTree = "<group>"; };
+		FD199BAF1B3C49E300BC756D /* TripViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripViewCell.xib; sourceTree = "<group>"; };
 		FD3CBF081B3A59BA007C47C2 /* VTLKDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTLKDelegate.h; sourceTree = "<group>"; };
 		FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTLKDelegate.m; sourceTree = "<group>"; };
 		FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -128,9 +133,8 @@
 				FD3CBF101B3AEE4D007C47C2 /* VTListViewController.m */,
 				FD3CBF201B3B110A007C47C2 /* VisitDetailViewController.h */,
 				FD3CBF211B3B110A007C47C2 /* VisitDetailViewController.m */,
-				FD3CBF181B3AF08C007C47C2 /* VisitViewCell.h */,
-				FD3CBF191B3AF08C007C47C2 /* VisitViewCell.m */,
-				FD3CBF1A1B3AF08C007C47C2 /* VisitViewCell.xib */,
+				FD199BB31B3C49F800BC756D /* Trip Cell */,
+				FD199BB21B3C49EB00BC756D /* Visit Cell */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -148,6 +152,26 @@
 				FD199BA81B3C42AE00BC756D /* VTTrip.m */,
 			);
 			name = LKHandlers;
+			sourceTree = "<group>";
+		};
+		FD199BB21B3C49EB00BC756D /* Visit Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FD3CBF181B3AF08C007C47C2 /* VisitViewCell.h */,
+				FD3CBF191B3AF08C007C47C2 /* VisitViewCell.m */,
+				FD3CBF1A1B3AF08C007C47C2 /* VisitViewCell.xib */,
+			);
+			name = "Visit Cell";
+			sourceTree = "<group>";
+		};
+		FD199BB31B3C49F800BC756D /* Trip Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FD199BAD1B3C49E300BC756D /* TripViewCell.h */,
+				FD199BAE1B3C49E300BC756D /* TripViewCell.m */,
+				FD199BAF1B3C49E300BC756D /* TripViewCell.xib */,
+			);
+			name = "Trip Cell";
 			sourceTree = "<group>";
 		};
 		FD813CC21B3A513800219108 = {
@@ -306,6 +330,7 @@
 				FD813CDA1B3A513800219108 /* Main.storyboard in Resources */,
 				FD813CDF1B3A513800219108 /* LaunchScreen.xib in Resources */,
 				FD813CDC1B3A513800219108 /* Images.xcassets in Resources */,
+				FD199BB11B3C49E300BC756D /* TripViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +386,7 @@
 				FD3CBF141B3AEEA7007C47C2 /* VTVisitHandler.m in Sources */,
 				FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */,
 				FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */,
+				FD199BB01B3C49E300BC756D /* TripViewCell.m in Sources */,
 				FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
 				FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */,

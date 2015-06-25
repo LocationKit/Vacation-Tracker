@@ -10,8 +10,11 @@
 
 @implementation VTTrip
 
-- (void)initWithName:(NSString *)name {
-    _tripName = name;
+- (instancetype)initWithName:(NSString *)name {
+    if (self = [super init]) {
+        _tripName = name;
+    }
+    return self;
 }
 
 - (void)addVisit:(LKVisit *)visit {

@@ -12,8 +12,6 @@
 
 @interface VTListViewController ()
 
-@property (strong, nonatomic) NSMutableArray *visits;
-
 @end
 
 @implementation VTListViewController
@@ -21,16 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _visits = [VTVisitHandler visits];
     [_tableView reloadData];
     
-    [VTVisitHandler registerObserver:^(NSNotification *note) {
+    /*[VTVisitHandler registerObserver:^(NSNotification *note) {
         if(note.name != VTVisitsChangedNotification) {
             return;
         }
         _visits = note.object;
         [_tableView reloadData];
-    }];
+    }];*/
     // Do any additional setup after loading the view.
 }
 
@@ -44,7 +41,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellID = @"TableCellID";
+    static NSString *cellID = @"VisitCellID";
         
     VisitViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
@@ -67,11 +64,11 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [VTVisitHandler removeVisitAtIndex:indexPath.row];
     }
-}
+}*/
 
 - (LKVisit *)getVisitForIndex:(NSUInteger)index {
     return [_visits objectAtIndex:index];
