@@ -7,12 +7,10 @@
 //
 
 #import "VTListViewController.h"
-#import "VTVisitHandler.h"
+#import "VTTripHandler.h"
 #import "VisitViewCell.h"
 
 @interface VTListViewController ()
-
-@property (strong, nonatomic) NSMutableArray *visits;
 
 @end
 
@@ -21,14 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _visits = [VTVisitHandler visits];
+    [self.navigationItem setTitle:[NSString stringWithFormat:@"Visits in %@", [_tripName capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visits in <locale>'
+    
     [_tableView reloadData];
     
-    [VTVisitHandler registerObserver:^(NSNotification *note) {
+    [VTTripHandler registerVisitObserver:^(NSNotification *note) {
         if(note.name != VTVisitsChangedNotification) {
             return;
         }
-        _visits = note.object;
+        if ([[note.object objectAtIndex:0] isEqualToString:_tripName]) {
+            _visits = [note.object objectAtIndex:1];
+        }
         [_tableView reloadData];
     }];
     // Do any additional setup after loading the view.
@@ -44,7 +45,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellID = @"TableCellID";
+    static NSString *cellID = @"VisitCellID";
         
     VisitViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
@@ -67,11 +68,11 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [VTVisitHandler removeVisitAtIndex:indexPath.row];
     }
-}
+}*/
 
 - (LKVisit *)getVisitForIndex:(NSUInteger)index {
     return [_visits objectAtIndex:index];

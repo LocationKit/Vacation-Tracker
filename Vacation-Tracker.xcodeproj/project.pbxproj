@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		BFC5787DB8A8805A01AFE6CC /* libPods-Vacation-Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E39CD944BF078D820401D8 /* libPods-Vacation-Tracker.a */; };
+		FD199BA61B3C429D00BC756D /* VTTripHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BA51B3C429D00BC756D /* VTTripHandler.m */; };
+		FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BA81B3C42AE00BC756D /* VTTrip.m */; };
+		FD199BAC1B3C438A00BC756D /* VTTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BAB1B3C438A00BC756D /* VTTripListViewController.m */; };
+		FD199BB01B3C49E300BC756D /* TripViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BAE1B3C49E300BC756D /* TripViewCell.m */; };
+		FD199BB11B3C49E300BC756D /* TripViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD199BAF1B3C49E300BC756D /* TripViewCell.xib */; };
 		FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */; };
 		FD3CBF0C1B3A5BD3007C47C2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */; };
 		FD3CBF0E1B3A5BDA007C47C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CBF0D1B3A5BDA007C47C2 /* CoreLocation.framework */; };
@@ -40,6 +45,15 @@
 		2516996F131D29B4BC74A83A /* Pods-Vacation-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker/Pods-Vacation-Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		EF0817CACE09C390A466199F /* Pods-Vacation-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker/Pods-Vacation-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		F2E39CD944BF078D820401D8 /* libPods-Vacation-Tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vacation-Tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD199BA41B3C429D00BC756D /* VTTripHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTripHandler.h; sourceTree = "<group>"; };
+		FD199BA51B3C429D00BC756D /* VTTripHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTripHandler.m; sourceTree = "<group>"; };
+		FD199BA71B3C42AE00BC756D /* VTTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTrip.h; sourceTree = "<group>"; };
+		FD199BA81B3C42AE00BC756D /* VTTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTrip.m; sourceTree = "<group>"; };
+		FD199BAA1B3C438A00BC756D /* VTTripListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTripListViewController.h; sourceTree = "<group>"; };
+		FD199BAB1B3C438A00BC756D /* VTTripListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTripListViewController.m; sourceTree = "<group>"; };
+		FD199BAD1B3C49E300BC756D /* TripViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripViewCell.h; sourceTree = "<group>"; };
+		FD199BAE1B3C49E300BC756D /* TripViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewCell.m; sourceTree = "<group>"; };
+		FD199BAF1B3C49E300BC756D /* TripViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripViewCell.xib; sourceTree = "<group>"; };
 		FD3CBF081B3A59BA007C47C2 /* VTLKDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTLKDelegate.h; sourceTree = "<group>"; };
 		FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTLKDelegate.m; sourceTree = "<group>"; };
 		FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -113,13 +127,14 @@
 		FD199B991B3C3DF500BC756D /* List */ = {
 			isa = PBXGroup;
 			children = (
+				FD199BAA1B3C438A00BC756D /* VTTripListViewController.h */,
+				FD199BAB1B3C438A00BC756D /* VTTripListViewController.m */,
 				FD3CBF0F1B3AEE4C007C47C2 /* VTListViewController.h */,
 				FD3CBF101B3AEE4D007C47C2 /* VTListViewController.m */,
 				FD3CBF201B3B110A007C47C2 /* VisitDetailViewController.h */,
 				FD3CBF211B3B110A007C47C2 /* VisitDetailViewController.m */,
-				FD3CBF181B3AF08C007C47C2 /* VisitViewCell.h */,
-				FD3CBF191B3AF08C007C47C2 /* VisitViewCell.m */,
-				FD3CBF1A1B3AF08C007C47C2 /* VisitViewCell.xib */,
+				FD199BB31B3C49F800BC756D /* Trip Cell */,
+				FD199BB21B3C49EB00BC756D /* Visit Cell */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -129,10 +144,34 @@
 			children = (
 				FD3CBF081B3A59BA007C47C2 /* VTLKDelegate.h */,
 				FD3CBF091B3A59BA007C47C2 /* VTLKDelegate.m */,
+				FD199BA41B3C429D00BC756D /* VTTripHandler.h */,
+				FD199BA51B3C429D00BC756D /* VTTripHandler.m */,
 				FD3CBF121B3AEEA7007C47C2 /* VTVisitHandler.h */,
 				FD3CBF131B3AEEA7007C47C2 /* VTVisitHandler.m */,
+				FD199BA71B3C42AE00BC756D /* VTTrip.h */,
+				FD199BA81B3C42AE00BC756D /* VTTrip.m */,
 			);
 			name = LKHandlers;
+			sourceTree = "<group>";
+		};
+		FD199BB21B3C49EB00BC756D /* Visit Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FD3CBF181B3AF08C007C47C2 /* VisitViewCell.h */,
+				FD3CBF191B3AF08C007C47C2 /* VisitViewCell.m */,
+				FD3CBF1A1B3AF08C007C47C2 /* VisitViewCell.xib */,
+			);
+			name = "Visit Cell";
+			sourceTree = "<group>";
+		};
+		FD199BB31B3C49F800BC756D /* Trip Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FD199BAD1B3C49E300BC756D /* TripViewCell.h */,
+				FD199BAE1B3C49E300BC756D /* TripViewCell.m */,
+				FD199BAF1B3C49E300BC756D /* TripViewCell.xib */,
+			);
+			name = "Trip Cell";
 			sourceTree = "<group>";
 		};
 		FD813CC21B3A513800219108 = {
@@ -251,6 +290,7 @@
 				TargetAttributes = {
 					FD813CCA1B3A513800219108 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = SEU4ZY89W2;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -291,6 +331,7 @@
 				FD813CDA1B3A513800219108 /* Main.storyboard in Resources */,
 				FD813CDF1B3A513800219108 /* LaunchScreen.xib in Resources */,
 				FD813CDC1B3A513800219108 /* Images.xcassets in Resources */,
+				FD199BB11B3C49E300BC756D /* TripViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,12 +383,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD3CBF1B1B3AF08C007C47C2 /* VisitViewCell.m in Sources */,
+				FD199BA61B3C429D00BC756D /* VTTripHandler.m in Sources */,
 				FD3CBF141B3AEEA7007C47C2 /* VTVisitHandler.m in Sources */,
 				FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */,
 				FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */,
+				FD199BB01B3C49E300BC756D /* TripViewCell.m in Sources */,
+				FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
 				FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */,
 				FD3CBF111B3AEE4D007C47C2 /* VTListViewController.m in Sources */,
+				FD199BAC1B3C438A00BC756D /* VTTripListViewController.m in Sources */,
 				FD3CBF221B3B110A007C47C2 /* VisitDetailViewController.m in Sources */,
 				FD813CD11B3A513800219108 /* main.m in Sources */,
 			);
@@ -478,6 +523,7 @@
 			baseConfigurationReference = EF0817CACE09C390A466199F /* Pods-Vacation-Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Vacation-Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +535,7 @@
 			baseConfigurationReference = 2516996F131D29B4BC74A83A /* Pods-Vacation-Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Vacation-Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

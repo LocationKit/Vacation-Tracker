@@ -7,28 +7,30 @@
 //
 
 #import "VTLKDelegate.h"
-#import "VTVisitHandler.h"
+#import "VTTripHandler.h"
+#import "VTTrip.h"
 
 @implementation VTLKDelegate
 
 - (void)locationKit:(LocationKit *)locationKit didUpdateLocation:(CLLocation *)location {
     NSLog(@"Location update.");
+    
+    // For debug only!!! Gets the place and inits a visit with that place.
     [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
         if (error == nil && location != nil && place != nil) {
             NSLog(@"User is in %@", place.venue.name);
             LKVisit *visit = [[LKVisit alloc] init];
             [visit setPlace:place];
             if (visit.place.venue.name != nil) {
-                [VTVisitHandler adddVisit:visit];
+                [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
             }
-            //[VTVisitHandler addVisitWithPlace:place Location:location];
         }
     }];
 }
 
 - (void)locationKit:(LocationKit *)locationKit didStartVisit:(LKVisit *)visit {
     NSLog(@"Visit started.");
-    [VTVisitHandler adddVisit:visit];
+    [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
 }
 
 - (void)locationKit:(LocationKit *)locationKit didEndVisit:(LKVisit *)visit {
@@ -36,7 +38,7 @@
 }
 
 - (void)locationKit:(LocationKit *)locationKit didFailWithError:(NSError *)error {
-    
+    NSLog(@"LocationKit failed with error: %@", error);
 }
 
 @end
