@@ -17,6 +17,7 @@ NSString *const VTVisitsChangedNotification = @"VTVisitsChangedNotification";
 static NSMutableArray *trips;
 static NSMutableArray *tripNames;
 
+// Register an observer for trip changes
 + (void)registerTripObserver:(void (^)(NSNotification *))block {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserverForName:VTTripsChangedNotification
@@ -25,6 +26,7 @@ static NSMutableArray *tripNames;
                     usingBlock:block];
 }
 
+// Register an observer for visit changes
 + (void)registerVisitObserver:(void (^)(NSNotification *))block {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserverForName:VTVisitsChangedNotification
@@ -33,9 +35,9 @@ static NSMutableArray *tripNames;
                     usingBlock:block];
 }
 
-+ (void)notifyTripChange:(NSArray *)visits {
++ (void)notifyTripChange:(NSArray *)trips {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:VTTripsChangedNotification object:visits];
+    [center postNotificationName:VTTripsChangedNotification object:trips];
 }
 
 + (void)notifyVisitChange:(NSArray *)data {

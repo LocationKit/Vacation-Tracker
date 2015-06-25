@@ -15,20 +15,8 @@
 
 @implementation VTVisitHandler
 
-/*+ (void)registerObserver:(void (^)(NSNotification *))block {
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserverForName:VTVisitsChangedNotification
-                        object:nil
-                         queue:nil
-                    usingBlock:block];
-}*/
-
-/*+ (void)notifyChange:(NSArray *)visits {
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:VTVisitsChangedNotification object:visits];
-}*/
-
 - (void)addVisit:(LKVisit *)visit {
+    // If visits is null it must be initialized
     if (_visits == nil) {
         _visits = [[NSMutableArray alloc] init];
     }
@@ -39,10 +27,6 @@
 - (void)removeVisitAtIndex:(NSUInteger)index {
     [_visits removeObjectAtIndex:index];
     [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:_tripName, _visits, nil]];
-}
-
-- (NSMutableArray *)visits {
-    return _visits;
 }
 
 @end

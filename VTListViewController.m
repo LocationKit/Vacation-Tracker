@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationItem setTitle:[NSString stringWithFormat:@"Visits in %@", [_tripName capitalizedStringWithLocale:[NSLocale currentLocale]]]];
+    [self.navigationItem setTitle:[NSString stringWithFormat:@"Visits in %@", [_tripName capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visits in <locale>'
     
     [_tableView reloadData];
     

@@ -22,6 +22,7 @@
     
     [_tableView reloadData];
     
+    // Resets trips and reloads data when trips are changed
     [VTTripHandler registerTripObserver:^(NSNotification *note) {
         if(note.name != VTTripsChangedNotification) {
             return;
@@ -57,7 +58,7 @@
     return [[VTTripHandler trips] objectAtIndex:index];
 }
 
-- (NSMutableArray *)getVisitsForIndex:(NSUInteger)index {
+- (NSMutableArray *)getVisitsForTripIndex:(NSUInteger)index {
     return [[[[VTTripHandler trips] objectAtIndex:index] visitHandler] visits];
 }
 
@@ -67,7 +68,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowTripVisitsID"]) {
-        NSMutableArray *visits = [self getVisitsForIndex:[sender indexPathForSelectedRow].row];
+        NSMutableArray *visits = [self getVisitsForTripIndex:[sender indexPathForSelectedRow].row];
         [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
         [[segue destinationViewController] setVisits:visits];
         [[segue destinationViewController] setTripName:[[self getTripForIndex:[sender indexPathForSelectedRow].row] tripName]];

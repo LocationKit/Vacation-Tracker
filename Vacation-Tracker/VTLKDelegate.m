@@ -14,6 +14,8 @@
 
 - (void)locationKit:(LocationKit *)locationKit didUpdateLocation:(CLLocation *)location {
     NSLog(@"Location update.");
+    
+    // For debug only!!! Gets the place and inits a visit with that place.
     [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
         if (error == nil && location != nil && place != nil) {
             NSLog(@"User is in %@", place.venue.name);
@@ -22,7 +24,6 @@
             if (visit.place.venue.name != nil) {
                 [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
             }
-            //[VTVisitHandler addVisitWithPlace:place Location:location];
         }
     }];
 }
@@ -37,7 +38,7 @@
 }
 
 - (void)locationKit:(LocationKit *)locationKit didFailWithError:(NSError *)error {
-    
+    NSLog(@"LocationKit failed with error: %@", error);
 }
 
 @end

@@ -11,7 +11,7 @@
 @implementation VisitViewCell
 
 - (void)setVisit:(LKVisit *)visit {
-    [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];    // Adds a '>' on the right side of the cell
     
     NSString *placeName = [visit place].venue.name;
     

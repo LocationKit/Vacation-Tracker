@@ -37,11 +37,13 @@
 }
 
 - (IBAction)changeVisitVisibility:(id)sender {
+    // If the annotations are not showing, add them
     if ([[[_visitsButton titleLabel] text] isEqualToString:@"Show All Visits"]) {
         [_visitsButton setTitle:@"Hide All Visits" forState:UIControlStateNormal];
         [self showVisitsOnMap];
     }
     
+    // If the annotations are showing, remove them
     else if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide All Visits"]) {
         [_visitsButton setTitle:@"Show All Visits" forState:UIControlStateNormal];
         [self removeVisitsFromMap];
@@ -49,12 +51,14 @@
 }
 
 - (void)showVisitsOnMap {
+    // Loops through each visit for each trip and displays it on the map
     for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
         for (NSUInteger i = 0; i < [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] count]; i++) {
             LKVisit *visit = [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:i];
             
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             NSString *placeName = visit.place.venue.name;
+            // If there is no valid venue name, set it to "Unregistered place"
             if (placeName == nil) {
                 [annotation setTitle:@"Unregistered Place"];
             }
@@ -78,14 +82,12 @@
 }
 
 - (void)reloadAnnotations {
+    // If the annotations are showing, remove them, then add them.
+    // If they are not showing, nothing to be done.
     if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide All Visits"]) {
         [self removeVisitsFromMap];
         [self showVisitsOnMap];
     }
-}
-
-- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
-    NSLog(@"Start locating user");
 }
 
 /*

@@ -16,6 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Start LocationKit using delegate and API Key. check that location services are authorized.
     _locationDelegate = [[VTLKDelegate alloc] init];
     NSString *apiToken = @"d735e0f01bef83d5";
     [[LocationKit sharedInstance] startWithApiToken:apiToken andDelegate:_locationDelegate];
@@ -40,7 +41,9 @@
                                                   otherButtonTitles:@"Settings", nil];
         alertView.delegate = self;
         [alertView show];
-    }  else if (status == kCLAuthorizationStatusNotDetermined) {
+    }
+    
+    else if (status == kCLAuthorizationStatusNotDetermined) {
         CLLocationManager *manager = [[CLLocationManager alloc] init];
         if([manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [manager requestAlwaysAuthorization];

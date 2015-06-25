@@ -21,7 +21,7 @@
 
 - (void)loadView {
     [super loadView];
-    [[self tabBar] setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];
+    [[self tabBar] setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];  // Sets tab bar tint color to SocialRadar's orange
 }
 
 - (void)didReceiveMemoryWarning {

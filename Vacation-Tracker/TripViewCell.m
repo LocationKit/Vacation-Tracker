@@ -11,13 +11,19 @@
 @implementation TripViewCell
 
 - (void)setTrip:(VTTrip *)trip {
-    [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    
+    [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];    // Adds a '>' on the right side of the cell
+    NSUInteger numVisits = [[[trip visitHandler] visits] count];
     if ([trip tripName] == nil) {
         [_tripNameLabel setText:@"Unknown Location"];
     }
     else {
-        [_tripNameLabel setText:[trip tripName]];
+        if (numVisits == 1) {
+            [_tripNameLabel setText:[NSString stringWithFormat:@"%@ (%lu visit)", [trip tripName], numVisits]];
+        }
+        
+        else {
+            [_tripNameLabel setText:[NSString stringWithFormat:@"%@ (%lu visits)", [trip tripName], numVisits]];
+        }
     }
 }
 

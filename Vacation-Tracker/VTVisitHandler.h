@@ -17,12 +17,8 @@
 
 @property (strong, nonatomic) NSString *tripName;
 
-//+ (void)registerObserver:(void (^)(NSNotification *))block;
-
 - (void)addVisit:(LKVisit *)visit;
 
 - (void)removeVisitAtIndex:(NSUInteger)index;
-
-- (NSMutableArray *)visits;
 
 @end
