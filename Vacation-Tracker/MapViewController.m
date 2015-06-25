@@ -24,7 +24,7 @@
         if(note.name != VTVisitsChangedNotification) {
             return;
         }
-        _visits = note.object;
+        //_visits = note.object;
         [self reloadAnnotations];
     }];
     
@@ -49,20 +49,21 @@
 }
 
 - (void)showVisitsOnMap {
-    //_visits = [VTVisitHandler visits];
-    for (NSUInteger x = 0; x < [_visits count]; x++) {
-        LKVisit *visit = [_visits objectAtIndex:x];
-        
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-        NSString *placeName = visit.place.venue.name;
-        if (placeName == nil) {
-            [annotation setTitle:@"Unregistered Place"];
+    for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
+        for (NSUInteger i = 0; i < [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] count]; i++) {
+            LKVisit *visit = [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:i];
+            
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            NSString *placeName = visit.place.venue.name;
+            if (placeName == nil) {
+                [annotation setTitle:@"Unregistered Place"];
+            }
+            else {
+                [annotation setTitle:placeName];
+            }
+            [annotation setCoordinate:visit.place.address.coordinate];
+            [_mapView addAnnotation:annotation];
         }
-        else {
-            [annotation setTitle:placeName];
-        }
-        [annotation setCoordinate:visit.place.address.coordinate];
-        [_mapView addAnnotation:annotation];
     }
 }
 
