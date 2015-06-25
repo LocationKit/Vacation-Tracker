@@ -20,6 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [VTVisitHandler registerObserver:^(NSNotification *note) {
+        if(note.name != VTVisitsChangedNotification) {
+            return;
+        }
+        _visits = note.object;
+        [self reloadAnnotations];
+    }];
+    
     [[LocationKit sharedInstance] getCurrentLocationWithHandler:^(CLLocation *location, NSError *error) {
         if (error == nil) {
             [_mapView setRegion:MKCoordinateRegionMakeWithDistance([location coordinate], 15.0f * 0.000621371192, 15.0f * 0.000621371192)];
@@ -54,7 +62,13 @@
         LKVisit *visit = [_visits objectAtIndex:x];
         
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-        [annotation setTitle:visit.place.venue.name];
+        NSString *placeName = visit.place.venue.name;
+        if (placeName == nil) {
+            [annotation setTitle:@"Unregistered Place"];
+        }
+        else {
+            [annotation setTitle:placeName];
+        }
         [annotation setCoordinate:visit.place.address.coordinate];
         [_mapView addAnnotation:annotation];
     }
@@ -73,6 +87,7 @@
 - (void)reloadAnnotations {
     if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide All Visits"]) {
         [self removeVisitsFromMap];
+        [self showVisitsOnMap];
     }
 }
 

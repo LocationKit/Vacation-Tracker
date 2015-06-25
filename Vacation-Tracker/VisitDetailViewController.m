@@ -12,14 +12,22 @@
 
 @end
 
+NSString *placeName;
+
 @implementation VisitDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    placeName = [_visit place].venue.name;
     
     [self addAnnotation];
     
-    [_locationLabel setText:_visit.place.venue.name];
+    if (placeName == nil) {
+        [_locationLabel setText:@"Unregistered Place"];
+    }
+    else {
+        [_locationLabel setText:placeName];
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
@@ -37,7 +45,12 @@
 
 - (void)addAnnotation {
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    [annotation setTitle:_visit.place.venue.name];
+    if (placeName == nil) {
+        [annotation setTitle:@"Unregistered Place"];
+    }
+    else {
+        [annotation setTitle:placeName];
+    }
     [annotation setCoordinate:_visit.place.address.coordinate];
     [_mapView setCenterCoordinate:annotation.coordinate];
     [_mapView setRegion:MKCoordinateRegionMakeWithDistance([_mapView centerCoordinate], 5.0f * 0.000621371192, 5.0f * 0.000621371192)];

@@ -12,8 +12,15 @@
 
 - (void)setVisit:(LKVisit *)visit {
     [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    [_placeName setText:[visit place].venue.name];
-    // SET DATE/TIME TEXT SOMEHOW
+    
+    NSString *placeName = [visit place].venue.name;
+    
+    if (placeName == nil) {
+        [_placeName setText:@"Unregistered Place"];
+    }
+    else {
+        [_placeName setText:[visit place].venue.name];
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"h:mm a";
