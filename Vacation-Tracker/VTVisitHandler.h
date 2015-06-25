@@ -13,13 +13,14 @@
 
 extern NSString * const VTVisitsChangedNotification;
 
+@property (strong, nonatomic) NSMutableArray *visits;
+
 + (void)registerObserver:(void (^)(NSNotification *))block;
 
-//+ (void)addVisitWithPlace:(LKPlace *)place Location:(CLLocation *)location;
-+ (void)adddVisit:(LKVisit *)visit;
+- (void)addVisit:(LKVisit *)visit;
 
-+ (void)removeVisitAtIndex:(NSUInteger)index;
+- (void)removeVisitAtIndex:(NSUInteger)index;
 
-+ (NSMutableArray *)visits;
+- (NSMutableArray *)visits;
 
 @end

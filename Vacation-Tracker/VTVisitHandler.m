@@ -14,8 +14,6 @@ NSString *const VTVisitsChangedNotification = @"VTVisitsChangedNotification";
 
 @implementation VTVisitHandler
 
-static NSMutableArray *visits;
-
 + (void)registerObserver:(void (^)(NSNotification *))block {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserverForName:VTVisitsChangedNotification
@@ -29,29 +27,21 @@ static NSMutableArray *visits;
     [center postNotificationName:VTVisitsChangedNotification object:visits];
 }
 
-/*+ (void)addVisitWithPlace:(LKPlace *)place Location:(CLLocation *)location {
-    if (visits == nil) {
-        visits = [[NSMutableArray alloc] init];
+- (void)addVisit:(LKVisit *)visit {
+    if (_visits == nil) {
+        _visits = [[NSMutableArray alloc] init];
     }
-    [visits addObject:[VTVisit initWithPlace:place Location:location]];
-    [VTVisitHandler notifyChange:visits];
-}*/
-
-+ (void)adddVisit:(LKVisit *)visit {
-    if (visits == nil) {
-        visits = [[NSMutableArray alloc] init];
-    }
-    [visits addObject:visit];
-    [VTVisitHandler notifyChange:visits];
+    [_visits addObject:visit];
+    [VTVisitHandler notifyChange:_visits];
 }
 
-+ (void)removeVisitAtIndex:(NSUInteger)index {
-    [visits removeObjectAtIndex:index];
-    [VTVisitHandler notifyChange:visits];
+- (void)removeVisitAtIndex:(NSUInteger)index {
+    [_visits removeObjectAtIndex:index];
+    [VTVisitHandler notifyChange:_visits];
 }
 
-+ (NSMutableArray *)visits {
-    return visits;
+- (NSMutableArray *)visits {
+    return _visits;
 }
 
 @end
