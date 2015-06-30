@@ -31,4 +31,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *localityLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+
+@property (weak, nonatomic) IBOutlet UIStepper *ratingStepper;
+
 @end

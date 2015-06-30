@@ -7,6 +7,7 @@
 //
 
 #import "VisitDetailViewController.h"
+#import "VTTripHandler.h"
 
 #define MILE_TO_METER 0.00062137f
 
@@ -20,6 +21,9 @@ NSString *placeName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_ratingLabel setText:[NSString stringWithFormat:@"Rating: %.f", [_visit rating]]];
+    [_ratingStepper setValue:[_visit rating]];
+    
     placeName = [_visit place].venue.name;
     
     [self addAnnotation];
@@ -53,6 +57,12 @@ NSString *placeName;
     
     [_localityLabel setText:_visit.place.address.locality];
     // Do any additional setup after loading the view.
+}
+
+- (IBAction)stepperChanged:(id)sender {
+    [_visit setRating:[_ratingStepper value]];
+    [_ratingLabel setText:[NSString stringWithFormat:@"Rating: %.f", [_visit rating]]];
+    [VTTripHandler notifyTripChange:[VTTripHandler trips]];
 }
 
 - (void)addAnnotation {

@@ -20,6 +20,8 @@ extern NSString * const VTVisitsChangedNotification;
 
 + (void)registerVisitObserver:(void (^)(NSNotification *))block;
 
++ (void)notifyTripChange:(NSArray *)trips;
+
 + (void)notifyVisitChange:(NSArray *)data;
 
 + (void)addVisit:(VTVisit *)visit forTrip:(VTTrip *)trip;

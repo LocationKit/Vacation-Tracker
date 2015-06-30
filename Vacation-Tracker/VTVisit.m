@@ -10,12 +10,21 @@
 
 @implementation VTVisit
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self setRating:5];
+    }
+    return self;
+}
+
 - (id)initWithLKVisit:(LKVisit *)visit {
     self = [super init];
     if (self) {
         [self setArrivalDate:[visit arrivalDate]];
         [self setDepartureDate:[visit departureDate]];
         [self setPlace:[visit place]];
+        [self setRating:5];
     }
     return self;
 }
@@ -26,6 +35,7 @@
         [self setArrivalDate:[aDecoder decodeObjectForKey:@"self.arrivalDate"]];
         [self setDepartureDate:[aDecoder decodeObjectForKey:@"self.departureDate"]];
         [self setPlace:[aDecoder decodeObjectForKey:@"self.place"]];
+        [self setRating:[aDecoder decodeDoubleForKey:@"self.rating"]];
     }
     return self;
 }
@@ -34,6 +44,7 @@
     [aCoder encodeObject:[self arrivalDate] forKey:@"self.arrivalDate"];
     [aCoder encodeObject:[self departureDate] forKey:@"self.departureDate"];
     [aCoder encodeObject:[self place] forKey:@"self.place"];
+    [aCoder encodeDouble:[self rating] forKey:@"self.rating"];
 }
 
 @end

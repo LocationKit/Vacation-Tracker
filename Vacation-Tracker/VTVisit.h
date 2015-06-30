@@ -11,11 +11,19 @@
 
 @interface VTVisit : NSObject <NSCoding>
 
+// From LKVisit
+
 @property (nonatomic, strong) NSDate *arrivalDate;
 
 @property (nonatomic, strong) NSDate *departureDate;
 
 @property (nonatomic, strong) LKPlace *place;
+
+// New
+
+@property (nonatomic) double rating;
+
+- (id)init;
 
 - (id)initWithLKVisit:(LKVisit *)visit;
 
