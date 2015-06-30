@@ -15,7 +15,7 @@
 
 @implementation VTVisitHandler
 
-- (void)addVisit:(LKVisit *)visit {
+- (void)addVisit:(VTVisit *)visit {
     // If visits is null it must be initialized
     if (_visits == nil) {
         _visits = [[NSMutableArray alloc] init];
@@ -27,6 +27,20 @@
 - (void)removeVisitAtIndex:(NSUInteger)index {
     [_visits removeObjectAtIndex:index];
     [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:_tripName, _visits, nil]];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        [self setVisits:[aDecoder decodeObjectForKey:@"self.visits"]];
+        [self setTripName:[aDecoder decodeObjectForKey:@"self.tripName"]];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:[self visits] forKey:@"self.visits"];
+    [aCoder encodeObject:[self tripName] forKey:@"self.tripName"];
 }
 
 @end

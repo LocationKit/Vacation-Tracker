@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <LocationKit/LocationKit.h>
 #import "VTVisitHandler.h"
+#import "VTVisit.h"
 
 
 @class VTTrip;
 
-@interface VTTrip : NSObject
+@interface VTTrip : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *tripName;
 
@@ -21,6 +22,6 @@
 
 - (instancetype)initWithName:(NSString *)name;
 
-- (void)addVisit:(LKVisit *)visit;
+- (void)addVisit:(VTVisit *)visit;
 
 @end

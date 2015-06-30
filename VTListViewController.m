@@ -62,7 +62,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"VisitDetailSegueID"]) {
-        LKVisit *visit = [self getVisitForIndex:[sender indexPathForSelectedRow].row];
+        VTVisit *visit = [self getVisitForIndex:[sender indexPathForSelectedRow].row];
         [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
         [[segue destinationViewController] setVisit:visit];
     }
@@ -74,7 +74,7 @@
     }
 }*/
 
-- (LKVisit *)getVisitForIndex:(NSUInteger)index {
+- (VTVisit *)getVisitForIndex:(NSUInteger)index {
     return [_visits objectAtIndex:index];
 }
 

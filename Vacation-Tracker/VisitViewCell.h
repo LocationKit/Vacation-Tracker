@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <LocationKit/LocationKit.h>
+#import "VTVisit.h"
 
 @class VisitViewCell;
 
@@ -16,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *time;
 
-- (void)setVisit:(LKVisit *)visit;
+- (void)setVisit:(VTVisit *)visit;
 
 @end

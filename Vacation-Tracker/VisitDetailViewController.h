@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <LocationKit/LocationKit.h>
 #import <MapKit/MapKit.h>
+#import "VTVisit.h"
 
 @interface VisitDetailViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (strong, nonatomic) LKVisit *visit;
+@property (strong, nonatomic) VTVisit *visit;
 
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 

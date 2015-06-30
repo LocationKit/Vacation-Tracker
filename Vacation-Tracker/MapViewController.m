@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "VTTripHandler.h"
+#import "VTVisit.h"
 
 @interface MapViewController ()
 
@@ -54,7 +55,7 @@
     // Loops through each visit for each trip and displays it on the map
     for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
         for (NSUInteger i = 0; i < [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] count]; i++) {
-            LKVisit *visit = [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:i];
+            VTVisit *visit = [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:i];
             
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             NSString *placeName = visit.place.venue.name;
