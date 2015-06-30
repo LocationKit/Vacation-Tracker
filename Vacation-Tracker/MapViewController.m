@@ -18,6 +18,8 @@
 
 @implementation MapViewController
 
+static BOOL state = YES; // debug only
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -89,6 +91,17 @@
         [self removeVisitsFromMap];
         [self showVisitsOnMap];
     }
+}
+
+// debug only
+- (IBAction)switchChanged:(id)sender {
+    state = [sender isOn];
+}
+
+
+// debug only
++ (BOOL)debugSwitchState {
+    return state;
 }
 
 /*

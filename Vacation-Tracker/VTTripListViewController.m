@@ -67,6 +67,8 @@
     [self performSegueWithIdentifier:@"ShowTripVisitsID" sender:tableView];
 }
 
+#pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowTripVisitsID"]) {
         NSMutableArray *visits = [self getVisitsForTripIndex:[sender indexPathForSelectedRow].row];
@@ -75,15 +77,5 @@
         [[segue destinationViewController] setTripName:[[self getTripForIndex:[sender indexPathForSelectedRow].row] tripName]];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

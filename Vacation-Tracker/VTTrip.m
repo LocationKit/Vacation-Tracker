@@ -34,9 +34,7 @@
     self = [super init];
     if (self) {
         [self setTripName:[aDecoder decodeObjectForKey:@"self.tripName"]];
-        NSLog(@"Trip name");
         [self setVisitHandler:[aDecoder decodeObjectForKey:@"self.visitHandler"]];
-        NSLog(@"Visit handler");
     }
     return self;
 }

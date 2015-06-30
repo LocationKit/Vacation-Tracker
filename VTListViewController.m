@@ -65,14 +65,6 @@
     [self performSegueWithIdentifier:@"VisitDetailSegueID" sender:tableView];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"VisitDetailSegueID"]) {
-        VTVisit *visit = [self getVisitForIndex:[sender indexPathForSelectedRow].row];
-        [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
-        [[segue destinationViewController] setVisit:visit];
-    }
-}
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSMutableArray *trips = [VTTripHandler trips];
@@ -88,14 +80,14 @@
     return [_visits objectAtIndex:lastIndex - index];
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"VisitDetailSegueID"]) {
+        VTVisit *visit = [self getVisitForIndex:[sender indexPathForSelectedRow].row];
+        [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
+        [[segue destinationViewController] setVisit:visit];
+    }
 }
-*/
 
 @end
