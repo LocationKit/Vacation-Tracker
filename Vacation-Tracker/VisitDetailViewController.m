@@ -49,6 +49,8 @@ NSString *placeName;
     [_address_0 setText:[NSString stringWithFormat:@"%@ %@ %@ %@", address.streetNumber, [streetName[0] lowercaseString], [streetName[1] capitalizedString], streetName[2]]];
     [_address_1 setText:[NSString stringWithFormat:@"%@, %@", [address.locality capitalizedString], address.region]];
     
+    [_categoryLabel setText:_visit.place.venue.category];
+    
     [_localityLabel setText:_visit.place.address.locality];
     // Do any additional setup after loading the view.
 }

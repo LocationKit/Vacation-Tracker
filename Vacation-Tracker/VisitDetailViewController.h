@@ -27,6 +27,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *address_1;
 
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *localityLabel;
 
 @end
