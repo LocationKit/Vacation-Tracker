@@ -22,12 +22,28 @@
     return self;
 }
 
-- (void)addVisit:(LKVisit *)visit {
+- (void)addVisit:(VTVisit *)visit {
     if (_visitHandler == nil) {
         _visitHandler = [[VTVisitHandler alloc] init];
         [_visitHandler setTripName:_tripName];
     }
     [_visitHandler addVisit:visit];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        [self setTripName:[aDecoder decodeObjectForKey:@"self.tripName"]];
+        NSLog(@"Trip name");
+        [self setVisitHandler:[aDecoder decodeObjectForKey:@"self.visitHandler"]];
+        NSLog(@"Visit handler");
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:[self tripName] forKey:@"self.tripName"];
+    [aCoder encodeObject:[self visitHandler] forKey:@"self.visitHandler"];
 }
 
 @end

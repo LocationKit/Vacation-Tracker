@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "VTTripHandler.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [VTTripHandler loadTripData];
+    
     // Start LocationKit using delegate and API Key. check that location services are authorized.
     _locationDelegate = [[VTLKDelegate alloc] init];
     NSString *apiToken = @"d735e0f01bef83d5";
@@ -70,6 +73,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    [VTTripHandler saveTripData];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

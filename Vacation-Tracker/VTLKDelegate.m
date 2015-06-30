@@ -9,6 +9,7 @@
 #import "VTLKDelegate.h"
 #import "VTTripHandler.h"
 #import "VTTrip.h"
+#import "VTVisit.h"
 
 @implementation VTLKDelegate
 
@@ -19,7 +20,7 @@
     [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
         if (error == nil && location != nil && place != nil) {
             NSLog(@"User is in %@", place.venue.name);
-            LKVisit *visit = [[LKVisit alloc] init];
+            VTVisit *visit = [[VTVisit alloc] init];
             [visit setPlace:place];
             if (visit.place.venue.name != nil) {
                 [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
@@ -30,10 +31,10 @@
 
 - (void)locationKit:(LocationKit *)locationKit didStartVisit:(LKVisit *)visit {
     NSLog(@"Visit started.");
-    [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
+    [VTTripHandler addVisit:[[VTVisit alloc] initWithLKVisit:visit] forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
 }
 
-- (void)locationKit:(LocationKit *)locationKit didEndVisit:(LKVisit *)visit {
+- (void)locationKit:(LocationKit *)locationKit didEndVisit:(VTVisit *)visit {
     NSLog(@"Visit ended.");
 }
 

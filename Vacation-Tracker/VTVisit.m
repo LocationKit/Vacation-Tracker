@@ -10,6 +10,16 @@
 
 @implementation VTVisit
 
+- (id)initWithLKVisit:(LKVisit *)visit {
+    self = [super init];
+    if (self) {
+        [self setArrivalDate:[visit arrivalDate]];
+        [self setDepartureDate:[visit departureDate]];
+        [self setPlace:[visit place]];
+    }
+    return self;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if (self) {

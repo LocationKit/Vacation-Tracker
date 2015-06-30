@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <LocationKit/LocationKit.h>
+#import "VTVisit.h"
 
-@interface VTVisitHandler : NSObject
+@interface VTVisitHandler : NSObject <NSCoding>
 
 //extern NSString * const VTVisitsChangedNotification;
 
@@ -17,7 +18,7 @@
 
 @property (strong, nonatomic) NSString *tripName;
 
-- (void)addVisit:(LKVisit *)visit;
+- (void)addVisit:(VTVisit *)visit;
 
 - (void)removeVisitAtIndex:(NSUInteger)index;
 

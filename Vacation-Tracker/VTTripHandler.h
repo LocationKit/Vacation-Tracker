@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VTTrip.h"
+#import "VTVisit.h"
 
 @interface VTTripHandler : NSObject
 
@@ -21,8 +22,12 @@ extern NSString * const VTVisitsChangedNotification;
 
 + (void)notifyVisitChange:(NSArray *)data;
 
-+ (void)addVisit:(LKVisit *)visit forTrip:(VTTrip *)trip;
++ (void)addVisit:(VTVisit *)visit forTrip:(VTTrip *)trip;
 
 + (NSMutableArray *)trips;
+
++ (void)saveTripData;
+
++ (void)loadTripData;
 
 @end

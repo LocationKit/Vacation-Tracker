@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <LocationKit/LocationKit.h>
 
-@interface VTVisit : LKVisit <NSCoding>
+@interface VTVisit : NSObject <NSCoding>
+
+@property (nonatomic, strong) NSDate *arrivalDate;
+
+@property (nonatomic, strong) NSDate *departureDate;
+
+@property (nonatomic, strong) LKPlace *place;
+
+- (id)initWithLKVisit:(LKVisit *)visit;
 
 @end

@@ -38,14 +38,16 @@ static NSMutableArray *tripNames;
 + (void)notifyTripChange:(NSArray *)trips {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:VTTripsChangedNotification object:trips];
+    [VTTripHandler saveTripData];
 }
 
 + (void)notifyVisitChange:(NSArray *)data {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:VTVisitsChangedNotification object:data];
+    [VTTripHandler saveTripData];
 }
 
-+ (void)addVisit:(LKVisit *)visit forTrip:(VTTrip *)trip {
++ (void)addVisit:(VTVisit *)visit forTrip:(VTTrip *)trip {
     if (trips == nil) {
         trips = [[NSMutableArray alloc] init];
     }
@@ -66,6 +68,33 @@ static NSMutableArray *tripNames;
 
 + (NSMutableArray *)trips {
     return trips;
+}
+
++ (NSString *)docsPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = paths[0];
+    return documentsDirectoryPath;//[documentsDirectoryPath stringByAppendingPathComponent:@"trips"];
+}
+
++ (void)saveTripData {
+    // Write trips
+    [NSKeyedArchiver archiveRootObject:trips toFile:[[self docsPath] stringByAppendingPathComponent:@"trips"]];
+    // Write trip names
+    [NSKeyedArchiver archiveRootObject:tripNames toFile:[[self docsPath] stringByAppendingPathComponent:@"tripNames"]];
+}
+
++ (void)loadTripData {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *tripPath = [[self docsPath] stringByAppendingPathComponent:@"trips"];
+    NSString *namesPath = [[self docsPath] stringByAppendingPathComponent:@"tripNames"];
+    
+    if ([fm fileExistsAtPath:tripPath isDirectory:false]) {
+        trips = [NSKeyedUnarchiver unarchiveObjectWithFile:tripPath];
+    }
+    
+    if ([fm fileExistsAtPath:namesPath isDirectory:false]) {
+        tripNames = [NSKeyedUnarchiver unarchiveObjectWithFile:namesPath];
+    }
 }
 
 @end
