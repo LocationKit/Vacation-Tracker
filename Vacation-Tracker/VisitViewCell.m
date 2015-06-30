@@ -8,6 +8,8 @@
 
 #import "VisitViewCell.h"
 
+#define DAY 86400.0f
+
 @implementation VisitViewCell
 
 - (void)setVisit:(VTVisit *)visit {
@@ -15,6 +17,7 @@
     
     NSString *placeName = [visit place].venue.name;
     
+    // Place name
     if (placeName == nil) {
         [_placeName setText:@"Unregistered Place"];
     }
@@ -22,15 +25,34 @@
         [_placeName setText:[visit place].venue.name];
     }
     
+    // Time
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"h:mm a";
     
     NSString *dateString = [dateFormatter stringFromDate: [visit arrivalDate]];
     [_time setText:dateString];
     
-    dateFormatter.dateFormat = @"MM/dd/yyyy";
-    dateString = [dateFormatter stringFromDate:[visit arrivalDate]];
-    [_date setText:dateString];    
+    // Date
+    NSTimeInterval difference = [[NSDate date] timeIntervalSinceDate:[visit arrivalDate]];
+    if (difference < DAY && difference >= 0) {
+        [_date setText:@"Today"];
+    }
+    
+    else if (difference < (2.0f * DAY) && difference >= DAY) {
+        [_date setText:@"Yesterday"];
+    }
+    
+    else if (difference < (8.0f * DAY) && difference >= (2.0f * DAY)) {
+        dateFormatter.dateFormat = @"EEEE";
+        [_date setText:[NSString stringWithFormat:@"Last %@", [dateFormatter stringFromDate:[visit arrivalDate]]]];
+    }
+    
+    else {
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+        dateString = [dateFormatter stringFromDate:[visit arrivalDate]];
+        [_date setText:dateString];
+    }
 }
 
 @end

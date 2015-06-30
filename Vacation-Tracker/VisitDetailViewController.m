@@ -30,12 +30,13 @@ NSString *placeName;
     }
     else {
         [_locationLabel setText:placeName];
-        [self.navigationItem setTitle:[NSString stringWithFormat:@"Visit to %@", [placeName capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visit to <place name>'
+        [self.navigationItem setTitle:[NSString stringWithFormat:@"Visit to %@", placeName]];   // Sets navigation bar title to 'Visit to <place name>'
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
-    dateFormatter.dateFormat = @"MM/dd/yyyy";
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     NSString *dateString = [dateFormatter stringFromDate:[_visit arrivalDate]];
     [_dateLabel setText:dateString];
     
