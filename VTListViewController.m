@@ -56,6 +56,11 @@
     return cell;
 }
 
+- (IBAction)clearVisits:(id)sender {
+    [self setVisits:[[NSMutableArray alloc] init]];
+    [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:_tripName, _visits, nil]];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"VisitDetailSegueID" sender:tableView];
 }
@@ -68,14 +73,19 @@
     }
 }
 
-/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [VTVisitHandler removeVisitAtIndex:indexPath.row];
+        NSMutableArray *trips = [VTTripHandler trips];
+        NSMutableArray *tripNames = [VTTripHandler tripNames];
+        
+        VTVisitHandler *visitHandler = [[trips objectAtIndex:[tripNames indexOfObject:[self tripName]]] visitHandler];
+        [visitHandler removeVisitAtIndex:indexPath.row];
     }
-}*/
+}
 
 - (VTVisit *)getVisitForIndex:(NSUInteger)index {
-    return [_visits objectAtIndex:index];
+    NSUInteger lastIndex = [_visits count] - 1;
+    return [_visits objectAtIndex:lastIndex - index];
 }
 
 /*

@@ -30,7 +30,7 @@ NSString *placeName;
     }
     else {
         [_locationLabel setText:placeName];
-        [self.navigationItem setTitle:[NSString stringWithFormat:@"Visit to %@", [placeName capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visits in <locale>'
+        [self.navigationItem setTitle:[NSString stringWithFormat:@"Visit to %@", [placeName capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visit to <place name>'
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -44,8 +44,9 @@ NSString *placeName;
     [_timeLabel setText:dateString];
     
     LKAddress *address = _visit.place.address;
-    [_address_0 setText:[NSString stringWithFormat:@"%@ %@", address.streetNumber, address.streetName]];
-    [_address_1 setText:[NSString stringWithFormat:@"%@, %@", [address.locality capitalizedStringWithLocale:[NSLocale currentLocale]], address.region]];
+    NSArray *streetName = [address.streetName componentsSeparatedByString:@" "];
+    [_address_0 setText:[NSString stringWithFormat:@"%@ %@ %@ %@", address.streetNumber, [streetName[0] lowercaseString], [streetName[1] capitalizedString], streetName[2]]];
+    [_address_1 setText:[NSString stringWithFormat:@"%@, %@", [address.locality capitalizedString], address.region]];
     
     [_localityLabel setText:_visit.place.address.locality];
     // Do any additional setup after loading the view.

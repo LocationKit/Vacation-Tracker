@@ -26,6 +26,8 @@ extern NSString * const VTVisitsChangedNotification;
 
 + (NSMutableArray *)trips;
 
++ (NSMutableArray *)tripNames;
+
 + (void)saveTripData;
 
 + (void)loadTripData;

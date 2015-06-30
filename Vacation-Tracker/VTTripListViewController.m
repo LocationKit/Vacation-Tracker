@@ -55,7 +55,8 @@
 }
 
 - (VTTrip *)getTripForIndex:(NSUInteger)index {
-    return [[VTTripHandler trips] objectAtIndex:index];
+    NSUInteger lastIndex = [[VTTripHandler trips] count] - 1;
+    return [[VTTripHandler trips] objectAtIndex:lastIndex - index];
 }
 
 - (NSMutableArray *)getVisitsForTripIndex:(NSUInteger)index {

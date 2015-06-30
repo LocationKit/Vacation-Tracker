@@ -21,8 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [VTTripHandler registerVisitObserver:^(NSNotification *note) {
-        if(note.name != VTVisitsChangedNotification) {
+    [VTTripHandler registerTripObserver:^(NSNotification *note) {
+        if(note.name != VTTripsChangedNotification) {
             return;
         }
         //_visits = note.object;
