@@ -12,7 +12,12 @@
 
 - (instancetype)initWithName:(NSString *)name {
     if (self = [super init]) {
-        _tripName = [name capitalizedStringWithLocale:[NSLocale currentLocale]];
+        if (name == nil) {
+            _tripName = @"Unknown Location";
+        }
+        else {
+            _tripName = [name capitalizedStringWithLocale:[NSLocale currentLocale]];
+        }
     }
     return self;
 }

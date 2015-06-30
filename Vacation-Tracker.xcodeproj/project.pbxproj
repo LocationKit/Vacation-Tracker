@@ -29,6 +29,7 @@
 		FD813CDC1B3A513800219108 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDB1B3A513800219108 /* Images.xcassets */; };
 		FD813CDF1B3A513800219108 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDD1B3A513800219108 /* LaunchScreen.xib */; };
 		FD813CEB1B3A513900219108 /* Vacation_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CEA1B3A513900219108 /* Vacation_TrackerTests.m */; };
+		FDECC1C41B42D64100A0D81A /* VTVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECC1C31B42D64100A0D81A /* VTVisit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		FD813CE41B3A513900219108 /* Vacation-TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vacation-TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD813CE91B3A513900219108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD813CEA1B3A513900219108 /* Vacation_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vacation_TrackerTests.m; sourceTree = "<group>"; };
+		FDECC1C21B42D64100A0D81A /* VTVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisit.h; sourceTree = "<group>"; };
+		FDECC1C31B42D64100A0D81A /* VTVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				FD3CBF131B3AEEA7007C47C2 /* VTVisitHandler.m */,
 				FD199BA71B3C42AE00BC756D /* VTTrip.h */,
 				FD199BA81B3C42AE00BC756D /* VTTrip.m */,
+				FDECC1C21B42D64100A0D81A /* VTVisit.h */,
+				FDECC1C31B42D64100A0D81A /* VTVisit.m */,
 			);
 			name = LKHandlers;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 				FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */,
 				FD199BB01B3C49E300BC756D /* TripViewCell.m in Sources */,
 				FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */,
+				FDECC1C41B42D64100A0D81A /* VTVisit.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
 				FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */,
 				FD3CBF111B3AEE4D007C47C2 /* VTListViewController.m in Sources */,
