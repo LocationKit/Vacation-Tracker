@@ -23,6 +23,7 @@
 @implementation MapViewController
 
 static BOOL state = YES; // debug only
+BOOL placedCorrectly = YES;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,6 +43,24 @@ static BOOL state = YES; // debug only
     // Dispose of any resources that can be recreated.
 }
 
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide Visits"]) {
+        if (_mapView.region.span.latitudeDelta < 4) {
+            if (!placedCorrectly) {
+                [self reloadAnnotations];
+            }
+            placedCorrectly = YES;
+        }
+        else {
+            if (placedCorrectly) {
+                [self removeVisitsFromMap];
+                [self showTripsOnMap];
+            }
+            placedCorrectly = NO;
+        }
+    }
+}
+
 - (IBAction)changeVisitVisibility:(id)sender {
     // If the annotations are not showing, add them
     if ([[[_visitsButton titleLabel] text] isEqualToString:@"Show Visits"]) {
@@ -57,17 +76,40 @@ static BOOL state = YES; // debug only
 }
 
 - (void)showVisitsOnMap {
-    _annotations = [[NSMutableDictionary alloc] init];
-    _numbVisits = [[NSMutableDictionary alloc] init];
-    // Loops through each visit for each trip and displays it on the map
-    if (_settingsPickerIndex == -1) {
-        for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
-            [self showAllVisitsForTrip:[[VTTripHandler trips] objectAtIndex:x]];
+    if (_mapView.region.span.latitudeDelta < 4) {
+        _annotations = [[NSMutableDictionary alloc] init];
+        _numbVisits = [[NSMutableDictionary alloc] init];
+        // Loops through each visit for each trip and displays it on the map
+        if (_settingsPickerIndex == -1) {
+            for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
+                [self showAllVisitsForTrip:[[VTTripHandler trips] objectAtIndex:x]];
+            }
+        }
+        // Shows only one trip
+        else {
+            [self showAllVisitsForTrip:[[VTTripHandler trips] objectAtIndex:_settingsPickerIndex]];
         }
     }
-    // Shows only one trip
     else {
-        [self showAllVisitsForTrip:[[VTTripHandler trips] objectAtIndex:_settingsPickerIndex]];
+        [self showTripsOnMap];
+        placedCorrectly = NO;
+    }
+}
+
+- (void)showTripsOnMap {
+    if (_settingsPickerIndex == -1) {
+        for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            [annotation setTitle:[[VTTripHandler tripNames] objectAtIndex:x]];
+            [annotation setCoordinate:((VTVisit *)[[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:0]).place.address.coordinate];
+            [_mapView addAnnotation:annotation];
+        }
+    }
+    else {
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        [annotation setTitle:[[VTTripHandler tripNames] objectAtIndex:_settingsPickerIndex]];
+        [annotation setCoordinate:((VTVisit *)[[[[[VTTripHandler trips] objectAtIndex:_settingsPickerIndex] visitHandler] visits] objectAtIndex:0]).place.address.coordinate];
+        [_mapView addAnnotation:annotation];
     }
 }
 
@@ -81,7 +123,7 @@ static BOOL state = YES; // debug only
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             // If there is no valid venue name, set it to "Unregistered place"
             if (placeName == nil) {
-                [annotation setTitle:@"Unregistered Place"];
+                [annotation setTitle:[NSString stringWithFormat:@"%@ %@", visit.place.address.streetNumber, visit.place.address.streetName]];
             }
             else {
                 NSNumber *a = [[NSNumber alloc] initWithInt:1];
@@ -89,13 +131,15 @@ static BOOL state = YES; // debug only
                 [_annotations setObject:annotation forKey:uID];
                 [_numbVisits setObject:[a copy] forKey:uID];
             }
+            [annotation setSubtitle:@"1 visit"];
             [annotation setCoordinate:visit.place.address.coordinate];
             [_mapView addAnnotation:annotation];
         }
         else {
             NSNumber *b = [[NSNumber alloc] initWithInt:[[_numbVisits objectForKey:uID] intValue] + 1];
             [_numbVisits setObject:[b copy] forKey:uID];
-            [[_annotations objectForKey:uID] setTitle:[NSString stringWithFormat:@"%@ (%d)", placeName, [b intValue]]];
+            [[_annotations objectForKey:uID] setTitle:placeName];
+            [[_annotations objectForKey:uID] setSubtitle:[NSString stringWithFormat:@"%d visits", [b intValue]]];
         }
     }
 }
