@@ -28,7 +28,7 @@
         if(note.name != VTTripsChangedNotification) {
             return;
         }
-        _trips = note.object;
+        //_trips = note.object;
         [_tableView reloadData];
     }];
     // Do any additional setup after loading the view.
@@ -76,7 +76,7 @@
         NSMutableArray *visits = [self getVisitsForTripIndex:[sender indexPathForSelectedRow].row];
         [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
         [[segue destinationViewController] setVisits:visits];
-        [[segue destinationViewController] setTripName:[[self getTripForTableIndex:_selected.row] tripName]];
+        [[segue destinationViewController] setTrip:[self getTripForTableIndex:_selected.row]];
     }
 }
 

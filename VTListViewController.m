@@ -19,15 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationItem setTitle:[NSString stringWithFormat:@"Visits in %@", [_tripName capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visits in <locale>'
+    [self.navigationItem setTitle:[NSString stringWithFormat:@"Visits in %@", [[_trip tripName] capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visits in <locale>'
     
+    _visits = [[_trip visitHandler] visits];
     [_tableView reloadData];
     
     [VTTripHandler registerVisitObserver:^(NSNotification *note) {
         if(note.name != VTVisitsChangedNotification) {
             return;
         }
-        if ([[note.object objectAtIndex:0] isEqualToString:_tripName]) {
+        if ([[note.object objectAtIndex:0] isEqualToString:[_trip tripName]]) {
             _visits = [note.object objectAtIndex:1];
         }
         [_tableView reloadData];
@@ -58,7 +59,7 @@
 
 - (IBAction)clearVisits:(id)sender {
     [self setVisits:[[NSMutableArray alloc] init]];
-    [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:_tripName, _visits, nil]];
+    [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:[_trip tripName], _visits, nil]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,7 +71,7 @@
         NSMutableArray *trips = [VTTripHandler trips];
         NSMutableArray *tripNames = [VTTripHandler tripNames];
         
-        VTVisitHandler *visitHandler = [[trips objectAtIndex:[tripNames indexOfObject:[self tripName]]] visitHandler];
+        VTVisitHandler *visitHandler = [[trips objectAtIndex:[tripNames indexOfObject:[_trip tripName]]] visitHandler];
         [visitHandler removeVisitAtIndex:indexPath.row];
     }
 }

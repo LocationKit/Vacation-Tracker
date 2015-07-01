@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VTVisitHandler.h"
+#import "VTTrip.h"
 
 @interface VTListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -15,6 +16,6 @@
 
 @property (strong, nonatomic) NSMutableArray *visits;
 
-@property (strong, nonatomic) NSString *tripName;
+@property (strong, nonatomic) VTTrip *trip;
 
 @end

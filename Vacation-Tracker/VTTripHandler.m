@@ -56,7 +56,6 @@ static NSMutableArray *tripNames;
     if (tripNames == nil) {
         tripNames = [[NSMutableArray alloc] init];
     }
-    
     if ([tripNames indexOfObject:[trip tripName]] == NSNotFound) {
         [trips addObject:trip];
         [tripNames addObject:[trip tripName]];
