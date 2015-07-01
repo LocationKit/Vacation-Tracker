@@ -14,6 +14,9 @@
 
 @property NSMutableArray *visits;
 
+@property NSMutableDictionary *annotations;
+@property NSMutableDictionary *numbVisits;
+
 @end
 
 @implementation MapViewController
@@ -54,22 +57,36 @@ static BOOL state = YES; // debug only
 }
 
 - (void)showVisitsOnMap {
+    _annotations = [[NSMutableDictionary alloc] init];
+    _numbVisits = [[NSMutableDictionary alloc] init];
     // Loops through each visit for each trip and displays it on the map
     for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
         for (NSUInteger i = 0; i < [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] count]; i++) {
             VTVisit *visit = [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:i];
-            
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             NSString *placeName = visit.place.venue.name;
-            // If there is no valid venue name, set it to "Unregistered place"
-            if (placeName == nil) {
-                [annotation setTitle:@"Unregistered Place"];
+            NSString *uID = visit.place.venue.venueId;
+            
+            if ([[_annotations allKeys] indexOfObject:uID] == NSNotFound) {
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                // If there is no valid venue name, set it to "Unregistered place"
+                if (placeName == nil) {
+                    [annotation setTitle:@"Unregistered Place"];
+                }
+                else {
+                    NSNumber *a = [[NSNumber alloc] initWithInt:1];
+                    [annotation setTitle:placeName];
+                    [_annotations setObject:annotation forKey:uID];
+                    [_numbVisits setObject:[a copy] forKey:uID];
+                }
+                [annotation setCoordinate:visit.place.address.coordinate];
+                [_mapView addAnnotation:annotation];
             }
             else {
-                [annotation setTitle:placeName];
+                int a = [[_numbVisits objectForKey:uID] intValue] + 1;
+                NSNumber *b = [[NSNumber alloc] initWithInt:a];
+                [_numbVisits setObject:[b copy] forKey:uID];
+                [[_annotations objectForKey:uID] setTitle:[NSString stringWithFormat:@"%@ (%d)", placeName, a]];
             }
-            [annotation setCoordinate:visit.place.address.coordinate];
-            [_mapView addAnnotation:annotation];
         }
     }
 }
