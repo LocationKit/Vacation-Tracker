@@ -10,5 +10,5 @@
 #define COCOAPODS_POD_AVAILABLE_LocationKit
 #define COCOAPODS_VERSION_MAJOR_LocationKit 2
 #define COCOAPODS_VERSION_MINOR_LocationKit 0
-#define COCOAPODS_VERSION_PATCH_LocationKit 4
+#define COCOAPODS_VERSION_PATCH_LocationKit 5
 

@@ -36,6 +36,23 @@
  */
 @property(nonatomic) NSUInteger limit;
 
+/*
+ *  category
+ *
+ *  Discussion:
+ *      Optional category string
+ *
+ */
+@property(nonatomic, strong) NSString *category;
+
+/*
+ *  query
+ *
+ *  Discussion:
+ *      Optional query string
+ *
+ */
+@property(nonatomic, strong) NSString *query;
 
 
 - (instancetype)initWithLocation:(CLLocation *)location;

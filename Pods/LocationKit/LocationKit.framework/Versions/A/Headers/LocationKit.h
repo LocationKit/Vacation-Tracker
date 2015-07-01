@@ -28,10 +28,6 @@ UIKIT_EXTERN NSString *const LKUserValueDateInstalled;
 
 @property(nonatomic, readonly) BOOL isRunning;
 
-@property(nonatomic) NSTimeInterval callbackInterval;
-
-@property(nonatomic, strong) NSTimer *scheduledLocationTimer;
-
 
 + (LocationKit *)sharedInstance;
 
@@ -50,14 +46,7 @@ UIKIT_EXTERN NSString *const LKUserValueDateInstalled;
 - (void)getCurrentLocationWithHandler:(void (^)(CLLocation *location, NSError *error))handler;
 
 
-/*
-*  searchForPlacseWithRequest:completionHandler:
-*
-*  Discussion:
-*       Will return places ...
-*
-*/
-- (void)searchForPlacseWithRequest:(LKSearchRequest *)request completionHandler:(void (^)(NSArray *places, NSError *error))handler;
+- (void)searchForPlacesWithRequest:(LKSearchRequest *)request completionHandler:(void (^)(NSArray *places, NSError *error))handler;
 
 
 /*

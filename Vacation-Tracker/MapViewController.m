@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "VTTripHandler.h"
 #import "VTVisit.h"
+#import "MapSettingsViewController.h"
 
 @interface MapViewController ()
 
@@ -25,12 +26,11 @@ static BOOL state = YES; // debug only
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _settingsPickerIndex = -1;
     [VTTripHandler registerTripObserver:^(NSNotification *note) {
         if(note.name != VTTripsChangedNotification) {
             return;
         }
-        //_visits = note.object;
         [self reloadAnnotations];
     }];
     
@@ -44,14 +44,14 @@ static BOOL state = YES; // debug only
 
 - (IBAction)changeVisitVisibility:(id)sender {
     // If the annotations are not showing, add them
-    if ([[[_visitsButton titleLabel] text] isEqualToString:@"Show All Visits"]) {
-        [_visitsButton setTitle:@"Hide All Visits" forState:UIControlStateNormal];
+    if ([[[_visitsButton titleLabel] text] isEqualToString:@"Show Visits"]) {
+        [_visitsButton setTitle:@"Hide Visits" forState:UIControlStateNormal];
         [self showVisitsOnMap];
     }
     
     // If the annotations are showing, remove them
-    else if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide All Visits"]) {
-        [_visitsButton setTitle:@"Show All Visits" forState:UIControlStateNormal];
+    else if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide Visits"]) {
+        [_visitsButton setTitle:@"Show Visits" forState:UIControlStateNormal];
         [self removeVisitsFromMap];
     }
 }
@@ -60,33 +60,42 @@ static BOOL state = YES; // debug only
     _annotations = [[NSMutableDictionary alloc] init];
     _numbVisits = [[NSMutableDictionary alloc] init];
     // Loops through each visit for each trip and displays it on the map
-    for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
-        for (NSUInteger i = 0; i < [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] count]; i++) {
-            VTVisit *visit = [[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:i];
-            NSString *placeName = visit.place.venue.name;
-            NSString *uID = visit.place.venue.venueId;
-            
-            if ([[_annotations allKeys] indexOfObject:uID] == NSNotFound) {
-                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-                // If there is no valid venue name, set it to "Unregistered place"
-                if (placeName == nil) {
-                    [annotation setTitle:@"Unregistered Place"];
-                }
-                else {
-                    NSNumber *a = [[NSNumber alloc] initWithInt:1];
-                    [annotation setTitle:placeName];
-                    [_annotations setObject:annotation forKey:uID];
-                    [_numbVisits setObject:[a copy] forKey:uID];
-                }
-                [annotation setCoordinate:visit.place.address.coordinate];
-                [_mapView addAnnotation:annotation];
+    if (_settingsPickerIndex == -1) {
+        for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
+            [self showAllVisitsForTrip:[[VTTripHandler trips] objectAtIndex:x]];
+        }
+    }
+    // Shows only one trip
+    else {
+        [self showAllVisitsForTrip:[[VTTripHandler trips] objectAtIndex:_settingsPickerIndex]];
+    }
+}
+
+- (void)showAllVisitsForTrip:(VTTrip *)trip {
+    for (NSUInteger i = 0; i < [[[trip visitHandler] visits] count]; i++) {
+        VTVisit *visit = [[[trip visitHandler] visits] objectAtIndex:i];
+        NSString *placeName = visit.place.venue.name;
+        NSString *uID = visit.place.venue.venueId;
+        
+        if ([[_annotations allKeys] indexOfObject:uID] == NSNotFound) {
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            // If there is no valid venue name, set it to "Unregistered place"
+            if (placeName == nil) {
+                [annotation setTitle:@"Unregistered Place"];
             }
             else {
-                int a = [[_numbVisits objectForKey:uID] intValue] + 1;
-                NSNumber *b = [[NSNumber alloc] initWithInt:a];
-                [_numbVisits setObject:[b copy] forKey:uID];
-                [[_annotations objectForKey:uID] setTitle:[NSString stringWithFormat:@"%@ (%d)", placeName, a]];
+                NSNumber *a = [[NSNumber alloc] initWithInt:1];
+                [annotation setTitle:placeName];
+                [_annotations setObject:annotation forKey:uID];
+                [_numbVisits setObject:[a copy] forKey:uID];
             }
+            [annotation setCoordinate:visit.place.address.coordinate];
+            [_mapView addAnnotation:annotation];
+        }
+        else {
+            NSNumber *b = [[NSNumber alloc] initWithInt:[[_numbVisits objectForKey:uID] intValue] + 1];
+            [_numbVisits setObject:[b copy] forKey:uID];
+            [[_annotations objectForKey:uID] setTitle:[NSString stringWithFormat:@"%@ (%d)", placeName, [b intValue]]];
         }
     }
 }
@@ -104,7 +113,7 @@ static BOOL state = YES; // debug only
 - (void)reloadAnnotations {
     // If the annotations are showing, remove them, then add them.
     // If they are not showing, nothing to be done.
-    if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide All Visits"]) {
+    if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide Visits"]) {
         [self removeVisitsFromMap];
         [self showVisitsOnMap];
     }
@@ -121,14 +130,18 @@ static BOOL state = YES; // debug only
     return state;
 }
 
-/*
+- (IBAction)settingsTapped:(id)sender {
+    [self performSegueWithIdentifier:@"ShowMapSettingsID" sender:self];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"ShowMapSettingsID"]) {
+        [[segue destinationViewController] setSelectedRow:[sender settingsPickerIndex] fromSender:self];
+    }
 }
-*/
+
 
 @end

@@ -17,6 +17,12 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *visitsButton;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+
+@property NSInteger settingsPickerIndex;
+
+- (void)reloadAnnotations;
+
 + (BOOL)debugSwitchState; // debug only
 
 @end
