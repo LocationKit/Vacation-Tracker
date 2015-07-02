@@ -99,10 +99,12 @@ BOOL placedCorrectly = YES;
 - (void)showTripsOnMap {
     if (_settingsPickerIndex == -1) {
         for (NSUInteger x = 0; x < [[VTTripHandler trips] count]; x++) {
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-            [annotation setTitle:[[VTTripHandler tripNames] objectAtIndex:x]];
-            [annotation setCoordinate:((VTVisit *)[[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:0]).place.address.coordinate];
-            [_mapView addAnnotation:annotation];
+            if ([[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] count] != 0) {
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                [annotation setTitle:[[VTTripHandler tripNames] objectAtIndex:x]];
+                [annotation setCoordinate:((VTVisit *)[[[[[VTTripHandler trips] objectAtIndex:x] visitHandler] visits] objectAtIndex:0]).place.address.coordinate];
+                [_mapView addAnnotation:annotation];
+            }
         }
     }
     else {

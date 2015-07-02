@@ -58,8 +58,17 @@
 }
 
 - (IBAction)clearVisits:(id)sender {
-    [self setVisits:[[NSMutableArray alloc] init]];
-    [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:[_trip tripName], _visits, nil]];
+    UIAlertController *confirmation = [UIAlertController alertControllerWithTitle:@"Are You Sure?" message:@"This will clear all visits." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+    }];
+    UIAlertAction *continueAction = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self setVisits:[[NSMutableArray alloc] init]];
+        [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:[_trip tripName], _visits, nil]];
+    }];
+    [confirmation addAction:cancelAction];
+    [confirmation addAction:continueAction];
+    [self presentViewController:confirmation animated:YES completion:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

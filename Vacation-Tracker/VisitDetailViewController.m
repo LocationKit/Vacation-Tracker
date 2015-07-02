@@ -50,7 +50,12 @@ NSString *placeName;
     
     LKAddress *address = _visit.place.address;
     NSArray *streetName = [address.streetName componentsSeparatedByString:@" "];
-    [_address_0 setText:[NSString stringWithFormat:@"%@ %@ %@ %@", address.streetNumber, [streetName[0] lowercaseString], [streetName[1] capitalizedString], streetName[2]]];
+    if ([streetName count] == 3) {
+        [_address_0 setText:[NSString stringWithFormat:@"%@ %@ %@ %@", address.streetNumber, [streetName[0] lowercaseString], [streetName[1] capitalizedString], streetName[2]]];
+    }
+    else {
+        [_address_0 setText:[NSString stringWithFormat:@"%@ %@ %@", address.streetNumber, [streetName[0] lowercaseString], [streetName[1] capitalizedString]]];
+    }
     [_address_1 setText:[NSString stringWithFormat:@"%@, %@", [address.locality capitalizedString], address.region]];
     
     [_categoryLabel setText:_visit.place.venue.category];

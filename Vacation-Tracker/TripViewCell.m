@@ -18,11 +18,11 @@
     }
     else {
         if (numVisits == 1) {
-            [_tripNameLabel setText:[NSString stringWithFormat:@"%@ (%lu visit)", [trip tripName], numVisits]];
+            [_tripNameLabel setText:[NSString stringWithFormat:@"%@ (%lu visit)", [trip tripName], (unsigned long)numVisits]];
         }
         
         else {
-            [_tripNameLabel setText:[NSString stringWithFormat:@"%@ (%lu visits)", [trip tripName], numVisits]];
+            [_tripNameLabel setText:[NSString stringWithFormat:@"%@ (%lu visits)", [trip tripName], (unsigned long)numVisits]];
         }
     }
 }
