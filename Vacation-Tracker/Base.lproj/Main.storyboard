@@ -61,11 +61,13 @@
                         <outlet property="settingsButton" destination="QgL-sS-yew" id="fnG-gc-a3Q"/>
                         <outlet property="visitsButton" destination="yw4-nk-xGM" id="oaU-GY-S4x"/>
                         <segue destination="pTc-ic-cYN" kind="push" identifier="ShowMapSettingsID" id="6pB-vG-wiY"/>
+                        <segue destination="yAT-P0-jYe" kind="push" identifier="MapToVisitDetailID" id="BH8-MT-h5k"/>
+                        <segue destination="pHW-44-aCg" kind="push" identifier="MapToVisitsID" id="rVk-hF-Qaq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL4-C0-xFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="94"/>
+            <point key="canvasLocation" x="904" y="36"/>
         </scene>
         <!--Settings-->
         <scene sceneID="EXj-2A-aDw">
@@ -100,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIe-sh-5kX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="94"/>
+            <point key="canvasLocation" x="1310" y="36"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="KUB-1f-6yR">
@@ -273,7 +275,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S1x-hG-G5y">
-                                <rect key="frame" x="133.00000037087338" y="213" width="171" height="21"/>
+                                <rect key="frame" x="133" y="213" width="171.00000037087338" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -294,7 +296,7 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QLw-Cc-HyL">
-                                <rect key="frame" x="16" y="478.00000246347287" width="92" height="21"/>
+                                <rect key="frame" x="16" y="478.00000330596316" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -357,7 +359,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPJ-mO-YYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="94"/>
+            <point key="canvasLocation" x="492" y="36"/>
         </scene>
     </scenes>
     <resources>
@@ -370,5 +372,9 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="BH8-MT-h5k"/>
+        <segue reference="rVk-hF-Qaq"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
 </document>

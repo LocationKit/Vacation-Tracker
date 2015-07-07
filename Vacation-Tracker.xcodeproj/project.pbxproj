@@ -23,6 +23,8 @@
 		FD3CBF221B3B110A007C47C2 /* VisitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF211B3B110A007C47C2 /* VisitDetailViewController.m */; };
 		FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF241B3B1A02007C47C2 /* TabBarViewController.m */; };
 		FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF271B3B4799007C47C2 /* MapViewController.m */; };
+		FD4976131B4C45770028FDE7 /* VTTripAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4976121B4C45770028FDE7 /* VTTripAnnotation.m */; };
+		FD4976161B4C49F20028FDE7 /* VTVisitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4976151B4C49F20028FDE7 /* VTVisitAnnotation.m */; };
 		FD813CD11B3A513800219108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD01B3A513800219108 /* main.m */; };
 		FD813CD41B3A513800219108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD31B3A513800219108 /* AppDelegate.m */; };
 		FD813CDA1B3A513800219108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD813CD81B3A513800219108 /* Main.storyboard */; };
@@ -73,6 +75,10 @@
 		FD3CBF241B3B1A02007C47C2 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		FD3CBF261B3B4799007C47C2 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		FD3CBF271B3B4799007C47C2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		FD4976111B4C45770028FDE7 /* VTTripAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTripAnnotation.h; sourceTree = "<group>"; };
+		FD4976121B4C45770028FDE7 /* VTTripAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTripAnnotation.m; sourceTree = "<group>"; };
+		FD4976141B4C49F20028FDE7 /* VTVisitAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisitAnnotation.h; sourceTree = "<group>"; };
+		FD4976151B4C49F20028FDE7 /* VTVisitAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisitAnnotation.m; sourceTree = "<group>"; };
 		FD813CCB1B3A513800219108 /* Vacation-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vacation-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD813CCF1B3A513800219108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD813CD01B3A513800219108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -253,6 +259,10 @@
 				FD3CBF271B3B4799007C47C2 /* MapViewController.m */,
 				FDECC1C61B443D4E00A0D81A /* MapSettingsViewController.h */,
 				FDECC1C71B443D4E00A0D81A /* MapSettingsViewController.m */,
+				FD4976111B4C45770028FDE7 /* VTTripAnnotation.h */,
+				FD4976121B4C45770028FDE7 /* VTTripAnnotation.m */,
+				FD4976141B4C49F20028FDE7 /* VTVisitAnnotation.h */,
+				FD4976151B4C49F20028FDE7 /* VTVisitAnnotation.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -401,12 +411,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD3CBF1B1B3AF08C007C47C2 /* VisitViewCell.m in Sources */,
+				FD4976131B4C45770028FDE7 /* VTTripAnnotation.m in Sources */,
 				FD199BA61B3C429D00BC756D /* VTTripHandler.m in Sources */,
 				FD3CBF141B3AEEA7007C47C2 /* VTVisitHandler.m in Sources */,
 				FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */,
 				FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */,
 				FD199BB01B3C49E300BC756D /* TripViewCell.m in Sources */,
 				FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */,
+				FD4976161B4C49F20028FDE7 /* VTVisitAnnotation.m in Sources */,
 				FDECC1C41B42D64100A0D81A /* VTVisit.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
 				FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */,
