@@ -59,12 +59,18 @@ static NSMutableArray *tripNames;
     if ([tripNames indexOfObject:[trip tripName]] == NSNotFound) {
         [trips addObject:trip];
         [tripNames addObject:[trip tripName]];
+        /*NSUInteger lastIndex = [trips count] - 1;
+        VTTrip *mostRecentTrip = [trips objectAtIndex:lastIndex];
+        
+        [mostRecentTrip addVisit:visit];
+        [trips setObject:mostRecentTrip atIndexedSubscript:lastIndex];*/
+        [trip addVisit:visit];
     }
-    NSUInteger lastIndex = [trips count] - 1;
-    VTTrip *mostRecentTrip = [trips objectAtIndex:lastIndex];
-    
-    [mostRecentTrip addVisit:visit];
-    [trips setObject:mostRecentTrip atIndexedSubscript:lastIndex];
+    else {
+        NSInteger index = [tripNames indexOfObject:[trip tripName]];
+        VTTrip *tripToUpdate = [trips objectAtIndex:index];
+        [tripToUpdate addVisit:visit];
+    }
     [VTTripHandler notifyTripChange:trips];
 }
 

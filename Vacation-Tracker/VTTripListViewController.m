@@ -12,6 +12,7 @@
 @interface VTTripListViewController ()
 
 @property (strong, nonatomic) NSMutableArray *trips;
+@property (strong, nonatomic) NSIndexPath *selected;
 
 @end
 
@@ -27,7 +28,7 @@
         if(note.name != VTTripsChangedNotification) {
             return;
         }
-        _trips = note.object;
+        //_trips = note.object;
         [_tableView reloadData];
     }];
     // Do any additional setup after loading the view.
@@ -50,13 +51,13 @@
         [_tableView registerNib:[UINib nibWithNibName:@"TripViewCell" bundle:nil] forCellReuseIdentifier:cellID];
         cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
     }
-    [cell setTrip:[self getTripForIndex:indexPath.row]];
+    [cell setTrip:[[VTTripHandler trips] objectAtIndex:[[VTTripHandler trips] count] - 1 - indexPath.row]];
     return cell;
 }
 
-- (VTTrip *)getTripForIndex:(NSUInteger)index {
-    NSUInteger lastIndex = [[VTTripHandler trips] count] - 1;
-    return [[VTTripHandler trips] objectAtIndex:lastIndex - index];
+- (VTTrip *)getTripForTableIndex:(NSUInteger)index {
+    NSUInteger maxIndex = [[VTTripHandler trips] count] - 1;
+    return [[VTTripHandler trips] objectAtIndex:maxIndex - index];
 }
 
 - (NSMutableArray *)getVisitsForTripIndex:(NSUInteger)index {
@@ -64,6 +65,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _selected = indexPath;
     [self performSegueWithIdentifier:@"ShowTripVisitsID" sender:tableView];
 }
 
@@ -74,7 +76,7 @@
         NSMutableArray *visits = [self getVisitsForTripIndex:[sender indexPathForSelectedRow].row];
         [_tableView deselectRowAtIndexPath:[sender indexPathForSelectedRow] animated:YES];
         [[segue destinationViewController] setVisits:visits];
-        [[segue destinationViewController] setTripName:[[self getTripForIndex:[sender indexPathForSelectedRow].row] tripName]];
+        [[segue destinationViewController] setTrip:[self getTripForTableIndex:_selected.row]];
     }
 }
 
