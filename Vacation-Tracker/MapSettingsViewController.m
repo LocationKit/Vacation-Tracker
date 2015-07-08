@@ -39,6 +39,7 @@ NSUInteger indexToSet;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    // The first item should be an "All" option
     if (row == 0) {
         return @"All";
     }

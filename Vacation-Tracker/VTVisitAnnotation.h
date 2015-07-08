@@ -13,6 +13,10 @@
 
 @property (strong, nonatomic) VTVisit *visit;
 
+@property (nonatomic) int numbVisits;
+
 - (id)initWithVisit:(VTVisit *)visit;
+
+- (void)increaseVisits:(int)numb;
 
 @end

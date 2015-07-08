@@ -17,14 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_ratingLabel setText:[NSString stringWithFormat:@"Rating: %.f", [_visit rating]]];
-    [_ratingStepper setValue:[_visit rating]];
     
+    // Creates an array from the street name components separated by a space.
     NSArray *streetName = [_visit.place.address.streetName componentsSeparatedByString:@" "];
     
     NSString *name = _visit.place.address.streetNumber;
     for (int x = 0; x < [streetName count]; x++) {
-        name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] lowercaseString]];
+        NSString *currentComponent = [streetName objectAtIndex:x];
+        // If the component contains a number, ('19th' for example) it should be lowercase.
+        if ([currentComponent intValue] != 0) {
+            name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] lowercaseString]];
+        }
+        else {
+            // If the component has length one, or is equal to NE, NW, SE, or SW it should be uppercase.
+            if ([currentComponent length] == 1 || [currentComponent isEqualToString:@"NE"] || [currentComponent isEqualToString:@"NW"] || [currentComponent isEqualToString:@"SE"] || [currentComponent isEqualToString:@"SW"]) {
+                name = [name stringByAppendingFormat:@" %@", [currentComponent uppercaseString]];
+            }
+            // Otherwise it should simply be capitalized.
+            else {
+                name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] capitalizedString]];
+            }
+        }
     }
     
     if (_visit.place.venue.name == nil) {
@@ -35,7 +48,7 @@
     }
     
     [_address_0 setText:name];
-    [_address_1 setText:[NSString stringWithFormat:@"%@, %@", [_visit.place.address.locality capitalizedString], _visit.place.address.region]];
+    [_address_1 setText:[NSString stringWithFormat:@"%@, %@ %@", [_visit.place.address.locality capitalizedString], _visit.place.address.region, _visit.place.address.postalCode]];
     
     [_categoryLabel setText:_visit.place.venue.category];
     
@@ -46,12 +59,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)stepperChanged:(id)sender {
-    [_visit setRating:[_ratingStepper value]];
-    [_ratingLabel setText:[NSString stringWithFormat:@"Rating: %.f", [_visit rating]]];
-    [VTTripHandler notifyTripChange:[VTTripHandler trips]];
 }
 
 /*

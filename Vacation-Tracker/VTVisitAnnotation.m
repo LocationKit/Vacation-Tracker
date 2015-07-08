@@ -14,8 +14,19 @@
     self = [super init];
     if (self) {
         [self setVisit:visit];
+        [self setNumbVisits:0];
     }
     return self;
+}
+
+- (void)increaseVisits:(int)numb {
+    _numbVisits += 1;
+    if (_numbVisits == 1) {
+        [self setSubtitle:@"1 visit"];
+    }
+    else {
+        [self setSubtitle:[NSString stringWithFormat:@"%d visits", _numbVisits]];
+    }
 }
 
 @end

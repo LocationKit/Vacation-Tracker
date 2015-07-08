@@ -19,7 +19,7 @@
     
     // Place name
     if (placeName == nil) {
-        [_placeName setText:@"Unregistered Place"];
+        [_placeName setText:@"Unknown Place"];
     }
     else {
         [_placeName setText:[visit place].venue.name];

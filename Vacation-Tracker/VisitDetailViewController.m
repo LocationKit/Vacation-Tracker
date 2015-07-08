@@ -32,13 +32,21 @@ NSString *name;
     
     name = address.streetNumber;
     for (int x = 0; x < [streetName count]; x++) {
-        /*NSString *current = [streetName objectAtIndex:x];
-         if ([current intValue] == 0) {
-         name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] capitalizedString]];
-         }
-         else {*/
-        name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] lowercaseString]];
-        //}
+        NSString *currentComponent = [streetName objectAtIndex:x];
+        // If the component contains a number, ('19th' for example) it should be lowercase.
+        if ([currentComponent intValue] != 0) {
+            name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] lowercaseString]];
+        }
+        else {
+            // If the component has length one, or is equal to NE, NW, SE, or SW it should be uppercase.
+            if ([currentComponent length] == 1 || [currentComponent isEqualToString:@"NE"] || [currentComponent isEqualToString:@"NW"] || [currentComponent isEqualToString:@"SE"] || [currentComponent isEqualToString:@"SW"]) {
+                name = [name stringByAppendingFormat:@" %@", [currentComponent uppercaseString]];
+            }
+            // Otherwise it should simply be capitalized.
+            else {
+                name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] capitalizedString]];
+            }
+        }
     }
     [self addAnnotation];
     if (placeName == nil) {
@@ -60,7 +68,7 @@ NSString *name;
     [_timeLabel setText:dateString];
     
     [_address_0 setText:name];
-    [_address_1 setText:[NSString stringWithFormat:@"%@, %@", [address.locality capitalizedString], address.region]];
+    [_address_1 setText:[NSString stringWithFormat:@"%@, %@ %@", [address.locality capitalizedString], address.region, address.postalCode]];
     
     [_categoryLabel setText:_visit.place.venue.category];
     
@@ -68,12 +76,14 @@ NSString *name;
     // Do any additional setup after loading the view.
 }
 
+// Updates the rating when the rating stepper is changed.
 - (IBAction)stepperChanged:(id)sender {
     [_visit setRating:[_ratingStepper value]];
     [_ratingLabel setText:[NSString stringWithFormat:@"Rating: %.f", [_visit rating]]];
     [VTTripHandler notifyTripChange:[VTTripHandler trips]];
 }
 
+// Adds the visit to the small map.
 - (void)addAnnotation {
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     if (placeName == nil) {
