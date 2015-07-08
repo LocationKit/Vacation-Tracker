@@ -70,6 +70,14 @@ static NSMutableArray *tripNames;
         NSInteger index = [tripNames indexOfObject:[trip tripName]];
         VTTrip *tripToUpdate = [trips objectAtIndex:index];
         [tripToUpdate addVisit:visit];
+        
+        // Makes the updated trip the most recent one.
+        if (index != ([trips count] - 1)) {
+            [trips insertObject:tripToUpdate atIndex:[trips count]];
+            [trips removeObjectAtIndex:index];
+            [tripNames insertObject:[tripNames objectAtIndex:index] atIndex:[tripNames count]];
+            [tripNames removeObjectAtIndex:index];
+        }
     }
     [VTTripHandler notifyTripChange:trips];
 }

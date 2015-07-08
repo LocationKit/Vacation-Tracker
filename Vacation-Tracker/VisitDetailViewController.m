@@ -85,7 +85,7 @@ NSString *name;
     [annotation setCoordinate:_visit.place.address.coordinate];
     [_mapView setCenterCoordinate:annotation.coordinate];
     [_mapView setMapType:MKMapTypeHybrid];
-    [_mapView setRegion:MKCoordinateRegionMakeWithDistance([_mapView centerCoordinate], 0.5f / MILE_TO_METER, 0.5f / MILE_TO_METER)];
+    [_mapView setRegion:MKCoordinateRegionMakeWithDistance([_mapView centerCoordinate], 0.1f / MILE_TO_METER, 0.1f / MILE_TO_METER)];
     [_mapView addAnnotation:annotation];
 }
 
