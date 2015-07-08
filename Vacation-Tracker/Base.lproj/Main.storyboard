@@ -19,6 +19,21 @@
                                     <outlet property="delegate" destination="DvO-B2-Fi8" id="d8F-Jx-WOR"/>
                                 </connections>
                             </mapView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="IWU-Vs-dj0">
+                                <rect key="frame" x="255" y="109" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="DvO-B2-Fi8" eventType="valueChanged" id="yjE-Mr-Nro"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1Q-G5-xPh">
+                                <rect key="frame" x="190.99999870687935" y="106" width="56" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yw4-nk-xGM">
                                 <rect key="frame" x="218" y="489" width="102" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
@@ -30,21 +45,17 @@
                                     <action selector="changeVisitVisibility:" destination="DvO-B2-Fi8" eventType="touchUpInside" id="2Zr-Z2-ywe"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="IWU-Vs-dj0">
-                                <rect key="frame" x="255" y="71" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="A1Y-Vt-C9V">
+                                <rect key="frame" x="58" y="70" width="204" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Trips"/>
+                                    <segment title="Visits"/>
+                                </segments>
                                 <connections>
-                                    <action selector="switchChanged:" destination="DvO-B2-Fi8" eventType="valueChanged" id="yjE-Mr-Nro"/>
+                                    <action selector="displayPrefsTapped:" destination="DvO-B2-Fi8" eventType="valueChanged" id="utt-rc-IMY"/>
                                 </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1Q-G5-xPh">
-                                <rect key="frame" x="191" y="68" width="55.999999441167461" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -62,6 +73,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="debugSwitch" destination="IWU-Vs-dj0" id="xbX-gf-nmE"/>
+                        <outlet property="displayPrefs" destination="A1Y-Vt-C9V" id="dep-8R-D9v"/>
                         <outlet property="mapView" destination="3bf-8V-qiR" id="1sR-z8-H2h"/>
                         <outlet property="searchButton" destination="JwO-C5-bRD" id="n7K-E8-qEz"/>
                         <outlet property="settingsButton" destination="QgL-sS-yew" id="fnG-gc-a3Q"/>
@@ -126,14 +138,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUMBER" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="GJC-Av-hH0">
-                                <rect key="frame" x="125.99999971950754" y="90" width="178" height="21"/>
+                                <rect key="frame" x="125.9999997195075" y="90" width="178" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY/STATE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="JD5-tW-wdg">
-                                <rect key="frame" x="125.99999971950754" y="108" width="178" height="21"/>
+                                <rect key="frame" x="125.9999997195075" y="108" width="178" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -300,7 +312,7 @@
                                 <rect key="frame" x="0.0" y="245" width="320" height="185"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="yAT-P0-jYe" id="t3I-Ke-77U"/>
+                                    <outlet property="delegate" destination="yAT-P0-jYe" id="oQd-eD-KAN"/>
                                 </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCALITY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" id="5Sg-ci-Nyg">
@@ -353,7 +365,7 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QLw-Cc-HyL">
-                                <rect key="frame" x="16" y="478.00000172332739" width="92" height="21"/>
+                                <rect key="frame" x="16" y="478.00000330596316" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

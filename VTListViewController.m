@@ -54,6 +54,36 @@
         cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
     }
     [cell setVisit:[self getVisitForIndex:indexPath.row]];
+    NSString *category = [self getVisitForIndex:indexPath.row].place.venue.category;
+    if (!category) {
+        [[cell imageView] setImage:[UIImage imageNamed:@"map-button-item"]];
+    }
+    else {
+        if ([category isEqualToString:@"Bars"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-bars"]];
+        }
+        else if ([category isEqualToString:@"Fitness Sports and Recreation"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-fitness"]];
+        }
+        else if ([category isEqualToString:@"Grocery"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-grocery"]];
+        }
+        else if ([category isEqualToString:@"Home and Garden"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-home-garden"]];
+        }
+        else if ([category isEqualToString:@"Personal Care and Services"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-personal-care"]];
+        }
+        else if ([category isEqualToString:@"Restaurants"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-restaurant"]];
+        }
+        else if ([category isEqualToString:@"Retail"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-retail"]];
+        }
+        else {
+            [[cell imageView] setImage:[UIImage imageNamed:@"map-button-item"]];
+        }
+    }
     return cell;
 }
 

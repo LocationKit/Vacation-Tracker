@@ -26,7 +26,6 @@
 @implementation MapViewController
 
 static BOOL state = YES; // debug only
-BOOL placedCorrectly = YES;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,25 +49,6 @@ BOOL placedCorrectly = YES;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-// If the map is zoomed out, a pin is placed for each trip.  If it is zoomed in, a pin is placed for each visit.
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide Visits"]) {
-        if (ZOOMED_IN) {
-            if (!placedCorrectly) {
-                [self reloadAnnotations];
-            }
-            placedCorrectly = YES;
-        }
-        else {
-            if (placedCorrectly) {
-                [self removeVisitsFromMap];
-                [self showTripsOnMap];
-                placedCorrectly = NO;
-            }
-        }
-    }
 }
 
 // If a trip was tapped, the list of visits for that trip is shown.  If a visit was tapped, info about the visit is shown.
@@ -117,7 +97,7 @@ BOOL placedCorrectly = YES;
 
 // Adds the appropriate annotations to the map
 - (void)addAnnotations {
-    if (ZOOMED_IN) {
+    if ([_displayPrefs selectedSegmentIndex] == 1) {
         _annotations = [[NSMutableDictionary alloc] init];
         // Loops through each visit for each trip and displays it on the map
         if (_settingsPickerIndex == -1) {
@@ -132,7 +112,6 @@ BOOL placedCorrectly = YES;
     }
     else {
         [self showTripsOnMap];
-        placedCorrectly = NO;
     }
 }
 
@@ -246,6 +225,13 @@ BOOL placedCorrectly = YES;
 // When the settings button is tapped, takes the user to the settings page.
 - (IBAction)settingsTapped:(id)sender {
     [self performSegueWithIdentifier:@"ShowMapSettingsID" sender:self];
+}
+
+- (IBAction)displayPrefsTapped:(id)sender {
+    if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide Visits"]) {
+        [self removeVisitsFromMap];
+        [self addAnnotations];
+    }
 }
 
 // Displays an alert that allows the user to type in a search term.
