@@ -31,6 +31,10 @@ BOOL placedCorrectly = YES;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_settingsButton setTitle:@"\u2699"];
+    UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:f1, NSFontAttributeName, nil];
+    [_settingsButton setTitleTextAttributes:dict forState:UIControlStateNormal];
     _settingsPickerIndex = -1;
     [VTTripHandler registerTripObserver:^(NSNotification *note) {
         if(note.name != VTTripsChangedNotification) {
@@ -228,6 +232,48 @@ BOOL placedCorrectly = YES;
 
 - (IBAction)settingsTapped:(id)sender {
     [self performSegueWithIdentifier:@"ShowMapSettingsID" sender:self];
+}
+
+- (IBAction)searchTapped:(id)sender {
+    UIAlertController *searchInput = [UIAlertController alertControllerWithTitle:@"Search" message:@"Search for places around you" preferredStyle:UIAlertControllerStyleAlert];
+    [searchInput addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        [textField setAutocorrectionType:UITextAutocorrectionTypeYes];
+        [textField setAutocapitalizationType:UITextAutocapitalizationTypeSentences];
+    }];
+    [[searchInput.view.subviews objectAtIndex:0] setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *searchAction = [UIAlertAction actionWithTitle:@"Search" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [[LocationKit sharedInstance] getCurrentLocationWithHandler:^(CLLocation *location, NSError *error) {
+            if (error == nil) {
+                NSString *searchText = [[[[searchInput textFields] objectAtIndex:0] text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                
+                // Name
+                LKSearchRequest *searchRequest = [[LKSearchRequest alloc] initWithLocation:location];
+                [searchRequest setQuery:searchText];
+                [[LocationKit sharedInstance] searchForPlacesWithRequest:searchRequest completionHandler:^(NSArray *places, NSError *error) {
+                    if (error == nil) {
+                        NSLog(@"Searching for %@", [[[searchInput textFields] objectAtIndex:0] text]);
+                        for (int x = 0; x < [places count]; x++) {
+                            NSLog(@"Place %d: %@", x, ((LKPlace *)places[x]).venue.name);
+                        }
+                    }
+                }];
+                
+                // Category
+                searchRequest = [[LKSearchRequest alloc] initWithLocation:location];
+                [searchRequest setCategory:searchText];
+                [[LocationKit sharedInstance] searchForPlacesWithRequest:searchRequest completionHandler:^(NSArray *places, NSError *error) {
+                    NSLog(@"Searching for %@", searchText);
+                    for (int x = 0; x < [places count]; x++) {
+                        NSLog(@"Place %d: %@", x, ((LKPlace *)places[x]).venue.name);
+                    }
+                }];
+            }
+        }];
+    }];
+    [searchInput addAction:cancelAction];
+    [searchInput addAction:searchAction];
+    [self presentViewController:searchInput animated:YES completion:nil];
 }
 
 #pragma mark - Navigation

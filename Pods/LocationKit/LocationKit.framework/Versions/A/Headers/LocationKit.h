@@ -22,6 +22,8 @@ UIKIT_EXTERN NSString *const LKUserValueDateInstalled;
 
 
 @protocol LocationKitDelegate;
+@class LKCachedVisit;
+@class LKReverseGeocodeResult;
 
 
 @interface LocationKit : NSObject
@@ -48,7 +50,6 @@ UIKIT_EXTERN NSString *const LKUserValueDateInstalled;
 
 - (void)searchForPlacesWithRequest:(LKSearchRequest *)request completionHandler:(void (^)(NSArray *places, NSError *error))handler;
 
-
 /*
  *  updateUserValues:
  *
@@ -62,7 +63,6 @@ UIKIT_EXTERN NSString *const LKUserValueDateInstalled;
 - (void)pause;
 
 - (NSError *)resume;
-
 
 @end
 

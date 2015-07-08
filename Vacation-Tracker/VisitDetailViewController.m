@@ -28,9 +28,22 @@ NSString *placeName;
     
     [self addAnnotation];
     
+    LKAddress *address = _visit.place.address;
+    NSArray *streetName = [address.streetName componentsSeparatedByString:@" "];
+    
+    NSString *name = address.streetNumber;
+    for (int x = 0; x < [streetName count]; x++) {
+        /*NSString *current = [streetName objectAtIndex:x];
+         if ([current intValue] == 0) {
+         name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] capitalizedString]];
+         }
+         else {*/
+        name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] lowercaseString]];
+        //}
+    }
     if (placeName == nil) {
-        [_locationLabel setText:@"Unregistered Place"];
-        [self.navigationItem setTitle:@"Unregistered Place"];
+        [_locationLabel setText:name];
+        [self.navigationItem setTitle:[NSString stringWithFormat:@"Visit to %@", name]];
     }
     else {
         [_locationLabel setText:placeName];
@@ -48,19 +61,7 @@ NSString *placeName;
     dateString = [dateFormatter stringFromDate: [_visit arrivalDate]];
     [_timeLabel setText:dateString];
     
-    LKAddress *address = _visit.place.address;
-    NSArray *streetName = [address.streetName componentsSeparatedByString:@" "];
     
-    NSString *name = address.streetNumber;
-    for (int x = 0; x < [streetName count]; x++) {
-        /*NSString *current = [streetName objectAtIndex:x];
-        if ([current intValue] == 0) {
-            name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] capitalizedString]];
-        }
-        else {*/
-            name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] lowercaseString]];
-        //}
-    }
     [_address_0 setText:name];
     /*
     if ([streetName count] == 3) {

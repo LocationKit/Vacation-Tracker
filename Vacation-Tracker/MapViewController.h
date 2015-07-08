@@ -19,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButton;
+
 @property NSInteger settingsPickerIndex;
 
 - (void)reloadAnnotations;
