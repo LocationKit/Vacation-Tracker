@@ -7,11 +7,10 @@
 #import "LKPlace.h"
 
 
-@interface LKVisit : NSObject
+@interface LKVisit : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSDate *arrivalDate;
 @property (nonatomic, strong) NSDate *departureDate;
-
 @property (nonatomic, strong) LKPlace *place;
 
 @end

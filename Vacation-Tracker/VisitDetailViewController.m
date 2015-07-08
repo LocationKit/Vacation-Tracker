@@ -16,6 +16,7 @@
 @end
 
 NSString *placeName;
+NSString *name;
 
 @implementation VisitDetailViewController
 
@@ -26,14 +27,24 @@ NSString *placeName;
     
     placeName = [_visit place].venue.name;
     
-    [self addAnnotation];
+    LKAddress *address = _visit.place.address;
+    NSArray *streetName = [address.streetName componentsSeparatedByString:@" "];
     
+    name = address.streetNumber;
+    for (int x = 0; x < [streetName count]; x++) {
+        /*NSString *current = [streetName objectAtIndex:x];
+         if ([current intValue] == 0) {
+         name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] capitalizedString]];
+         }
+         else {*/
+        name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] lowercaseString]];
+        //}
+    }
+    [self addAnnotation];
     if (placeName == nil) {
-        [_locationLabel setText:@"Unregistered Place"];
-        [self.navigationItem setTitle:@"Unregistered Place"];
+        [self.navigationItem setTitle:[NSString stringWithFormat:@"Visit to %@", name]];
     }
     else {
-        [_locationLabel setText:placeName];
         [self.navigationItem setTitle:[NSString stringWithFormat:@"Visit to %@", placeName]];   // Sets navigation bar title to 'Visit to <place name>'
     }
     
@@ -48,14 +59,7 @@ NSString *placeName;
     dateString = [dateFormatter stringFromDate: [_visit arrivalDate]];
     [_timeLabel setText:dateString];
     
-    LKAddress *address = _visit.place.address;
-    NSArray *streetName = [address.streetName componentsSeparatedByString:@" "];
-    if ([streetName count] == 3) {
-        [_address_0 setText:[NSString stringWithFormat:@"%@ %@ %@ %@", address.streetNumber, [streetName[0] lowercaseString], [streetName[1] capitalizedString], streetName[2]]];
-    }
-    else {
-        [_address_0 setText:[NSString stringWithFormat:@"%@ %@ %@", address.streetNumber, [streetName[0] lowercaseString], [streetName[1] capitalizedString]]];
-    }
+    [_address_0 setText:name];
     [_address_1 setText:[NSString stringWithFormat:@"%@, %@", [address.locality capitalizedString], address.region]];
     
     [_categoryLabel setText:_visit.place.venue.category];
@@ -73,14 +77,15 @@ NSString *placeName;
 - (void)addAnnotation {
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     if (placeName == nil) {
-        [annotation setTitle:@"Unregistered Place"];
+        [annotation setTitle:[NSString stringWithFormat:@"Visit to %@", name]];
     }
     else {
         [annotation setTitle:placeName];
     }
     [annotation setCoordinate:_visit.place.address.coordinate];
     [_mapView setCenterCoordinate:annotation.coordinate];
-    [_mapView setRegion:MKCoordinateRegionMakeWithDistance([_mapView centerCoordinate], 1.0f / MILE_TO_METER, 1.0f / MILE_TO_METER)];
+    [_mapView setMapType:MKMapTypeHybrid];
+    [_mapView setRegion:MKCoordinateRegionMakeWithDistance([_mapView centerCoordinate], 0.5f / MILE_TO_METER, 0.5f / MILE_TO_METER)];
     [_mapView addAnnotation:annotation];
 }
 

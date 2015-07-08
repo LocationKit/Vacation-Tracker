@@ -17,8 +17,6 @@
 
 @property (strong, nonatomic) VTVisit *visit;
 
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;

@@ -1,10 +1,10 @@
 PODS:
-  - LocationKit (2.0.5)
+  - LocationKit (2.0.6)
 
 DEPENDENCIES:
   - LocationKit (~> 2.0.0)
 
 SPEC CHECKSUMS:
-  LocationKit: f46ac594b031df9b734b10726942edd3cd95fc9d
+  LocationKit: e730ce31be8c2d91312225ab58bc097a1a1c988e
 
 COCOAPODS: 0.37.2

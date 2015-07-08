@@ -47,6 +47,10 @@ NSUInteger indexToSet;
     }
 }
 
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return 30;
+}
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     [(MapViewController *)_parent setSettingsPickerIndex:row - 1];
     [(MapViewController *)_parent reloadAnnotations];
