@@ -21,7 +21,7 @@
     
     [self.navigationItem setTitle:[NSString stringWithFormat:@"Visits in %@", [[_trip tripName] capitalizedStringWithLocale:[NSLocale currentLocale]]]];   // Sets navigation bar title to 'Visits in <locale>'
     
-    _visits = [[_trip visitHandler] visits];
+    _visits = [[[_trip visitHandler] visits] copy];
     [_tableView reloadData];
     
     [VTTripHandler registerVisitObserver:^(NSNotification *note) {
@@ -29,9 +29,12 @@
             return;
         }
         if ([[note.object objectAtIndex:0] isEqualToString:[_trip tripName]]) {
-            _visits = [note.object objectAtIndex:1];
+            NSUInteger oldCount = [_visits count];
+            _visits = [[note.object objectAtIndex:1] copy];
+            if (!([[note.object objectAtIndex:1] count] < oldCount)) {
+                [_tableView reloadData];
+            }
         }
-        [_tableView reloadData];
     }];
     // Do any additional setup after loading the view.
 }
@@ -54,6 +57,36 @@
         cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
     }
     [cell setVisit:[self getVisitForIndex:indexPath.row]];
+    NSString *category = [self getVisitForIndex:indexPath.row].place.venue.category;
+    if (!category) {
+        [[cell imageView] setImage:[UIImage imageNamed:@"map-button-item"]];
+    }
+    else {
+        if ([category isEqualToString:@"Bars"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-bars"]];
+        }
+        else if ([category isEqualToString:@"Fitness Sports and Recreation"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-fitness"]];
+        }
+        else if ([category isEqualToString:@"Grocery"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-grocery"]];
+        }
+        else if ([category isEqualToString:@"Home and Garden"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-home-garden"]];
+        }
+        else if ([category isEqualToString:@"Personal Care and Services"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-personal-care"]];
+        }
+        else if ([category isEqualToString:@"Restaurants"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-restaurant"]];
+        }
+        else if ([category isEqualToString:@"Retail"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-retail"]];
+        }
+        else {
+            [[cell imageView] setImage:[UIImage imageNamed:@"map-button-item"]];
+        }
+    }
     return cell;
 }
 
@@ -65,8 +98,12 @@
         
     }];
     UIAlertAction *continueAction = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        [self setVisits:[[NSMutableArray alloc] init]];
-        [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:[_trip tripName], _visits, nil]];
+        _visits = [[NSMutableArray alloc] init];
+        [[_trip visitHandler] setVisits:[[NSMutableArray alloc] init]];
+        [[VTTripHandler tripNames] removeObject:[_trip tripName]];
+        [[VTTripHandler trips] removeObject:_trip];
+        [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:[_trip tripName], [_visits copy], nil]];
+        [[self navigationController] popViewControllerAnimated:YES];
     }];
     [confirmation addAction:cancelAction];
     [confirmation addAction:continueAction];
@@ -84,6 +121,17 @@
         
         VTVisitHandler *visitHandler = [[trips objectAtIndex:[tripNames indexOfObject:[_trip tripName]]] visitHandler];
         [visitHandler removeVisitAtIndex:indexPath.row];
+        _visits = [[visitHandler visits] copy];
+        [_tableView deleteRowsAtIndexPaths:[[NSArray alloc] initWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationLeft];
+        
+        if ([_visits count] == 0) {
+            _visits = [[NSMutableArray alloc] init];
+            [[_trip visitHandler] setVisits:[[NSMutableArray alloc] init]];
+            [[VTTripHandler tripNames] removeObject:[_trip tripName]];
+            [[VTTripHandler trips] removeObject:_trip];
+            [VTTripHandler notifyVisitChange:[[NSArray alloc] initWithObjects:[_trip tripName], [_visits copy], nil]];
+            [[self navigationController] popViewControllerAnimated:YES];
+        }
     }
 }
 

@@ -52,9 +52,14 @@ NSUInteger indexToSet;
     return 30;
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    [(MapViewController *)_parent setSettingsPickerIndex:row - 1];
+- (IBAction)doneTapped:(id)sender {
+    [(MapViewController *)_parent setSettingsPickerIndex:[_timePicker selectedRowInComponent:0] - 1];
     [(MapViewController *)_parent reloadAnnotations];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)cancelTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setSelectedRow:(NSUInteger)index fromSender:(UIViewController *)sender {

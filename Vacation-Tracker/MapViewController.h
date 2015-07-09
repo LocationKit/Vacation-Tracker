@@ -21,6 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButton;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *displayPrefs;
+
 @property NSInteger settingsPickerIndex;
 
 - (void)reloadAnnotations;
