@@ -56,6 +56,15 @@
                                     <action selector="displayPrefsTapped:" destination="DvO-B2-Fi8" eventType="valueChanged" id="utt-rc-IMY"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7g4-6l-FTI">
+                                <rect key="frame" x="0.0" y="65" width="56" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="map-button-item"/>
+                                <connections>
+                                    <action selector="markTapped:" destination="DvO-B2-Fi8" eventType="touchUpInside" id="vHn-Aa-H2C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -78,7 +87,7 @@
                         <outlet property="searchButton" destination="JwO-C5-bRD" id="n7K-E8-qEz"/>
                         <outlet property="settingsButton" destination="QgL-sS-yew" id="fnG-gc-a3Q"/>
                         <outlet property="visitsButton" destination="yw4-nk-xGM" id="oaU-GY-S4x"/>
-                        <segue destination="pTc-ic-cYN" kind="push" identifier="ShowMapSettingsID" id="6pB-vG-wiY"/>
+                        <segue destination="taT-nz-9Ky" kind="modal" identifier="ShowMapSettingsID" modalTransitionStyle="coverVertical" id="6pB-vG-wiY"/>
                         <segue destination="pHW-44-aCg" kind="push" identifier="MapToVisitsID" id="rVk-hF-Qaq"/>
                         <segue destination="gGf-Ye-vKL" kind="push" identifier="MapToVisitDetailID" id="f2T-w7-bP2"/>
                     </connections>
@@ -113,14 +122,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="pvq-Cp-YPE"/>
+                    <navigationItem key="navigationItem" title="Settings" id="pvq-Cp-YPE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mpg-x6-rWe">
+                            <connections>
+                                <action selector="cancelTapped:" destination="pTc-ic-cYN" id="P0g-Mi-j9m"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="sJQ-Ps-tWe">
+                            <connections>
+                                <action selector="doneTapped:" destination="pTc-ic-cYN" id="dCu-E1-RgD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="timePicker" destination="fQI-ls-t1c" id="KUz-gE-a2a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIe-sh-5kX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1337" y="-579"/>
+            <point key="canvasLocation" x="904" y="-650"/>
         </scene>
         <!--Visit to <trip location>-->
         <scene sceneID="dcd-FG-wog">
@@ -138,14 +158,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUMBER" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="GJC-Av-hH0">
-                                <rect key="frame" x="125.9999997195075" y="90" width="178" height="21"/>
+                                <rect key="frame" x="125.99999971950754" y="90" width="178" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY/STATE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="JD5-tW-wdg">
-                                <rect key="frame" x="125.9999997195075" y="108" width="178" height="21"/>
+                                <rect key="frame" x="125.99999971950754" y="108" width="178" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -414,7 +434,7 @@
         <scene sceneID="4gy-hq-YZj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GIZ-in-ko0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="map-button-item" id="wnX-mq-Lsy"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map_icon6" id="wnX-mq-Lsy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1lw-pK-T5i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -429,10 +449,29 @@
             </objects>
             <point key="canvasLocation" x="492" y="36"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QzV-zB-V7d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="taT-nz-9Ky" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JpW-VB-rLh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pTc-ic-cYN" kind="relationship" relationship="rootViewController" id="qgy-ox-i7z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="idL-9x-f0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1337" y="-650"/>
+        </scene>
     </scenes>
     <resources>
         <image name="list-button-item" width="22" height="22"/>
         <image name="map-button-item" width="22" height="22"/>
+        <image name="map_icon6" width="40" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

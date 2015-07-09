@@ -280,13 +280,27 @@ static BOOL state = YES; // debug only
     [self presentViewController:searchInput animated:YES completion:nil];
 }
 
+- (IBAction)markTapped:(id)sender {
+    [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
+        if (error == nil && place != nil) {
+            NSLog(@"User is in %@", place.venue.name);
+            VTVisit *visit = [[VTVisit alloc] init];
+            [visit setPlace:place];
+            [visit setArrivalDate:[NSDate date/*WithTimeIntervalSince1970:0*/]]; // Placeholder time
+            if (visit.place.venue.name != nil) {
+                [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
+            }
+        }
+    }];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Segue to the map settings.
     if ([[segue identifier] isEqualToString:@"ShowMapSettingsID"]) {
-        [[segue destinationViewController] setSelectedRow:[sender settingsPickerIndex] fromSender:self];
+        [[[[segue destinationViewController] viewControllers] objectAtIndex:0] setSelectedRow:[sender settingsPickerIndex] fromSender:self];
     }
     // Segue to a given trip's visits.
     else if ([[segue identifier] isEqualToString:@"MapToVisitsID"]) {

@@ -44,7 +44,9 @@ static NSMutableArray *tripNames;
 + (void)notifyVisitChange:(NSArray *)data {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:VTVisitsChangedNotification object:data];
-    [[[trips objectAtIndex:[tripNames indexOfObject:[data objectAtIndex:0]]] visitHandler] setVisits:[data objectAtIndex:1]];
+    if ([[data objectAtIndex:1] count] != 0) {
+        [[[trips objectAtIndex:[tripNames indexOfObject:[data objectAtIndex:0]]] visitHandler] setVisits:[data objectAtIndex:1]];
+    }
     [VTTripHandler notifyTripChange:trips];
     [VTTripHandler saveTripData];
 }
