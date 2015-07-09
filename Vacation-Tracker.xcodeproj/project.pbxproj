@@ -32,6 +32,7 @@
 		FD813CDC1B3A513800219108 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDB1B3A513800219108 /* Images.xcassets */; };
 		FD813CDF1B3A513800219108 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDD1B3A513800219108 /* LaunchScreen.xib */; };
 		FD813CEB1B3A513900219108 /* Vacation_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CEA1B3A513900219108 /* Vacation_TrackerTests.m */; };
+		FDEA6CF31B4EDD1B00E416E8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEA6CF21B4EDD1B00E416E8 /* InfoViewController.m */; };
 		FDECC1C41B42D64100A0D81A /* VTVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECC1C31B42D64100A0D81A /* VTVisit.m */; };
 		FDECC1C81B443D4E00A0D81A /* MapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECC1C71B443D4E00A0D81A /* MapSettingsViewController.m */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,8 @@
 		FD813CE41B3A513900219108 /* Vacation-TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vacation-TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD813CE91B3A513900219108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD813CEA1B3A513900219108 /* Vacation_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vacation_TrackerTests.m; sourceTree = "<group>"; };
+		FDEA6CF11B4EDD1B00E416E8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		FDEA6CF21B4EDD1B00E416E8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		FDECC1C21B42D64100A0D81A /* VTVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisit.h; sourceTree = "<group>"; };
 		FDECC1C31B42D64100A0D81A /* VTVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisit.m; sourceTree = "<group>"; };
 		FDECC1C61B443D4E00A0D81A /* MapSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSettingsViewController.h; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 				FD3CBF231B3B1A02007C47C2 /* TabBarViewController.h */,
 				FD3CBF241B3B1A02007C47C2 /* TabBarViewController.m */,
 				FD199B9A1B3C3E0C00BC756D /* LKHandlers */,
+				FDEA6CF41B4EDD2000E416E8 /* Info */,
 				FDECC1C51B443D3000A0D81A /* Map */,
 				FD199B991B3C3DF500BC756D /* List */,
 				FD813CDD1B3A513800219108 /* LaunchScreen.xib */,
@@ -253,6 +257,15 @@
 				FD813CE91B3A513900219108 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDEA6CF41B4EDD2000E416E8 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				FDEA6CF11B4EDD1B00E416E8 /* InfoViewController.h */,
+				FDEA6CF21B4EDD1B00E416E8 /* InfoViewController.m */,
+			);
+			name = Info;
 			sourceTree = "<group>";
 		};
 		FDECC1C51B443D3000A0D81A /* Map */ = {
@@ -426,6 +439,7 @@
 				FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */,
 				FD4976161B4C49F20028FDE7 /* VTVisitAnnotation.m in Sources */,
 				FDECC1C41B42D64100A0D81A /* VTVisit.m in Sources */,
+				FDEA6CF31B4EDD1B00E416E8 /* InfoViewController.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
 				FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */,
 				FDECC1C81B443D4E00A0D81A /* MapSettingsViewController.m in Sources */,

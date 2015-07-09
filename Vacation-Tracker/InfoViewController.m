@@ -1,42 +1,32 @@
 //
-//  TabBarViewController.m
+//  InfoViewController.m
 //  Vacation-Tracker
 //
-//  Created by Spencer Atkin on 6/24/15.
+//  Created by Spencer Atkin on 7/9/15.
 //  Copyright (c) 2015 Spencer Atkin. All rights reserved.
 //
 
-#import "TabBarViewController.h"
 #import "InfoViewController.h"
+#import "TabBarViewController.h"
 
-@interface TabBarViewController ()
+@interface InfoViewController ()
 
 @end
 
-@implementation TabBarViewController
+@implementation InfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
-    {
-        [self performSegueWithIdentifier:@"ShowInfoSegueID" sender:self];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-}
-
-- (void)loadView {
-    [super loadView];
-    [[self tabBar] setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];  // Sets tab bar tint color to SocialRadar's orange
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)xTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
