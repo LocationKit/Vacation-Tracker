@@ -62,8 +62,26 @@
         [[cell imageView] setImage:[UIImage imageNamed:@"map-button-item"]];
     }
     else {
-        if ([category isEqualToString:@"Bars"]) {
+        if ([category isEqualToString:@"Automotive"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-automotive"]];
+        }
+        else if ([category isEqualToString:@"Bars and Nightlife"]) {
             [[cell imageView] setImage:[UIImage imageNamed:@"category-bars"]];
+        }
+        else if ([category isEqualToString:@"Community and Public Services"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-community"]];
+        }
+        else if ([category isEqualToString:@"Culture and Attractions"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-attractions"]];
+        }
+        else if ([category isEqualToString:@"Education"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-education"]];
+        }
+        else if ([category isEqualToString:@"Entertainment"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-entertainment"]];
+        }
+        else if ([category isEqualToString:@"Financial"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-financial"]];
         }
         else if ([category isEqualToString:@"Fitness Sports and Recreation"]) {
             [[cell imageView] setImage:[UIImage imageNamed:@"category-fitness"]];
@@ -74,14 +92,32 @@
         else if ([category isEqualToString:@"Home and Garden"]) {
             [[cell imageView] setImage:[UIImage imageNamed:@"category-home-garden"]];
         }
+        else if ([category isEqualToString:@"Legal"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-legal"]];
+        }
+        else if ([category isEqualToString:@"Medical"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-medical"]];
+        }
+        else if ([category isEqualToString:@"Organizations and Associations"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-professional"]];
+        }
         else if ([category isEqualToString:@"Personal Care and Services"]) {
             [[cell imageView] setImage:[UIImage imageNamed:@"category-personal-care"]];
+        }
+        else if ([category isEqualToString:@"Professional"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-professional"]];
+        }
+        else if ([category isEqualToString:@"Residential"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-residential"]];
         }
         else if ([category isEqualToString:@"Restaurants"]) {
             [[cell imageView] setImage:[UIImage imageNamed:@"category-restaurant"]];
         }
         else if ([category isEqualToString:@"Retail"]) {
             [[cell imageView] setImage:[UIImage imageNamed:@"category-retail"]];
+        }
+        else if ([category isEqualToString:@"Travel"]) {
+            [[cell imageView] setImage:[UIImage imageNamed:@"category-travel"]];
         }
         else {
             [[cell imageView] setImage:[UIImage imageNamed:@"map-button-item"]];

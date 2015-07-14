@@ -17,7 +17,30 @@
     
     // Place name
     if (placeName == nil) {
-        [_placeName setText:@"Unknown Place"];
+        placeName = [visit place].venue.name;
+        
+        LKAddress *address = visit.place.address;
+        NSArray *streetName = [address.streetName componentsSeparatedByString:@" "];
+        
+        NSString *name = address.streetNumber;
+        for (int x = 0; x < [streetName count]; x++) {
+            NSString *currentComponent = [streetName objectAtIndex:x];
+            // If the component contains a number, ('19th' for example) it should be lowercase.
+            if ([currentComponent intValue] != 0) {
+                name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] lowercaseString]];
+            }
+            else {
+                // If the component has length one, or is equal to NE, NW, SE, or SW it should be uppercase.
+                if ([currentComponent length] == 1 || [currentComponent isEqualToString:@"NE"] || [currentComponent isEqualToString:@"NW"] || [currentComponent isEqualToString:@"SE"] || [currentComponent isEqualToString:@"SW"]) {
+                    name = [name stringByAppendingFormat:@" %@", [currentComponent uppercaseString]];
+                }
+                // Otherwise it should simply be capitalized.
+                else {
+                    name = [name stringByAppendingFormat:@" %@", [[streetName objectAtIndex:x] capitalizedString]];
+                }
+            }
+        }
+        [_placeName setText:name];
     }
     else {
         [_placeName setText:[visit place].venue.name];
