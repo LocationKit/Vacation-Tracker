@@ -8,8 +8,6 @@
 
 #import "VisitViewCell.h"
 
-#define DAY 86400.0f
-
 @implementation VisitViewCell
 
 - (void)setVisit:(VTVisit *)visit {
@@ -33,16 +31,18 @@
     [_time setText:dateString];
     
     // Date
-    NSTimeInterval difference = [[NSDate date] timeIntervalSinceDate:[visit arrivalDate]];
-    if (difference < DAY && difference >= 0) {
+    NSTimeInterval difference = [[NSDate date] timeIntervalSinceDate:[visit arrivalDate]];  // Difference between now and the arrival date
+    difference -= fmod(difference, 86400.0); // Number of seconds to the day of the arrival date
+    difference /= 86400.0;                   // Number of days (86400 seconds in 1 day)
+    if (difference < 1.0 && difference >= 0.0) {
         [_date setText:@"Today"];
     }
     
-    else if (difference < (2.0f * DAY) && difference >= DAY) {
+    else if (difference < 2.0 && difference >= 1.0) {
         [_date setText:@"Yesterday"];
     }
     
-    else if (difference < (8.0f * DAY) && difference >= (2.0f * DAY)) {
+    else if (difference < 8.0 && difference >= 2.0) {
         dateFormatter.dateFormat = @"EEEE";
         [_date setText:[NSString stringWithFormat:@"Last %@", [dateFormatter stringFromDate:[visit arrivalDate]]]];
     }
