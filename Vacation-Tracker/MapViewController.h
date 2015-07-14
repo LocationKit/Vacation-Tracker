@@ -23,6 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *displayPrefs;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+
 @property NSInteger settingsPickerIndex;
 
 - (void)reloadAnnotations;

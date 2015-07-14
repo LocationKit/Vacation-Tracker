@@ -21,6 +21,8 @@
 
 @property NSMutableDictionary *annotations; // Stores the annotation by their venueID.
 
+@property MKUserTrackingBarButtonItem *trackingButton;
+
 @end
 
 @implementation MapViewController
@@ -29,6 +31,11 @@ static BOOL state = YES; // debug only
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _trackingButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:_mapView];
+    NSMutableArray *items = [[NSMutableArray alloc] initWithArray:_toolbar.items];
+    [items insertObject:_trackingButton atIndex:0];
+    [_toolbar setItems:items];
+    
     [_settingsButton setTitle:@"\u2699"]; // Unicode gear icon
     UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:f1, NSFontAttributeName, nil];
@@ -223,11 +230,11 @@ static BOOL state = YES; // debug only
 }
 
 // When the settings button is tapped, takes the user to the settings page.
-- (IBAction)settingsTapped:(id)sender {
+- (IBAction)didTapSettings:(id)sender {
     [self performSegueWithIdentifier:@"ShowMapSettingsID" sender:self];
 }
 
-- (IBAction)displayPrefsTapped:(id)sender {
+- (IBAction)didTapDisplayPrefs:(id)sender {
     if ([[[_visitsButton titleLabel] text] isEqualToString:@"Hide Visits"]) {
         [self removeVisitsFromMap];
         [self addAnnotations];
@@ -235,8 +242,9 @@ static BOOL state = YES; // debug only
 }
 
 // Displays an alert that allows the user to type in a search term.
-- (IBAction)searchTapped:(id)sender {
-    // Alert controller with text entry, cancel, and search buttons.
+- (IBAction)didTapSearch:(id)sender {
+    [self performSegueWithIdentifier:@"NearbyPlacesSegueID" sender:self];
+    /*// Alert controller with text entry, cancel, and search buttons.
     UIAlertController *searchInput = [UIAlertController alertControllerWithTitle:@"Search" message:@"Search for places around you" preferredStyle:UIAlertControllerStyleAlert];
     [searchInput addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         [textField setAutocorrectionType:UITextAutocorrectionTypeYes];
@@ -277,22 +285,40 @@ static BOOL state = YES; // debug only
     }];
     [searchInput addAction:cancelAction];
     [searchInput addAction:searchAction];
-    [self presentViewController:searchInput animated:YES completion:nil];
+    [self presentViewController:searchInput animated:YES completion:nil];*/
 }
 
-- (IBAction)markTapped:(id)sender {
+- (IBAction)didTapMark:(id)sender {
+    UIAlertController *locating = [UIAlertController alertControllerWithTitle:@"Locating..." message:@"Getting your location." preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:locating animated:YES completion:nil];
     [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
         if (error == nil && place != nil) {
-            NSLog(@"User is in %@", place.venue.name);
+            NSLog(@"User is in %@ (manual)", place.venue.name);
             VTVisit *visit = [[VTVisit alloc] init];
             [visit setPlace:place];
             [visit setArrivalDate:[NSDate date/*WithTimeIntervalSince1970:0*/]]; // Placeholder time
-            if (visit.place.venue.name != nil) {
-                [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
-            }
+            [VTTripHandler addVisit:visit forTrip:[[VTTrip alloc] initWithName:visit.place.address.locality]];
+            [locating dismissViewControllerAnimated:YES completion:nil];
+        }
+        else {
+            [locating dismissViewControllerAnimated:YES completion:^{
+                [self showErrorAlertWithMessage:@"Could not determine current place."];
+            }];
+            
         }
     }];
 }
+
+- (void)showErrorAlertWithMessage:(NSString *)message {
+    UIAlertController *error = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *accept = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [error addAction:accept];
+    [error.view setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];
+    [self presentViewController:error animated:YES completion:nil];
+}
+
 
 #pragma mark - Navigation
 
