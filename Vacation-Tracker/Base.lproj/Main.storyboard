@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="3bf-8V-qiR">
-                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="408"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="DvO-B2-Fi8" id="d8F-Jx-WOR"/>
@@ -28,23 +28,17 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1Q-G5-xPh">
-                                <rect key="frame" x="190.99999870687935" y="106" width="56" height="37"/>
+                                <rect key="frame" x="190.9999965364527" y="106" width="56" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yw4-nk-xGM">
-                                <rect key="frame" x="218" y="489" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                            <view contentMode="scaleToFill" id="iQU-e5-tTc">
+                                <rect key="frame" x="0.0" y="65" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Show Visits">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeVisitVisibility:" destination="DvO-B2-Fi8" eventType="touchUpInside" id="2Zr-Z2-ywe"/>
-                                </connections>
-                            </button>
+                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="A1Y-Vt-C9V">
                                 <rect key="frame" x="58" y="70" width="204" height="29"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -53,30 +47,48 @@
                                     <segment title="Visits"/>
                                 </segments>
                                 <connections>
-                                    <action selector="displayPrefsTapped:" destination="DvO-B2-Fi8" eventType="valueChanged" id="utt-rc-IMY"/>
+                                    <action selector="didTapDisplayPrefs:" destination="DvO-B2-Fi8" eventType="valueChanged" id="CqE-1a-153"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7g4-6l-FTI">
                                 <rect key="frame" x="0.0" y="65" width="56" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="map-button-item"/>
                                 <connections>
-                                    <action selector="markTapped:" destination="DvO-B2-Fi8" eventType="touchUpInside" id="vHn-Aa-H2C"/>
+                                    <action selector="didTapMark:" destination="DvO-B2-Fi8" eventType="touchUpInside" id="Ajg-eZ-7lc"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="AEn-Mm-ybu">
+                                <rect key="frame" x="0.0" y="473" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="J9Z-xt-w1e"/>
+                                    <barButtonItem style="plain" id="zlM-Vv-E4J">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yw4-nk-xGM">
+                                            <rect key="frame" x="222" y="7" width="82" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                            <state key="normal" title="Show Visits">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="changeVisitVisibility:" destination="DvO-B2-Fi8" eventType="touchUpInside" id="6xw-qJ-zKi"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="0cg-9C-5Bn">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="QgL-sS-yew">
                             <connections>
-                                <action selector="settingsTapped:" destination="DvO-B2-Fi8" id="FSv-FV-pTR"/>
+                                <action selector="didTapSettings:" destination="DvO-B2-Fi8" id="hd9-ey-3J0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="JwO-C5-bRD">
                             <connections>
-                                <action selector="searchTapped:" destination="DvO-B2-Fi8" id="hKz-yX-zhv"/>
+                                <action selector="didTapSearch:" destination="DvO-B2-Fi8" id="zUY-m6-G1z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -86,15 +98,44 @@
                         <outlet property="mapView" destination="3bf-8V-qiR" id="1sR-z8-H2h"/>
                         <outlet property="searchButton" destination="JwO-C5-bRD" id="n7K-E8-qEz"/>
                         <outlet property="settingsButton" destination="QgL-sS-yew" id="fnG-gc-a3Q"/>
+                        <outlet property="toolbar" destination="AEn-Mm-ybu" id="CL7-6f-F0h"/>
                         <outlet property="visitsButton" destination="yw4-nk-xGM" id="oaU-GY-S4x"/>
                         <segue destination="taT-nz-9Ky" kind="modal" identifier="ShowMapSettingsID" modalTransitionStyle="coverVertical" id="6pB-vG-wiY"/>
                         <segue destination="pHW-44-aCg" kind="push" identifier="MapToVisitsID" id="rVk-hF-Qaq"/>
                         <segue destination="gGf-Ye-vKL" kind="push" identifier="MapToVisitDetailID" id="f2T-w7-bP2"/>
+                        <segue destination="G5O-aG-JpR" kind="push" identifier="NearbyPlacesSegueID" id="4Ab-s2-Oah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL4-C0-xFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="904" y="36"/>
+        </scene>
+        <!--Nearby Places-->
+        <scene sceneID="9zH-Vd-ofi">
+            <objects>
+                <viewController id="G5O-aG-JpR" customClass="VTFindViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="beH-dT-rwD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="gU3-4H-jZm">
+                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="G5O-aG-JpR" id="3bp-Yo-6eF"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nearby Places" id="N3e-25-U8V"/>
+                    <connections>
+                        <outlet property="mapView" destination="gU3-4H-jZm" id="OsN-il-wjZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHx-Es-LXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1331" y="36"/>
         </scene>
         <!--Settings-->
         <scene sceneID="EXj-2A-aDw">
@@ -205,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cg-uq-6U8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1337" y="36"/>
+            <point key="canvasLocation" x="1753" y="-650"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="KUB-1f-6yR">
@@ -290,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZh-HH-m7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="719"/>
+            <point key="canvasLocation" x="1331" y="719"/>
         </scene>
         <!--Visit to <trip location>-->
         <scene sceneID="JVm-R6-A7v">
@@ -385,7 +426,7 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QLw-Cc-HyL">
-                                <rect key="frame" x="16" y="478.00000330596316" width="92" height="21"/>
+                                <rect key="frame" x="16" y="478.00000535654249" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -409,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3j-v6-ACW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="719"/>
+            <point key="canvasLocation" x="1753" y="719"/>
         </scene>
         <!--List-->
         <scene sceneID="gyx-nD-aOi">
@@ -465,7 +506,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idL-9x-f0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1337" y="-650"/>
+            <point key="canvasLocation" x="1331" y="-650"/>
         </scene>
     </scenes>
     <resources>
