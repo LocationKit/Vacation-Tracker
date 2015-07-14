@@ -289,7 +289,7 @@ static BOOL state = YES; // debug only
 }
 
 - (IBAction)didTapMark:(id)sender {
-    UIAlertController *locating = [UIAlertController alertControllerWithTitle:@"Locating..." message:@"Getting your location." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *locating = [UIAlertController alertControllerWithTitle:@"Locating..." message:@"Finding your current location." preferredStyle:UIAlertControllerStyleAlert];
     [self presentViewController:locating animated:YES completion:nil];
     [[LocationKit sharedInstance] getCurrentPlaceWithHandler:^(LKPlace *place, NSError *error) {
         if (error == nil && place != nil) {
@@ -302,7 +302,7 @@ static BOOL state = YES; // debug only
         }
         else {
             [locating dismissViewControllerAnimated:YES completion:^{
-                [self showErrorAlertWithMessage:@"Could not determine current place."];
+                [self showErrorAlertWithMessage:@"Could not determine your current place."];
             }];
             
         }

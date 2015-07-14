@@ -80,7 +80,7 @@ UIAlertController *searching;
         else {
             NSLog(@"%@", error);
             [searching dismissViewControllerAnimated:NO completion:nil];
-            [self showErrorWithMessage:@"Could not find current location"];
+            [self showErrorWithMessage:@"Could not find your current location"];
             return;
         }
     }];

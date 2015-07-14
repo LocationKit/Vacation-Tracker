@@ -92,7 +92,7 @@
 
 // Displays an alert view confirming the decision to clear all visits.
 - (IBAction)clearVisits:(id)sender {
-    UIAlertController *confirmation = [UIAlertController alertControllerWithTitle:@"Are You Sure?" message:@"This will clear all visits." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *confirmation = [UIAlertController alertControllerWithTitle:@"Are You Sure?" message:@"This will clear all visits.\nThis action cannot be undone." preferredStyle:UIAlertControllerStyleAlert];
     [confirmation.view setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         
