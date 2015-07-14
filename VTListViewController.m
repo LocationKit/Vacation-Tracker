@@ -93,11 +93,8 @@
 // Displays an alert view confirming the decision to clear all visits.
 - (IBAction)clearVisits:(id)sender {
     UIAlertController *confirmation = [UIAlertController alertControllerWithTitle:@"Are You Sure?" message:@"This will clear all visits.\nThis action cannot be undone." preferredStyle:UIAlertControllerStyleAlert];
-    [confirmation.view setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        
-    }];
-    UIAlertAction *continueAction = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *continueAction = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         _visits = [[NSMutableArray alloc] init];
         [[_trip visitHandler] setVisits:[[NSMutableArray alloc] init]];
         [[VTTripHandler tripNames] removeObject:[_trip tripName]];
@@ -107,6 +104,7 @@
     }];
     [confirmation addAction:cancelAction];
     [confirmation addAction:continueAction];
+    [confirmation.view setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];
     [self presentViewController:confirmation animated:YES completion:nil];
 }
 

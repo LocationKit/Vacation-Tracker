@@ -28,14 +28,14 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1Q-G5-xPh">
-                                <rect key="frame" x="190.9999965364527" y="106" width="56" height="37"/>
+                                <rect key="frame" x="190.99999289351962" y="106" width="56" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="iQU-e5-tTc">
-                                <rect key="frame" x="0.0" y="65" width="320" height="36"/>
+                                <rect key="frame" x="0.0" y="65" width="275" height="36"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                             </view>
@@ -411,13 +411,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EO9-vt-tsw">
-                                <rect key="frame" x="16" y="194" width="75" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" id="Jek-st-IFE">
                                 <rect key="frame" x="209.99999971950751" y="474" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -426,8 +419,15 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QLw-Cc-HyL">
-                                <rect key="frame" x="16" y="478.00000535654249" width="92" height="21"/>
+                                <rect key="frame" x="16" y="478" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EO9-vt-tsw">
+                                <rect key="frame" x="16" y="194" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -435,7 +435,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Visit to &lt;trip location&gt;" id="hgG-q7-Zzj"/>
+                    <navigationItem key="navigationItem" title="Visit to &lt;trip location&gt;" id="hgG-q7-Zzj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="sUx-i7-gZO">
+                            <connections>
+                                <action selector="didTapCommnentsButton:" destination="yAT-P0-jYe" id="D3f-Iz-MOA"/>
+                                <segue destination="cRa-M3-SqE" kind="modal" identifier="DetailsToCommentsSegueID" modalTransitionStyle="coverVertical" id="8YL-oj-Dyf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="address_0" destination="Jjf-cq-pbk" id="n4X-ig-Nf8"/>
                         <outlet property="address_1" destination="bIT-8O-fzX" id="j1I-9x-3fZ"/>
@@ -451,6 +458,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3j-v6-ACW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1753" y="719"/>
+        </scene>
+        <!--Comments-->
+        <scene sceneID="9JQ-Z2-xPt">
+            <objects>
+                <viewController id="bhi-eB-DiU" customClass="VTVisitCommentsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fhh-X4-V2n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jxk-Fs-3LT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bhi-eB-DiU" id="QCv-2A-To1"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Comments" id="pbE-NX-sBd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6fe-ci-vhe">
+                            <connections>
+                                <action selector="didTapCancel:" destination="bhi-eB-DiU" id="vS3-9m-dV8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="iWD-ep-gXG">
+                            <connections>
+                                <action selector="didTapDone:" destination="bhi-eB-DiU" id="xlc-7g-Eck"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="commentsEntry" destination="jxk-Fs-3LT" id="uSR-l8-v1R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9M-AF-zcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2174" y="36"/>
         </scene>
         <!--List-->
         <scene sceneID="gyx-nD-aOi">
@@ -507,6 +557,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idL-9x-f0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1331" y="-650"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xuq-ad-P9f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cRa-M3-SqE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sfk-uq-40p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bhi-eB-DiU" kind="relationship" relationship="rootViewController" id="N37-L4-4PQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0K0-l6-nfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1753" y="36"/>
         </scene>
     </scenes>
     <resources>

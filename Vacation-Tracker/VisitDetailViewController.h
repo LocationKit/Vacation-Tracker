@@ -10,6 +10,7 @@
 #import <LocationKit/LocationKit.h>
 #import <MapKit/MapKit.h>
 #import "VTVisit.h"
+#import "VTVisitCommentsViewController.h"
 
 @interface VisitDetailViewController : UIViewController <MKMapViewDelegate>
 

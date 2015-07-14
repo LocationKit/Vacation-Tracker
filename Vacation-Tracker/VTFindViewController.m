@@ -78,10 +78,29 @@ UIAlertController *searching;
             }];
         }
         else {
-            NSLog(@"%@", error);
-            [searching dismissViewControllerAnimated:NO completion:nil];
-            [self showErrorWithMessage:@"Could not find your current location"];
-            return;
+            if (_mapView.userLocation != nil) {
+                location = (CLLocation *)_mapView.userLocation;
+                [_mapView setRegion:MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)];
+                [self presentViewController:searching animated:NO completion:nil];
+                LKSearchRequest *searchRequest = [[LKSearchRequest alloc] initWithLocation:location];
+                [[LocationKit sharedInstance] searchForPlacesWithRequest:searchRequest completionHandler:^(NSArray *places, NSError *error) {
+                    if (error == nil) {
+                        [self markPlaces:places];
+                    }
+                    else {
+                        NSLog(@"%@", error);
+                        [searching dismissViewControllerAnimated:NO completion:nil];
+                        [self showErrorWithMessage:@"Could not find places"];
+                        return;
+                    }
+                }];
+            }
+            else {
+                NSLog(@"%@", error);
+                [searching dismissViewControllerAnimated:NO completion:nil];
+                [self showErrorWithMessage:@"Could not find your current location"];
+                return;
+            }
         }
     }];
 }

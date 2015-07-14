@@ -23,6 +23,8 @@
 
 @property (nonatomic) double rating;
 
+@property (strong, nonatomic) NSString *comments;
+
 - (id)init;
 
 - (id)initWithLKVisit:(LKVisit *)visit;

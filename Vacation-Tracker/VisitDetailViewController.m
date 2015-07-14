@@ -70,7 +70,13 @@ NSString *name;
     [_address_0 setText:name];
     [_address_1 setText:[NSString stringWithFormat:@"%@, %@ %@", [address.locality capitalizedString], address.region, address.postalCode]];
     
-    [_categoryLabel setText:_visit.place.venue.category];
+    if (_visit.place.venue.category != nil) {
+        [_categoryLabel setText:_visit.place.venue.category];
+    }
+    
+    else {
+        [_categoryLabel setText:@"None"];
+    }
     
     [_localityLabel setText:_visit.place.address.locality];
     // Do any additional setup after loading the view.
@@ -104,14 +110,19 @@ NSString *name;
     // Dispose of any resources that can be recreated.
 }
 
-/*
+- (IBAction)didTapCommnentsButton:(id)sender {
+    [self performSegueWithIdentifier:@"DetailsToCommentsSegueID" sender:self];
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"DetailsToCommentsSegueID"]) {
+        [[[[segue destinationViewController] viewControllers] objectAtIndex:0] setVisit:_visit];
+    }
 }
-*/
+
 
 @end

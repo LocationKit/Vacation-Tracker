@@ -36,6 +36,7 @@
         [self setDepartureDate:[aDecoder decodeObjectForKey:@"self.departureDate"]];
         [self setPlace:[aDecoder decodeObjectForKey:@"self.place"]];
         [self setRating:[aDecoder decodeDoubleForKey:@"self.rating"]];
+        [self setComments:[aDecoder decodeObjectForKey:@"self.comments"]];
     }
     return self;
 }
@@ -45,6 +46,7 @@
     [aCoder encodeObject:[self departureDate] forKey:@"self.departureDate"];
     [aCoder encodeObject:[self place] forKey:@"self.place"];
     [aCoder encodeDouble:[self rating] forKey:@"self.rating"];
+    [aCoder encodeObject:[self comments] forKey:@"self.comments"];
 }
 
 @end

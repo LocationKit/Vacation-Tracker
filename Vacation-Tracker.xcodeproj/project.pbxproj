@@ -23,6 +23,7 @@
 		FD3CBF221B3B110A007C47C2 /* VisitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF211B3B110A007C47C2 /* VisitDetailViewController.m */; };
 		FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF241B3B1A02007C47C2 /* TabBarViewController.m */; };
 		FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF271B3B4799007C47C2 /* MapViewController.m */; };
+		FD40400D1B5578A5000D5CD8 /* VTVisitCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD40400C1B5578A5000D5CD8 /* VTVisitCommentsViewController.m */; };
 		FD4976131B4C45770028FDE7 /* VTTripAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4976121B4C45770028FDE7 /* VTTripAnnotation.m */; };
 		FD4976161B4C49F20028FDE7 /* VTVisitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4976151B4C49F20028FDE7 /* VTVisitAnnotation.m */; };
 		FD80521F1B4D73D2007E9071 /* VTMapVisitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD80521E1B4D73D2007E9071 /* VTMapVisitDetailViewController.m */; };
@@ -77,6 +78,8 @@
 		FD3CBF241B3B1A02007C47C2 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		FD3CBF261B3B4799007C47C2 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		FD3CBF271B3B4799007C47C2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		FD40400B1B5578A5000D5CD8 /* VTVisitCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisitCommentsViewController.h; sourceTree = "<group>"; };
+		FD40400C1B5578A5000D5CD8 /* VTVisitCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisitCommentsViewController.m; sourceTree = "<group>"; };
 		FD4976111B4C45770028FDE7 /* VTTripAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTripAnnotation.h; sourceTree = "<group>"; };
 		FD4976121B4C45770028FDE7 /* VTTripAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTripAnnotation.m; sourceTree = "<group>"; };
 		FD4976141B4C49F20028FDE7 /* VTVisitAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisitAnnotation.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				FD3CBF101B3AEE4D007C47C2 /* VTListViewController.m */,
 				FD3CBF201B3B110A007C47C2 /* VisitDetailViewController.h */,
 				FD3CBF211B3B110A007C47C2 /* VisitDetailViewController.m */,
+				FD40400B1B5578A5000D5CD8 /* VTVisitCommentsViewController.h */,
+				FD40400C1B5578A5000D5CD8 /* VTVisitCommentsViewController.m */,
 				FD199BB31B3C49F800BC756D /* Trip Cell */,
 				FD199BB21B3C49EB00BC756D /* Visit Cell */,
 			);
@@ -428,6 +433,7 @@
 				FD3CBF0A1B3A59BA007C47C2 /* VTLKDelegate.m in Sources */,
 				FD3CBF281B3B4799007C47C2 /* MapViewController.m in Sources */,
 				FDEA6CFA1B4EF66D00E416E8 /* VTFindViewController.m in Sources */,
+				FD40400D1B5578A5000D5CD8 /* VTVisitCommentsViewController.m in Sources */,
 				FD199BB01B3C49E300BC756D /* TripViewCell.m in Sources */,
 				FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */,
 				FD4976161B4C49F20028FDE7 /* VTVisitAnnotation.m in Sources */,
