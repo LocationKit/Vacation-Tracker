@@ -31,6 +31,7 @@ static CLLocation *lastLocation;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self removeAnnotations];
     [self markNearbyPlaces];
 }

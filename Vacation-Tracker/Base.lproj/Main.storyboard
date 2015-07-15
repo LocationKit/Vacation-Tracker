@@ -28,7 +28,7 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1Q-G5-xPh">
-                                <rect key="frame" x="190.99999289351962" y="106" width="56" height="37"/>
+                                <rect key="frame" x="190.99999502781452" y="106" width="56" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,6 +74,7 @@
                                                 <action selector="changeVisitVisibility:" destination="DvO-B2-Fi8" eventType="touchUpInside" id="6xw-qJ-zKi"/>
                                             </connections>
                                         </button>
+                                        <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -82,11 +83,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="0cg-9C-5Bn">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="QgL-sS-yew">
+                            <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTapSettings:" destination="DvO-B2-Fi8" id="hd9-ey-3J0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="JwO-C5-bRD">
+                            <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTapSearch:" destination="DvO-B2-Fi8" id="zUY-m6-G1z"/>
                             </connections>
@@ -146,30 +149,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" id="fQI-ls-t1c">
-                                <rect key="frame" x="0.0" y="203" width="320" height="272"/>
+                                <rect key="frame" x="0.0" y="107" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="pTc-ic-cYN" id="t55-i8-ftR"/>
                                     <outlet property="delegate" destination="pTc-ic-cYN" id="R4F-Dd-1vL"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Visits From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JdM-P7-9zY">
-                                <rect key="frame" x="66" y="167" width="189" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Display" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IWh-hv-v5T">
+                                <rect key="frame" x="0.0" y="64" width="320" height="35"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MLI-a1-JLo">
+                                <rect key="frame" x="0.0" y="331" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="App Privacy Settings"/>
+                                <connections>
+                                    <action selector="didTapPrivacySettings:" destination="pTc-ic-cYN" eventType="touchUpInside" id="roL-iS-MLf"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="pvq-Cp-YPE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mpg-x6-rWe">
-                            <connections>
-                                <action selector="cancelTapped:" destination="pTc-ic-cYN" id="P0g-Mi-j9m"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="sJQ-Ps-tWe">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="sJQ-Ps-tWe">
+                            <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneTapped:" destination="pTc-ic-cYN" id="dCu-E1-RgD"/>
                             </connections>
@@ -319,6 +329,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Visits in &lt;trip location&gt;" id="ZoN-Hp-JBJ">
                         <barButtonItem key="rightBarButtonItem" title="Clear" id="yOU-va-acp">
+                            <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clearVisits:" destination="pHW-44-aCg" id="xmQ-au-ylN"/>
                             </connections>
@@ -419,7 +430,7 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QLw-Cc-HyL">
-                                <rect key="frame" x="16" y="478" width="92" height="21"/>
+                                <rect key="frame" x="16" y="478.00000050184985" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -437,6 +448,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Visit to &lt;trip location&gt;" id="hgG-q7-Zzj">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="sUx-i7-gZO">
+                            <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTapCommnentsButton:" destination="yAT-P0-jYe" id="D3f-Iz-MOA"/>
                                 <segue destination="cRa-M3-SqE" kind="modal" identifier="DetailsToCommentsSegueID" modalTransitionStyle="coverVertical" id="8YL-oj-Dyf"/>
@@ -468,27 +480,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jxk-Fs-3LT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="bhi-eB-DiU" id="QCv-2A-To1"/>
                                 </connections>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Comments" id="pbE-NX-sBd">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6fe-ci-vhe">
+                            <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTapCancel:" destination="bhi-eB-DiU" id="vS3-9m-dV8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="iWD-ep-gXG">
+                            <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTapDone:" destination="bhi-eB-DiU" id="xlc-7g-Eck"/>
                             </connections>

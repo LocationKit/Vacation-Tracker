@@ -27,6 +27,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_commentsEntry becomeFirstResponder];
+}
+
 - (IBAction)didTapCancel:(id)sender {
     [_commentsEntry resignFirstResponder];
     UIAlertController *confirm = [UIAlertController alertControllerWithTitle:@"Discard Changes?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
