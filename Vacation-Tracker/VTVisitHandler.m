@@ -7,11 +7,7 @@
 //
 
 #import "VTVisitHandler.h"
-//#import "VTVisit.h"
 #import "VTTripHandler.h"
-
-
-//NSString *const VTVisitsChangedNotification = @"VTVisitsChangedNotification";
 
 @implementation VTVisitHandler
 

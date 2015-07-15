@@ -8,6 +8,7 @@
 
 #import "VTTripAnnotation.h"
 
+// An MKPointAnnotation that holds a trip.
 @implementation VTTripAnnotation
 
 - (id)initWithTrip:(VTTrip *)trip {

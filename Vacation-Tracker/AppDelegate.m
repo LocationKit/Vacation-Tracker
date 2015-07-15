@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [VTTripHandler loadTripData];
+    [VTTripHandler loadTripData];   // Loads any saved data
     
     // Start LocationKit using delegate and API Key. check that location services are authorized.
     _locationDelegate = [[VTLKDelegate alloc] init];
@@ -28,8 +28,8 @@
     return YES;
 }
 
-- (void)checkAlwaysAuthorization
-{
+// Displays an alert that can take the user to Settings if the location authorization status is not satisfactory.
+- (void)checkAlwaysAuthorization {
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     
     // If the status is denied or only granted for when in use, display an alert

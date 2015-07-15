@@ -16,7 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (strong, nonatomic) VTVisit *visit;
+@property (strong, nonatomic) VTVisit *visit;   // The visit about which details are being displayed.
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 

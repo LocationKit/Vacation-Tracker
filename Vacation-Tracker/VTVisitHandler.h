@@ -12,8 +12,6 @@
 
 @interface VTVisitHandler : NSObject <NSCoding>
 
-//extern NSString * const VTVisitsChangedNotification;
-
 @property (strong, nonatomic) NSMutableArray *visits;
 
 @property (strong, nonatomic) NSString *tripName;

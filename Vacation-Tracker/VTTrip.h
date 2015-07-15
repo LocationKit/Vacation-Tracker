@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <LocationKit/LocationKit.h>
 #import "VTVisitHandler.h"
-#import "VTVisit.h"
-
 
 @class VTTrip;
 

@@ -52,7 +52,7 @@ NSUInteger indexToSet;
     return 30;
 }
 
-- (IBAction)doneTapped:(id)sender {
+- (IBAction)didTapDone:(id)sender {
     [(MapViewController *)_parent setSettingsPickerIndex:[_timePicker selectedRowInComponent:0] - 1];
     [(MapViewController *)_parent reloadAnnotations];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -66,15 +66,5 @@ NSUInteger indexToSet;
     indexToSet = index + 1;
     _parent = sender;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

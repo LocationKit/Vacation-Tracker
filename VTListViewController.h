@@ -16,6 +16,6 @@
 
 @property (strong, nonatomic) NSMutableArray *visits;
 
-@property (strong, nonatomic) VTTrip *trip;
+@property (strong, nonatomic) VTTrip *trip; // The trip for which the visits are being shown.
 
 @end

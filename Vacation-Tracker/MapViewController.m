@@ -29,15 +29,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Adds the MKUserTrackingButton to the left side of the toolbar.
     _trackingButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:_mapView];
     NSMutableArray *items = [[NSMutableArray alloc] initWithArray:_toolbar.items];
     [items insertObject:_trackingButton atIndex:0];
     [_toolbar setItems:items];
     
+    // Sets the settings button to a unicode gear icon.
     [_settingsButton setTitle:@"\u2699"]; // Unicode gear icon
     UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:f1, NSFontAttributeName, nil];
     [_settingsButton setTitleTextAttributes:dict forState:UIControlStateNormal];
+    
+    // Default setting is all trips
     _settingsPickerIndex = -1;
     
     // When trips are changed the map reloads annotations
@@ -231,48 +236,6 @@
 // Displays an alert that allows the user to type in a search term.
 - (IBAction)didTapSearch:(id)sender {
     [self performSegueWithIdentifier:@"NearbyPlacesSegueID" sender:self];
-    /*// Alert controller with text entry, cancel, and search buttons.
-    UIAlertController *searchInput = [UIAlertController alertControllerWithTitle:@"Search" message:@"Search for places around you" preferredStyle:UIAlertControllerStyleAlert];
-    [searchInput addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        [textField setAutocorrectionType:UITextAutocorrectionTypeYes];
-        [textField setAutocapitalizationType:UITextAutocapitalizationTypeSentences];
-    }];
-    [[searchInput.view.subviews objectAtIndex:0] setTintColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];    // SocialRadar orange tint color.
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    // Searches for the user's text entry.
-    UIAlertAction *searchAction = [UIAlertAction actionWithTitle:@"Search" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        // Gets the user's current location to use for the SearchRequest location.
-        [[LocationKit sharedInstance] getCurrentLocationWithHandler:^(CLLocation *location, NSError *error) {
-            if (error == nil) {
-                NSString *searchText = [[[[searchInput textFields] objectAtIndex:0] text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];   // Search Text set to the user's text entry.
-                
-                // Searches for places as if the text entry was a place name (LKSearchRequest "query").
-                LKSearchRequest *searchRequest = [[LKSearchRequest alloc] initWithLocation:location];
-                [searchRequest setQuery:searchText];
-                [[LocationKit sharedInstance] searchForPlacesWithRequest:searchRequest completionHandler:^(NSArray *places, NSError *error) {
-                    if (error == nil) {
-                        NSLog(@"Searching for %@", [[[searchInput textFields] objectAtIndex:0] text]);
-                        for (int x = 0; x < [places count]; x++) {
-                            NSLog(@"Place %d: %@", x, ((LKPlace *)places[x]).venue.name);
-                        }
-                    }
-                }];
-                
-                // Searches for places as if the text entry was a category (LKSearchRequest "category").
-                searchRequest = [[LKSearchRequest alloc] initWithLocation:location];
-                [searchRequest setCategory:searchText];
-                [[LocationKit sharedInstance] searchForPlacesWithRequest:searchRequest completionHandler:^(NSArray *places, NSError *error) {
-                    NSLog(@"Searching for %@", searchText);
-                    for (int x = 0; x < [places count]; x++) {
-                        NSLog(@"Place %d: %@", x, ((LKPlace *)places[x]).venue.name);
-                    }
-                }];
-            }
-        }];
-    }];
-    [searchInput addAction:cancelAction];
-    [searchInput addAction:searchAction];
-    [self presentViewController:searchInput animated:YES completion:nil];*/
 }
 
 - (IBAction)didTapMark:(id)sender {

@@ -12,8 +12,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) VTLKDelegate *locationDelegate;
 
+@property (strong, nonatomic) VTLKDelegate *locationDelegate;
 
 @end
 

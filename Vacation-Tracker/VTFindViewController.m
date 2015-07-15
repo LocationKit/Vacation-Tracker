@@ -78,6 +78,7 @@ static CLLocation *lastLocation;
     [_mapView removeAnnotations:pins];
 }
 
+// Searches for places and marks them on the map.
 - (void)markNearbyPlaces {
     searching = [UIAlertController alertControllerWithTitle:@"Searching..." message:@"Finding places around you. This may take a few seconds." preferredStyle:UIAlertControllerStyleAlert]; // Displayed while the annotations are being added so it doesn't appear as though the app is hanging.
     
@@ -85,7 +86,7 @@ static CLLocation *lastLocation;
     [[LocationKit sharedInstance] getCurrentLocationWithHandler:^(CLLocation *location, NSError *error) {
         // If there is no problem obtaining the location, continue.
         if (error == nil && location != nil) {
-            // If the user is close to the last search location, there is no need to re-search.  The old search is simply displayed.
+            // If the user is close to the last search location, there is no need to re-search.  The old search is simply displayed to save time+resources.
             if (lastLocation != nil && [location distanceFromLocation:lastLocation] <= 30) {
                 [self presentViewController:searching animated:NO completion:nil];
                 [_mapView addAnnotations:lastFoundPlaces];
@@ -135,6 +136,7 @@ static CLLocation *lastLocation;
 
 }
 
+// Drops passed in places onto the map
 - (void)markPlaces:(NSArray *)places {
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     // Loops through all places and creates and adds an annotation for each one.
@@ -149,15 +151,5 @@ static CLLocation *lastLocation;
     // Annotations are added in bulk.
     [_mapView addAnnotations:annotations];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

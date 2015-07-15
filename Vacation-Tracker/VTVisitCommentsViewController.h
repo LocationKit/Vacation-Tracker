@@ -13,6 +13,6 @@
 
 @property (strong, nonatomic) VTVisit *visit;
 
-@property (weak, nonatomic) IBOutlet UITextView *commentsEntry;
+@property (weak, nonatomic) IBOutlet UITextView *commentsEntry; // UITextView that allows the user to enter comments about the visit.
 
 @end

@@ -35,12 +35,14 @@ static NSMutableArray *tripNames;
                     usingBlock:block];
 }
 
+// Notify a change in trips
 + (void)notifyTripChange:(NSArray *)trips {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:VTTripsChangedNotification object:trips];
     [VTTripHandler saveTripData];
 }
 
+// Notify a change in visits.
 + (void)notifyVisitChange:(NSArray *)data {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:VTVisitsChangedNotification object:data];
@@ -51,6 +53,7 @@ static NSMutableArray *tripNames;
     [VTTripHandler saveTripData];
 }
 
+// Add a visit to a trip.
 + (void)addVisit:(VTVisit *)visit forTrip:(VTTrip *)trip {
     if (trips == nil) {
         trips = [[NSMutableArray alloc] init];
@@ -61,11 +64,6 @@ static NSMutableArray *tripNames;
     if ([tripNames indexOfObject:[trip tripName]] == NSNotFound) {
         [trips addObject:trip];
         [tripNames addObject:[trip tripName]];
-        /*NSUInteger lastIndex = [trips count] - 1;
-        VTTrip *mostRecentTrip = [trips objectAtIndex:lastIndex];
-        
-        [mostRecentTrip addVisit:visit];
-        [trips setObject:mostRecentTrip atIndexedSubscript:lastIndex];*/
         [trip addVisit:visit];
     }
     else {
@@ -92,12 +90,14 @@ static NSMutableArray *tripNames;
     return tripNames;
 }
 
+// Path to the documents directory
 + (NSString *)docsPath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectoryPath = paths[0];
-    return documentsDirectoryPath;//[documentsDirectoryPath stringByAppendingPathComponent:@"trips"];
+    return documentsDirectoryPath;
 }
 
+// Saves data to file
 + (void)saveTripData {
     // Write trips
     [NSKeyedArchiver archiveRootObject:trips toFile:[[self docsPath] stringByAppendingPathComponent:@"trips"]];
@@ -105,6 +105,7 @@ static NSMutableArray *tripNames;
     [NSKeyedArchiver archiveRootObject:tripNames toFile:[[self docsPath] stringByAppendingPathComponent:@"tripNames"]];
 }
 
+// Loads data from file
 + (void)loadTripData {
     NSFileManager *fm = [NSFileManager defaultManager];
     NSString *tripPath = [[self docsPath] stringByAppendingPathComponent:@"trips"];

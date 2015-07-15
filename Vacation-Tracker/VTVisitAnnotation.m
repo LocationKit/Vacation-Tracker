@@ -8,6 +8,7 @@
 
 #import "VTVisitAnnotation.h"
 
+// An MKPointAnnotation that holds a visit.
 @implementation VTVisitAnnotation
 
 - (id)initWithVisit:(VTVisit *)visit {
