@@ -41,7 +41,7 @@ NSUInteger indexToSet;
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     // The first item should be an "All" option
     if (row == 0) {
-        return @"All";
+        return @"All Trips";
     }
     else {
         return [[VTTripHandler tripNames] objectAtIndex:row - 1];
@@ -58,8 +58,8 @@ NSUInteger indexToSet;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)cancelTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)didTapPrivacySettings:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 }
 
 - (void)setSelectedRow:(NSUInteger)index fromSender:(UIViewController *)sender {
