@@ -11,8 +11,6 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UISwitch *debugSwitch; // debug only
-
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (weak, nonatomic) IBOutlet UIButton *visitsButton;
@@ -28,7 +26,5 @@
 @property NSInteger settingsPickerIndex;
 
 - (void)reloadAnnotations;
-
-+ (BOOL)debugSwitchState; // debug only
 
 @end

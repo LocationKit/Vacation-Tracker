@@ -19,21 +19,6 @@
                                     <outlet property="delegate" destination="DvO-B2-Fi8" id="d8F-Jx-WOR"/>
                                 </connections>
                             </mapView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="IWU-Vs-dj0">
-                                <rect key="frame" x="255" y="109" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="switchChanged:" destination="DvO-B2-Fi8" eventType="valueChanged" id="yjE-Mr-Nro"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1Q-G5-xPh">
-                                <rect key="frame" x="190.99999502781452" y="106" width="56" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" id="iQU-e5-tTc">
                                 <rect key="frame" x="0.0" y="65" width="275" height="36"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -96,7 +81,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="debugSwitch" destination="IWU-Vs-dj0" id="xbX-gf-nmE"/>
                         <outlet property="displayPrefs" destination="A1Y-Vt-C9V" id="dep-8R-D9v"/>
                         <outlet property="mapView" destination="3bf-8V-qiR" id="1sR-z8-H2h"/>
                         <outlet property="searchButton" destination="JwO-C5-bRD" id="n7K-E8-qEz"/>

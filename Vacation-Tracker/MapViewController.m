@@ -27,8 +27,6 @@
 
 @implementation MapViewController
 
-static BOOL state = YES; // debug only
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _trackingButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:_mapView];
@@ -216,17 +214,6 @@ static BOOL state = YES; // debug only
         [self removeVisitsFromMap];
         [self addAnnotations];
     }
-}
-
-// debug only
-- (IBAction)switchChanged:(id)sender {
-    state = [sender isOn];
-}
-
-
-// debug only
-+ (BOOL)debugSwitchState {
-    return state;
 }
 
 // When the settings button is tapped, takes the user to the settings page.
