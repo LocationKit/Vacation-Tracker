@@ -7,127 +7,127 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B41FF44AFE80501DC97B37B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136537EB6597C3DF6F2D5B67 /* Foundation.framework */; };
-		F36C31980B4CA0CE53A72F13 /* Pods-Vacation-Tracker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29C7716D2F7EEB4A5EAF90 /* Pods-Vacation-Tracker-dummy.m */; };
+		9A4BA9F6CCD17210FF71CA20 /* Pods-Vacation-Tracker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4108558DC2ADFC45FD4A692E /* Pods-Vacation-Tracker-dummy.m */; };
+		EEA09D4DA56CE3E6F253510B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3045F330073301F674FBF548 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		130CACDD2BD844F2919AD1EE /* Pods-Vacation-Tracker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Vacation-Tracker-acknowledgements.plist"; sourceTree = "<group>"; };
-		136537EB6597C3DF6F2D5B67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		14617BAC91B438417ADAC5F9 /* libPods-Vacation-Tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vacation-Tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B9D413C9025874DA51BB2C6 /* Pods-Vacation-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vacation-Tracker.release.xcconfig"; sourceTree = "<group>"; };
-		3F29C7716D2F7EEB4A5EAF90 /* Pods-Vacation-Tracker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vacation-Tracker-dummy.m"; sourceTree = "<group>"; };
-		426C1E838FC90D9F5F8B29F9 /* LocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LocationKit.framework; sourceTree = "<group>"; };
-		470916C070AF69A964B50708 /* Pods-Vacation-Tracker-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Vacation-Tracker-resources.sh"; sourceTree = "<group>"; };
-		88D5CFC006DF3BE4EBD66618 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F22C200B7EE34641023D5162 /* Pods-Vacation-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vacation-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
-		FC6E3B83D5C365887E2DA338 /* Pods-Vacation-Tracker-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vacation-Tracker-environment.h"; sourceTree = "<group>"; };
-		FD427068A56077DEDC321A6D /* Pods-Vacation-Tracker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Vacation-Tracker-acknowledgements.markdown"; sourceTree = "<group>"; };
+		20E6843929E018BFD35719CC /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2FC1624A4F4DE8F1676B16C8 /* Pods-Vacation-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vacation-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		3045F330073301F674FBF548 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4108558DC2ADFC45FD4A692E /* Pods-Vacation-Tracker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vacation-Tracker-dummy.m"; sourceTree = "<group>"; };
+		5E5B27EA36F60EE34D81A780 /* Pods-Vacation-Tracker-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vacation-Tracker-environment.h"; sourceTree = "<group>"; };
+		9744317E8F02CC3BB41BF3CD /* Pods-Vacation-Tracker-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Vacation-Tracker-resources.sh"; sourceTree = "<group>"; };
+		9CE1EEE16344379F91FF0F32 /* Pods-Vacation-Tracker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Vacation-Tracker-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C816E3A0F9F1C035185B0114 /* libPods-Vacation-Tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vacation-Tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D04F76B0D681F979D22CAA34 /* Pods-Vacation-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vacation-Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		D2E8585038A686BF931E5FA3 /* LocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LocationKit.framework; sourceTree = "<group>"; };
+		ECC83C8970B3298F6B1F7A1C /* Pods-Vacation-Tracker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Vacation-Tracker-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BB0241DD7F70229BB43947D8 /* Frameworks */ = {
+		D438FA16016D28D5D94B8B28 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B41FF44AFE80501DC97B37B5 /* Foundation.framework in Frameworks */,
+				EEA09D4DA56CE3E6F253510B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B48AA328D79705B10242600 /* Products */ = {
+		1F81AEF74835B8A3292ECE39 /* Pods-Vacation-Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				14617BAC91B438417ADAC5F9 /* libPods-Vacation-Tracker.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		50DD27C39EAC9F72AB47BE8E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				87972D781C687E7DF23A9B2D /* LocationKit */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		53246A3B382C79BEB4488558 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				426C1E838FC90D9F5F8B29F9 /* LocationKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		557966F241498DD4903B5FCF = {
-			isa = PBXGroup;
-			children = (
-				88D5CFC006DF3BE4EBD66618 /* Podfile */,
-				8DA4C5018BB430A1442F4564 /* Frameworks */,
-				50DD27C39EAC9F72AB47BE8E /* Pods */,
-				4B48AA328D79705B10242600 /* Products */,
-				81A1E510768E891E5429B0EB /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		763782AFC246237F050097FC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				136537EB6597C3DF6F2D5B67 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		81A1E510768E891E5429B0EB /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D3D265EE12DC7358759028C3 /* Pods-Vacation-Tracker */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		87972D781C687E7DF23A9B2D /* LocationKit */ = {
-			isa = PBXGroup;
-			children = (
-				53246A3B382C79BEB4488558 /* Frameworks */,
-			);
-			path = LocationKit;
-			sourceTree = "<group>";
-		};
-		8DA4C5018BB430A1442F4564 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				763782AFC246237F050097FC /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D3D265EE12DC7358759028C3 /* Pods-Vacation-Tracker */ = {
-			isa = PBXGroup;
-			children = (
-				FD427068A56077DEDC321A6D /* Pods-Vacation-Tracker-acknowledgements.markdown */,
-				130CACDD2BD844F2919AD1EE /* Pods-Vacation-Tracker-acknowledgements.plist */,
-				3F29C7716D2F7EEB4A5EAF90 /* Pods-Vacation-Tracker-dummy.m */,
-				FC6E3B83D5C365887E2DA338 /* Pods-Vacation-Tracker-environment.h */,
-				470916C070AF69A964B50708 /* Pods-Vacation-Tracker-resources.sh */,
-				F22C200B7EE34641023D5162 /* Pods-Vacation-Tracker.debug.xcconfig */,
-				3B9D413C9025874DA51BB2C6 /* Pods-Vacation-Tracker.release.xcconfig */,
+				9CE1EEE16344379F91FF0F32 /* Pods-Vacation-Tracker-acknowledgements.markdown */,
+				ECC83C8970B3298F6B1F7A1C /* Pods-Vacation-Tracker-acknowledgements.plist */,
+				4108558DC2ADFC45FD4A692E /* Pods-Vacation-Tracker-dummy.m */,
+				5E5B27EA36F60EE34D81A780 /* Pods-Vacation-Tracker-environment.h */,
+				9744317E8F02CC3BB41BF3CD /* Pods-Vacation-Tracker-resources.sh */,
+				2FC1624A4F4DE8F1676B16C8 /* Pods-Vacation-Tracker.debug.xcconfig */,
+				D04F76B0D681F979D22CAA34 /* Pods-Vacation-Tracker.release.xcconfig */,
 			);
 			name = "Pods-Vacation-Tracker";
 			path = "Target Support Files/Pods-Vacation-Tracker";
 			sourceTree = "<group>";
 		};
+		23EEE83554C357F42F524A90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C816E3A0F9F1C035185B0114 /* libPods-Vacation-Tracker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39DD501F983C13E067EA65F6 = {
+			isa = PBXGroup;
+			children = (
+				20E6843929E018BFD35719CC /* Podfile */,
+				622851EC1D4CF3CF49A80A9E /* Frameworks */,
+				DB280C6993045A5F14545143 /* Pods */,
+				23EEE83554C357F42F524A90 /* Products */,
+				BA55804864ED7BBFC47E561C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		622851EC1D4CF3CF49A80A9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD353B68E3DFEF706D89C955 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F7677DF202FAA04DEE3E77D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2E8585038A686BF931E5FA3 /* LocationKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E047536AD34DB163E42D7BA /* LocationKit */ = {
+			isa = PBXGroup;
+			children = (
+				6F7677DF202FAA04DEE3E77D /* Frameworks */,
+			);
+			path = LocationKit;
+			sourceTree = "<group>";
+		};
+		BA55804864ED7BBFC47E561C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F81AEF74835B8A3292ECE39 /* Pods-Vacation-Tracker */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BD353B68E3DFEF706D89C955 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3045F330073301F674FBF548 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DB280C6993045A5F14545143 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E047536AD34DB163E42D7BA /* LocationKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B5DC631F446DF1E5D0FE75F5 /* Pods-Vacation-Tracker */ = {
+		0160383967602F978787846F /* Pods-Vacation-Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0CF81A7F7FCDFA1D9590A4A /* Build configuration list for PBXNativeTarget "Pods-Vacation-Tracker" */;
+			buildConfigurationList = 204F61EE46E93A05FAD68186 /* Build configuration list for PBXNativeTarget "Pods-Vacation-Tracker" */;
 			buildPhases = (
-				8FD5FA2D02FF9DA9C1BEE14C /* Sources */,
-				BB0241DD7F70229BB43947D8 /* Frameworks */,
+				282C2537C3E9F4B0E8C72C9A /* Sources */,
+				D438FA16016D28D5D94B8B28 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,63 +135,47 @@
 			);
 			name = "Pods-Vacation-Tracker";
 			productName = "Pods-Vacation-Tracker";
-			productReference = 14617BAC91B438417ADAC5F9 /* libPods-Vacation-Tracker.a */;
+			productReference = C816E3A0F9F1C035185B0114 /* libPods-Vacation-Tracker.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		695D3547D9F10F0E1564C853 /* Project object */ = {
+		FB8338DF299095B946BA5FBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 9BDC3AD1C7D114827752D073 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 6C3B140C7E4A386F97BF8E05 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 557966F241498DD4903B5FCF;
-			productRefGroup = 4B48AA328D79705B10242600 /* Products */;
+			mainGroup = 39DD501F983C13E067EA65F6;
+			productRefGroup = 23EEE83554C357F42F524A90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5DC631F446DF1E5D0FE75F5 /* Pods-Vacation-Tracker */,
+				0160383967602F978787846F /* Pods-Vacation-Tracker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8FD5FA2D02FF9DA9C1BEE14C /* Sources */ = {
+		282C2537C3E9F4B0E8C72C9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F36C31980B4CA0CE53A72F13 /* Pods-Vacation-Tracker-dummy.m in Sources */,
+				9A4BA9F6CCD17210FF71CA20 /* Pods-Vacation-Tracker-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		44ECA09FCDF25F4841FC1EF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F22C200B7EE34641023D5162 /* Pods-Vacation-Tracker.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		AB052F65B655F78256F37DD2 /* Debug */ = {
+		AA8A908A9D5AFC061BC0D041 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,19 +207,35 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		B3ED97D9D9849EAFC3DD8BDD /* Release */ = {
+		D240B87C1285C081287BAE90 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B9D413C9025874DA51BB2C6 /* Pods-Vacation-Tracker.release.xcconfig */;
+			baseConfigurationReference = 2FC1624A4F4DE8F1676B16C8 /* Pods-Vacation-Tracker.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EE8D8113FA705632846EB21E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D04F76B0D681F979D22CAA34 /* Pods-Vacation-Tracker.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -246,7 +246,7 @@
 			};
 			name = Release;
 		};
-		DFDAFCF9DF9991B1385F210A /* Release */ = {
+		F0FD5DDB2FD68332470B4B39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -273,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
@@ -283,25 +283,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9BDC3AD1C7D114827752D073 /* Build configuration list for PBXProject "Pods" */ = {
+		204F61EE46E93A05FAD68186 /* Build configuration list for PBXNativeTarget "Pods-Vacation-Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB052F65B655F78256F37DD2 /* Debug */,
-				DFDAFCF9DF9991B1385F210A /* Release */,
+				D240B87C1285C081287BAE90 /* Debug */,
+				EE8D8113FA705632846EB21E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0CF81A7F7FCDFA1D9590A4A /* Build configuration list for PBXNativeTarget "Pods-Vacation-Tracker" */ = {
+		6C3B140C7E4A386F97BF8E05 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				44ECA09FCDF25F4841FC1EF9 /* Debug */,
-				B3ED97D9D9849EAFC3DD8BDD /* Release */,
+				AA8A908A9D5AFC061BC0D041 /* Debug */,
+				F0FD5DDB2FD68332470B4B39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 695D3547D9F10F0E1564C853 /* Project object */;
+	rootObject = FB8338DF299095B946BA5FBE /* Project object */;
 }
