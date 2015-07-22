@@ -12,3 +12,9 @@
 #define COCOAPODS_VERSION_MINOR_LocationKit 0
 #define COCOAPODS_VERSION_PATCH_LocationKit 8
 
+// Onboard
+#define COCOAPODS_POD_AVAILABLE_Onboard
+#define COCOAPODS_VERSION_MAJOR_Onboard 2
+#define COCOAPODS_VERSION_MINOR_Onboard 1
+#define COCOAPODS_VERSION_PATCH_Onboard 5
+
