@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2CE69F1AF52AB704EFD07EB1"
+               BlueprintIdentifier = "161F0F43AD71D35B13FB5906"
                BuildableName = "libPods-Vacation-Tracker.a"
                BlueprintName = "Pods-Vacation-Tracker"
                ReferencedContainer = "container:Pods.xcodeproj">
