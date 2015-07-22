@@ -22,12 +22,12 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
-    {
+    //if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    //{
         [self performSegueWithIdentifier:@"ShowInfoSegueID" sender:self];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
+    //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+    //    [[NSUserDefaults standardUserDefaults] synchronize];
+    //}
 }
 
 - (void)loadView {

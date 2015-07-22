@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _pageTitles = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
+    _pageTitles = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png", @"page5.png", @"page6.png", @"page7.png"];
+    _pageImages = @[@"image1.png", @"image2.png", @"image3.png", @"image4.png", @"image5.png", @"image6.png", @"image7.png"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
@@ -30,7 +30,7 @@
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
@@ -43,9 +43,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)didTapExit:(id)sender {
+- (IBAction)didTapSkip:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 - (VTInfoViewController *)viewControllerAtIndex:(NSUInteger)index {
     if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
