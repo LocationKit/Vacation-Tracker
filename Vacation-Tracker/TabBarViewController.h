@@ -10,4 +10,6 @@
 
 @interface TabBarViewController : UITabBarController
 
++ (void)showWelcomeFromViewController:(UIViewController *)sender;
+
 @end
