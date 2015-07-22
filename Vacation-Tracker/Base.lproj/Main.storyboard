@@ -220,7 +220,6 @@
                     <connections>
                         <segue destination="GIZ-in-ko0" kind="relationship" relationship="viewControllers" id="M5z-b5-gr7"/>
                         <segue destination="mLB-sE-P5C" kind="relationship" relationship="viewControllers" id="eEM-vL-lBk"/>
-                        <segue destination="TqI-Ds-iyq" kind="modal" identifier="ShowInfoSegueID" modalTransitionStyle="coverVertical" id="yAj-UX-t7D"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFL-mk-aYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -431,43 +430,6 @@
             </objects>
             <point key="canvasLocation" x="492" y="719"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="Ctw-CO-WaK">
-            <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="4Jg-mf-A5A" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Ifh-Qy-prk">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="EFs-Tj-OVb"/>
-                    </navigationItem>
-                    <nil key="simulatedStatusBarMetrics"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HPX-6W-g49" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="54" y="-220"/>
-        </scene>
-        <!--Info View Controller-->
-        <scene sceneID="wg3-Fg-uXX">
-            <objects>
-                <viewController storyboardIdentifier="InfoViewController" id="YjJ-VU-YfQ" customClass="VTInfoViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vTZ-cJ-Uqt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oqg-VZ-Wb0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="backgroundImageView" destination="oqg-VZ-Wb0" id="Qso-w7-Y0U"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i5z-oS-Wcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="492" y="-220"/>
-        </scene>
         <!--Map-->
         <scene sceneID="4gy-hq-YZj">
             <objects>
@@ -504,40 +466,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idL-9x-f0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2401" y="-650"/>
-        </scene>
-        <!--About-->
-        <scene sceneID="CzF-Nf-C2h">
-            <objects>
-                <viewController id="TqI-Ds-iyq" customClass="VTInfoBaseViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ajW-AK-5AR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TF9-lV-BMh">
-                                <rect key="frame" x="254.99999961074522" y="538" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <state key="normal" title="Skip">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapSkip:" destination="TqI-Ds-iyq" eventType="touchUpInside" id="29t-1O-nIr"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="About" id="UGt-kL-ls4">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="pdV-3d-exI">
-                            <connections>
-                                <action selector="didTapExit:" destination="TqI-Ds-iyq" id="y5p-PA-Omn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <nil key="simulatedStatusBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P0x-dv-UGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="54" y="-877"/>
         </scene>
     </scenes>
     <resources>

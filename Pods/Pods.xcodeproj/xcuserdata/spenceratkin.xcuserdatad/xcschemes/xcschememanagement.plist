@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Vacation-Tracker-Onboard.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Vacation-Tracker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B5DC631F446DF1E5D0FE75F5</key>
+		<key>24C5CB6D349258BCD34E11E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>519301AB19B25AD54BF80C04</key>
 		<dict>
 			<key>primary</key>
 			<true/>

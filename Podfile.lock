@@ -1,10 +1,13 @@
 PODS:
-  - LocationKit (2.0.6)
+  - LocationKit (2.0.8)
+  - Onboard (2.1.5)
 
 DEPENDENCIES:
   - LocationKit (~> 2.0.0)
+  - Onboard
 
 SPEC CHECKSUMS:
-  LocationKit: e730ce31be8c2d91312225ab58bc097a1a1c988e
+  LocationKit: d8e02bf450002b37e7bf9c1e24444c854e0f2ef5
+  Onboard: c58adaef5a377b0c45b4754c5cbe17d4627898c7
 
 COCOAPODS: 0.37.2

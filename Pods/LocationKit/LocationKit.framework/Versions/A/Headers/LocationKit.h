@@ -22,14 +22,17 @@ UIKIT_EXTERN NSString *const LKUserValueDateInstalled;
 
 
 @protocol LocationKitDelegate;
-@class LKCachedVisit;
-@class LKReverseGeocodeResult;
+
 
 
 @interface LocationKit : NSObject
 
 @property(nonatomic, readonly) BOOL isRunning;
 
+
+@property(nonatomic, copy) void (^getCurrentLocationCallback)(CLLocation *, NSError *);
+
+@property(nonatomic) BOOL isCompassOff;
 
 + (LocationKit *)sharedInstance;
 
@@ -64,6 +67,7 @@ UIKIT_EXTERN NSString *const LKUserValueDateInstalled;
 
 - (NSError *)resume;
 
+- (void)turnCompassOff:(BOOL)b;
 @end
 
 

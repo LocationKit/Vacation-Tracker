@@ -4,10 +4,10 @@
 target 'Vacation-Tracker' do
 
 pod 'LocationKit', '~> 2.0.0'
+pod 'Onboard'
 
 end
 
 target 'Vacation-TrackerTests' do
 
 end
-
