@@ -35,6 +35,7 @@
     UIAlertController *confirm = [UIAlertController alertControllerWithTitle:@"Discard Changes?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         [confirm dismissViewControllerAnimated:YES completion:nil];
+        [_commentsEntry becomeFirstResponder];
     }];
     UIAlertAction *discard = [UIAlertAction actionWithTitle:@"Discard" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [confirm dismissViewControllerAnimated:YES completion:nil];

@@ -51,7 +51,7 @@
     [_address_0 setText:name];
     [_address_1 setText:[NSString stringWithFormat:@"%@, %@ %@", [_visit.place.address.locality capitalizedString], _visit.place.address.region, _visit.place.address.postalCode]];
     
-    [_categoryLabel setText:_visit.place.venue.category];
+    _categoryLabel.text = (_visit.place.venue.category) ? _visit.place.venue.category : @"None";
     
     [_localityLabel setText:_visit.place.address.locality];
     // Do any additional setup after loading the view.

@@ -47,24 +47,20 @@
     OnboardingContentViewController *firstPage = [OnboardingContentViewController contentWithTitle:@"Introduction" body:@"VacationTracker automatically saves the places you visit during your vacations so they can easily be viewed later." image:nil buttonText:nil action:nil];
     [firstPage setUnderTitlePadding:150];
     
-    OnboardingContentViewController *secondPage = [OnboardingContentViewController contentWithTitle:@"Controls" body:@"If you want to see all of your visits, they can be shown on the map. If you want to see info about them, visits are sorted by trip in the list view." image:nil buttonText:nil action:nil];
-    [secondPage setUnderTitlePadding:130];
-    
     // Second info page
-    OnboardingContentViewController *thirdPage = [OnboardingContentViewController contentWithTitle:@"Controls" body:@"You can use the search button to discover places around you." image:nil buttonText:nil action:nil];
-    [thirdPage setUnderTitlePadding:185];
+    OnboardingContentViewController *secondPage = [OnboardingContentViewController contentWithTitle:@"Features" body:@"Visits can be shown on the map or viewed in the list view." image:nil buttonText:nil action:nil];
+    [secondPage setUnderTitlePadding:185];
     
     // Third info page
-    OnboardingContentViewController *fourthPage = [OnboardingContentViewController contentWithTitle:@"Controls" body:@"You can also create a visit at your current place using the pin button." image:nil buttonText:@"Get Started!" action:^{
+    OnboardingContentViewController *thirdPage = [OnboardingContentViewController contentWithTitle:@"Controls" body:@"You can use the search button to discover places around you, and the pin button creates a visit at your current place." image:nil buttonText:@"Get Started!" action:^{
         [sender dismissViewControllerAnimated:YES completion:nil];
         [[UIApplication sharedApplication] setStatusBarHidden:NO];
     }];
-    [fourthPage setButtonTextColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];
-    [fourthPage setUnderTitlePadding:185];
-    
+    [thirdPage setUnderTitlePadding:150];
+    [thirdPage setButtonTextColor:[UIColor colorWithRed:.97 green:.33 blue:.1 alpha:1]];    
     
     // Main onboarding vc
-    OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBackgroundImage:[UIImage imageNamed:@"info-background"] contents:@[welcomePage, firstPage, secondPage, thirdPage, fourthPage]];
+    OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBackgroundImage:[UIImage imageNamed:@"info-background"] contents:@[welcomePage, firstPage, secondPage, thirdPage]];
     
     // Configures appearance
     [onboardingVC setTopPadding:10];
