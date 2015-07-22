@@ -24,6 +24,11 @@
     NSString *apiToken = @"d735e0f01bef83d5";
     [[LocationKit sharedInstance] startWithApiToken:apiToken andDelegate:_locationDelegate];
     [self checkAlwaysAuthorization];
+    
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
     // Override point for customization after application launch.
     return YES;
 }

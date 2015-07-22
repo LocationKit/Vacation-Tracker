@@ -1,32 +1,29 @@
 //
-//  InfoViewController.m
+//  VTInfoViewController.m
 //  Vacation-Tracker
 //
-//  Created by Spencer Atkin on 7/9/15.
+//  Created by Spencer Atkin on 7/21/15.
 //  Copyright (c) 2015 Spencer Atkin. All rights reserved.
 //
 
-#import "InfoViewController.h"
-#import "TabBarViewController.h"
+#import "VTInfoViewController.h"
 
-@interface InfoViewController ()
+@interface VTInfoViewController ()
 
 @end
 
-@implementation InfoViewController
+@implementation VTInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)xTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

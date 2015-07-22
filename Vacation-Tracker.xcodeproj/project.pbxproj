@@ -32,9 +32,10 @@
 		FD813CDC1B3A513800219108 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDB1B3A513800219108 /* Images.xcassets */; };
 		FD813CDF1B3A513800219108 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDD1B3A513800219108 /* LaunchScreen.xib */; };
 		FD813CEB1B3A513900219108 /* Vacation_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CEA1B3A513900219108 /* Vacation_TrackerTests.m */; };
-		FDEA6CF31B4EDD1B00E416E8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEA6CF21B4EDD1B00E416E8 /* InfoViewController.m */; };
 		FDECC1C41B42D64100A0D81A /* VTVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECC1C31B42D64100A0D81A /* VTVisit.m */; };
 		FDECC1C81B443D4E00A0D81A /* MapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECC1C71B443D4E00A0D81A /* MapSettingsViewController.m */; };
+		FDF23E751B5EB3DF001BCF1E /* VTInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF23E741B5EB3DF001BCF1E /* VTInfoViewController.m */; };
+		FDF23E781B5EEAFD001BCF1E /* VTInfoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF23E771B5EEAFD001BCF1E /* VTInfoBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,12 +95,14 @@
 		FD813CE41B3A513900219108 /* Vacation-TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vacation-TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD813CE91B3A513900219108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD813CEA1B3A513900219108 /* Vacation_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vacation_TrackerTests.m; sourceTree = "<group>"; };
-		FDEA6CF11B4EDD1B00E416E8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		FDEA6CF21B4EDD1B00E416E8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		FDECC1C21B42D64100A0D81A /* VTVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisit.h; sourceTree = "<group>"; };
 		FDECC1C31B42D64100A0D81A /* VTVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisit.m; sourceTree = "<group>"; };
 		FDECC1C61B443D4E00A0D81A /* MapSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSettingsViewController.h; sourceTree = "<group>"; };
 		FDECC1C71B443D4E00A0D81A /* MapSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSettingsViewController.m; sourceTree = "<group>"; };
+		FDF23E731B5EB3DF001BCF1E /* VTInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTInfoViewController.h; sourceTree = "<group>"; };
+		FDF23E741B5EB3DF001BCF1E /* VTInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTInfoViewController.m; sourceTree = "<group>"; };
+		FDF23E761B5EEAFD001BCF1E /* VTInfoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTInfoBaseViewController.h; sourceTree = "<group>"; };
+		FDF23E771B5EEAFD001BCF1E /* VTInfoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTInfoBaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,8 +265,10 @@
 		FDEA6CF41B4EDD2000E416E8 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				FDEA6CF11B4EDD1B00E416E8 /* InfoViewController.h */,
-				FDEA6CF21B4EDD1B00E416E8 /* InfoViewController.m */,
+				FDF23E731B5EB3DF001BCF1E /* VTInfoViewController.h */,
+				FDF23E741B5EB3DF001BCF1E /* VTInfoViewController.m */,
+				FDF23E761B5EEAFD001BCF1E /* VTInfoBaseViewController.h */,
+				FDF23E771B5EEAFD001BCF1E /* VTInfoBaseViewController.m */,
 			);
 			name = Info;
 			sourceTree = "<group>";
@@ -439,14 +444,15 @@
 				FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */,
 				FD4976161B4C49F20028FDE7 /* VTVisitAnnotation.m in Sources */,
 				FDECC1C41B42D64100A0D81A /* VTVisit.m in Sources */,
-				FDEA6CF31B4EDD1B00E416E8 /* InfoViewController.m in Sources */,
 				FD813CD41B3A513800219108 /* AppDelegate.m in Sources */,
 				FD3CBF251B3B1A02007C47C2 /* TabBarViewController.m in Sources */,
 				FDECC1C81B443D4E00A0D81A /* MapSettingsViewController.m in Sources */,
 				FD3CBF111B3AEE4D007C47C2 /* VTListViewController.m in Sources */,
 				FD199BAC1B3C438A00BC756D /* VTTripListViewController.m in Sources */,
 				FD3CBF221B3B110A007C47C2 /* VisitDetailViewController.m in Sources */,
+				FDF23E781B5EEAFD001BCF1E /* VTInfoBaseViewController.m in Sources */,
 				FD813CD11B3A513800219108 /* main.m in Sources */,
+				FDF23E751B5EB3DF001BCF1E /* VTInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

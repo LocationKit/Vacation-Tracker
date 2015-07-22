@@ -7,7 +7,7 @@
 //
 
 #import "TabBarViewController.h"
-#import "InfoViewController.h"
+#import "VTInfoViewController.h"
 
 @interface TabBarViewController ()
 
@@ -21,6 +21,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
         [self performSegueWithIdentifier:@"ShowInfoSegueID" sender:self];
