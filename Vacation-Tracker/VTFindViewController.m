@@ -80,15 +80,14 @@ static CLLocation *lastLocation;
 
 // Searches for places and marks them on the map.
 - (void)markNearbyPlaces {
-    searching = [UIAlertController alertControllerWithTitle:@"Searching..." message:@"Finding places around you. This may take a few seconds." preferredStyle:UIAlertControllerStyleAlert]; // Displayed while the annotations are being added so it doesn't appear as though the app is hanging.
-    
+    searching = [UIAlertController alertControllerWithTitle:@"Searching..." message:@"Finding places around you. This may take a minute." preferredStyle:UIAlertControllerStyleAlert]; // Displayed while the annotations are being added so it doesn't appear as though the app is hanging.
+    [self presentViewController:searching animated:NO completion:nil];
     // Gets the user's current location to use for the SearchRequest location.
     [[LocationKit sharedInstance] getCurrentLocationWithHandler:^(CLLocation *location, NSError *error) {
         // If there is no problem obtaining the location, continue.
         if (error == nil && location != nil) {
             // If the user is close to the last search location, there is no need to re-search.  The old search is simply displayed to save time+resources.
             if (lastLocation != nil && [location distanceFromLocation:lastLocation] <= 30) {
-                [self presentViewController:searching animated:NO completion:nil];
                 [_mapView addAnnotations:lastFoundPlaces];
             }
             // Otherwise a search is actually performed.
@@ -104,7 +103,6 @@ static CLLocation *lastLocation;
                     }
                     // If there was no issue, mark the places on the map.
                     else if (error == nil) {
-                        [self presentViewController:searching animated:NO completion:nil];
                         [self markPlaces:places];
                     }
                     // If there was an error, log and report it to the user.
