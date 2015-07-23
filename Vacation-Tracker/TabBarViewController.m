@@ -48,11 +48,11 @@
     [firstPage setUnderTitlePadding:150];
     
     // Second info page
-    OnboardingContentViewController *secondPage = [OnboardingContentViewController contentWithTitle:@"Features" body:@"Visits can be shown on the map or viewed in the list view." image:nil buttonText:nil action:nil];
-    [secondPage setUnderTitlePadding:185];
+    OnboardingContentViewController *secondPage = [OnboardingContentViewController contentWithTitle:@"Features" body:@"Visits can be shown on the map or viewed in the list view. When viewing a visit, you can add a rating and comments." image:nil buttonText:nil action:nil];
+    [secondPage setUnderTitlePadding:150];
     
     // Third info page
-    OnboardingContentViewController *thirdPage = [OnboardingContentViewController contentWithTitle:@"Controls" body:@"You can use the search button to discover places around you, and the pin button creates a visit at your current place." image:nil buttonText:@"Get Started!" action:^{
+    OnboardingContentViewController *thirdPage = [OnboardingContentViewController contentWithTitle:@"Controls" body:@"You can use the search button to discover places around you, and the pin button creates a visit at your current location." image:nil buttonText:@"Get Started!" action:^{
         [sender dismissViewControllerAnimated:YES completion:nil];
         [[UIApplication sharedApplication] setStatusBarHidden:NO];
     }];
