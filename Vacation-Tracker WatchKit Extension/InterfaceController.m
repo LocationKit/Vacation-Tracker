@@ -17,6 +17,8 @@
 
 @implementation InterfaceController
 
+NSInteger selected;
+
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     //[self loadVisits];
@@ -70,10 +72,12 @@
             }
         }
     }];
-    
-    //NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.socialradar.VTSharedDefaults"];
-    //return [NSKeyedUnarchiver unarchiveObjectWithData:[sharedDefaults objectForKey:@"trips"]];
 }
+
+- (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
+    [self pushControllerWithName:@"MapController" context:[_visits objectAtIndex:([_visits count] - 1) - rowIndex]];
+}
+
 - (IBAction)didTapRefresh {
     [self loadVisits];
 }

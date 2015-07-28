@@ -34,6 +34,7 @@
 		FD40400D1B5578A5000D5CD8 /* VTVisitCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD40400C1B5578A5000D5CD8 /* VTVisitCommentsViewController.m */; };
 		FD4976131B4C45770028FDE7 /* VTTripAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4976121B4C45770028FDE7 /* VTTripAnnotation.m */; };
 		FD4976161B4C49F20028FDE7 /* VTVisitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4976151B4C49F20028FDE7 /* VTVisitAnnotation.m */; };
+		FD6C222B1B67DE5E00A1282E /* VTMapInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6C222A1B67DE5E00A1282E /* VTMapInterfaceController.m */; };
 		FD80521F1B4D73D2007E9071 /* VTMapVisitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD80521E1B4D73D2007E9071 /* VTMapVisitDetailViewController.m */; };
 		FD813CD11B3A513800219108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD01B3A513800219108 /* main.m */; };
 		FD813CD41B3A513800219108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CD31B3A513800219108 /* AppDelegate.m */; };
@@ -140,6 +141,8 @@
 		FD4976121B4C45770028FDE7 /* VTTripAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTripAnnotation.m; sourceTree = "<group>"; };
 		FD4976141B4C49F20028FDE7 /* VTVisitAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisitAnnotation.h; sourceTree = "<group>"; };
 		FD4976151B4C49F20028FDE7 /* VTVisitAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisitAnnotation.m; sourceTree = "<group>"; };
+		FD6C22291B67DE5E00A1282E /* VTMapInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMapInterfaceController.h; sourceTree = "<group>"; };
+		FD6C222A1B67DE5E00A1282E /* VTMapInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTMapInterfaceController.m; sourceTree = "<group>"; };
 		FD80521D1B4D73D2007E9071 /* VTMapVisitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMapVisitDetailViewController.h; sourceTree = "<group>"; };
 		FD80521E1B4D73D2007E9071 /* VTMapVisitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTMapVisitDetailViewController.m; sourceTree = "<group>"; };
 		FD813CCB1B3A513800219108 /* Vacation-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vacation-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +233,8 @@
 			children = (
 				FD0BC1531B61403B00EB9090 /* InterfaceController.h */,
 				FD0BC1541B61403B00EB9090 /* InterfaceController.m */,
+				FD6C22291B67DE5E00A1282E /* VTMapInterfaceController.h */,
+				FD6C222A1B67DE5E00A1282E /* VTMapInterfaceController.m */,
 				FDF482EE1B61467E00EE9C3D /* VTVisitRowController.h */,
 				FDF482EF1B61467E00EE9C3D /* VTVisitRowController.m */,
 				FD0BC1561B61403B00EB9090 /* Images.xcassets */,
@@ -684,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDDEACDB1B617FE3002F8070 /* VTTripHandler.m in Sources */,
+				FD6C222B1B67DE5E00A1282E /* VTMapInterfaceController.m in Sources */,
 				FDDEACDA1B617FC4002F8070 /* VTVisitHandler.m in Sources */,
 				FDDEACD81B617FAA002F8070 /* VTTrip.m in Sources */,
 				FDDEACD91B617FAA002F8070 /* VTVisit.m in Sources */,
