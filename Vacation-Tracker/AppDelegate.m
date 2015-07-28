@@ -55,6 +55,42 @@
     }
 }
 
+- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
+    UIBackgroundTaskIdentifier backgroundID = [application beginBackgroundTaskWithName:@"LoadData" expirationHandler:^{
+        reply(nil);
+    }];
+    [VTTripHandler loadTripData];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *tripPath = [[AppDelegate docsPath] stringByAppendingPathComponent:@"trips"];
+    
+    //reply(@{@"trips":[NSNumber numberWithBool:[fm fileExistsAtPath:tripPath]]});
+    
+    if ([fm fileExistsAtPath:tripPath]) {
+        //NSDictionary *replyData = [[NSDictionary alloc] init];
+        //[replyData setValue:/*[NSKeyedUnarchiver unarchiveObjectWithFile:tripPath]*/@"Hello" forKey:@"trips"];
+        //NSLog(@"%@", [replyData objectForKey:@"trips"]);
+        NSData *replyData = [NSKeyedArchiver archivedDataWithRootObject:[NSKeyedUnarchiver unarchiveObjectWithFile:tripPath]];
+        reply(@{@"trips":replyData});
+    }
+    else {
+        reply(@{@"trips":[NSKeyedArchiver archivedDataWithRootObject:0]});
+    }
+    [application endBackgroundTask:backgroundID];
+}
+
++ (NSString *)docsPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = paths[0];
+    return documentsDirectoryPath;
+}
+
+/*- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo)) {
+    [VTTripHandler loadTripData];
+    NSDictionary *replyData = [[NSDictionary alloc] initWithObjectsAndKeys:[[[[VTTripHandler trips] objectAtIndex:0] visitHandler] visits], @"trips", nil];
+    reply(replyData);
+}*/
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

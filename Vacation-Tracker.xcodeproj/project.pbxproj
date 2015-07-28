@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E35776FB0EA45E324F85CC8 /* libPods-Vacation-Tracker WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D27680DF14318A3081636D61 /* libPods-Vacation-Tracker WatchKit App.a */; };
+		8F2AA9EEDE35A1F1A5672F7A /* libPods-Vacation-Tracker WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 118BEEAD4EC6B994DCF40E3A /* libPods-Vacation-Tracker WatchKit Extension.a */; };
 		BFC5787DB8A8805A01AFE6CC /* libPods-Vacation-Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E39CD944BF078D820401D8 /* libPods-Vacation-Tracker.a */; };
+		FD0BC1551B61403B00EB9090 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0BC1541B61403B00EB9090 /* InterfaceController.m */; };
+		FD0BC1571B61403B00EB9090 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0BC1561B61403B00EB9090 /* Images.xcassets */; };
+		FD0BC15B1B61403B00EB9090 /* Vacation-Tracker WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = FD0BC15A1B61403B00EB9090 /* Vacation-Tracker WatchKit App.app */; };
+		FD0BC1631B61403B00EB9090 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0BC1611B61403B00EB9090 /* Interface.storyboard */; };
+		FD0BC1651B61403B00EB9090 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0BC1641B61403B00EB9090 /* Images.xcassets */; };
+		FD0BC1681B61403B00EB9090 /* Vacation-Tracker WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FD0BC14F1B61403B00EB9090 /* Vacation-Tracker WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FD199BA61B3C429D00BC756D /* VTTripHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BA51B3C429D00BC756D /* VTTripHandler.m */; };
 		FD199BA91B3C42AE00BC756D /* VTTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BA81B3C42AE00BC756D /* VTTrip.m */; };
 		FD199BAC1B3C438A00BC756D /* VTTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BAB1B3C438A00BC756D /* VTTripListViewController.m */; };
@@ -33,12 +41,31 @@
 		FD813CDC1B3A513800219108 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDB1B3A513800219108 /* Images.xcassets */; };
 		FD813CDF1B3A513800219108 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD813CDD1B3A513800219108 /* LaunchScreen.xib */; };
 		FD813CEB1B3A513900219108 /* Vacation_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD813CEA1B3A513900219108 /* Vacation_TrackerTests.m */; };
+		FDDEACD81B617FAA002F8070 /* VTTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BA81B3C42AE00BC756D /* VTTrip.m */; };
+		FDDEACD91B617FAA002F8070 /* VTVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECC1C31B42D64100A0D81A /* VTVisit.m */; };
+		FDDEACDA1B617FC4002F8070 /* VTVisitHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CBF131B3AEEA7007C47C2 /* VTVisitHandler.m */; };
+		FDDEACDB1B617FE3002F8070 /* VTTripHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD199BA51B3C429D00BC756D /* VTTripHandler.m */; };
 		FDEA6CFA1B4EF66D00E416E8 /* VTFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEA6CF91B4EF66D00E416E8 /* VTFindViewController.m */; };
 		FDECC1C41B42D64100A0D81A /* VTVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECC1C31B42D64100A0D81A /* VTVisit.m */; };
 		FDECC1C81B443D4E00A0D81A /* MapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECC1C71B443D4E00A0D81A /* MapSettingsViewController.m */; };
+		FDF482F01B61467E00EE9C3D /* VTVisitRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF482EF1B61467E00EE9C3D /* VTVisitRowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FD0BC15C1B61403B00EB9090 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD813CC31B3A513800219108 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD0BC1591B61403B00EB9090;
+			remoteInfo = "Vacation-Tracker WatchKit App";
+		};
+		FD0BC1661B61403B00EB9090 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD813CC31B3A513800219108 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD0BC14E1B61403B00EB9090;
+			remoteInfo = "Vacation-Tracker WatchKit Extension";
+		};
 		FD813CE51B3A513900219108 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FD813CC31B3A513800219108 /* Project object */;
@@ -48,10 +75,39 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FD0BC16F1B61403B00EB9090 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FD0BC1681B61403B00EB9090 /* Vacation-Tracker WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		118BEEAD4EC6B994DCF40E3A /* libPods-Vacation-Tracker WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vacation-Tracker WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2516996F131D29B4BC74A83A /* Pods-Vacation-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker/Pods-Vacation-Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		3E179594E3BB4DD279F7689C /* Pods-Vacation-Tracker WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker WatchKit Extension/Pods-Vacation-Tracker WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		488E84313D796F74D1A95A89 /* Pods-Vacation-Tracker WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker WatchKit App/Pods-Vacation-Tracker WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		5480F3ECE5FDEB32126C06A4 /* Pods-Vacation-Tracker WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker WatchKit Extension/Pods-Vacation-Tracker WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		7BC902C79B195B591CCEE45E /* Pods-Vacation-Tracker WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker WatchKit App/Pods-Vacation-Tracker WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		D27680DF14318A3081636D61 /* libPods-Vacation-Tracker WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vacation-Tracker WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0817CACE09C390A466199F /* Pods-Vacation-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation-Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation-Tracker/Pods-Vacation-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		F2E39CD944BF078D820401D8 /* libPods-Vacation-Tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vacation-Tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0BC14F1B61403B00EB9090 /* Vacation-Tracker WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Vacation-Tracker WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0BC1521B61403B00EB9090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD0BC1531B61403B00EB9090 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		FD0BC1541B61403B00EB9090 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		FD0BC1561B61403B00EB9090 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FD0BC15A1B61403B00EB9090 /* Vacation-Tracker WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vacation-Tracker WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0BC1601B61403B00EB9090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD0BC1621B61403B00EB9090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FD0BC1641B61403B00EB9090 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD199BA41B3C429D00BC756D /* VTTripHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTripHandler.h; sourceTree = "<group>"; };
 		FD199BA51B3C429D00BC756D /* VTTripHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTripHandler.m; sourceTree = "<group>"; };
 		FD199BA71B3C42AE00BC756D /* VTTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTrip.h; sourceTree = "<group>"; };
@@ -103,9 +159,27 @@
 		FDECC1C31B42D64100A0D81A /* VTVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisit.m; sourceTree = "<group>"; };
 		FDECC1C61B443D4E00A0D81A /* MapSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSettingsViewController.h; sourceTree = "<group>"; };
 		FDECC1C71B443D4E00A0D81A /* MapSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSettingsViewController.m; sourceTree = "<group>"; };
+		FDF482EE1B61467E00EE9C3D /* VTVisitRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTVisitRowController.h; sourceTree = "<group>"; };
+		FDF482EF1B61467E00EE9C3D /* VTVisitRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTVisitRowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04C62178ACE624B461C47855 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E35776FB0EA45E324F85CC8 /* libPods-Vacation-Tracker WatchKit App.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD0BC14C1B61403B00EB9090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F2AA9EEDE35A1F1A5672F7A /* libPods-Vacation-Tracker WatchKit Extension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD813CC81B3A513800219108 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,6 +206,8 @@
 				FD3CBF0D1B3A5BDA007C47C2 /* CoreLocation.framework */,
 				FD3CBF0B1B3A5BD3007C47C2 /* MapKit.framework */,
 				F2E39CD944BF078D820401D8 /* libPods-Vacation-Tracker.a */,
+				D27680DF14318A3081636D61 /* libPods-Vacation-Tracker WatchKit App.a */,
+				118BEEAD4EC6B994DCF40E3A /* libPods-Vacation-Tracker WatchKit Extension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,8 +217,51 @@
 			children = (
 				EF0817CACE09C390A466199F /* Pods-Vacation-Tracker.debug.xcconfig */,
 				2516996F131D29B4BC74A83A /* Pods-Vacation-Tracker.release.xcconfig */,
+				7BC902C79B195B591CCEE45E /* Pods-Vacation-Tracker WatchKit App.debug.xcconfig */,
+				488E84313D796F74D1A95A89 /* Pods-Vacation-Tracker WatchKit App.release.xcconfig */,
+				5480F3ECE5FDEB32126C06A4 /* Pods-Vacation-Tracker WatchKit Extension.debug.xcconfig */,
+				3E179594E3BB4DD279F7689C /* Pods-Vacation-Tracker WatchKit Extension.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FD0BC1501B61403B00EB9090 /* Vacation-Tracker WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FD0BC1531B61403B00EB9090 /* InterfaceController.h */,
+				FD0BC1541B61403B00EB9090 /* InterfaceController.m */,
+				FDF482EE1B61467E00EE9C3D /* VTVisitRowController.h */,
+				FDF482EF1B61467E00EE9C3D /* VTVisitRowController.m */,
+				FD0BC1561B61403B00EB9090 /* Images.xcassets */,
+				FD0BC1511B61403B00EB9090 /* Supporting Files */,
+			);
+			path = "Vacation-Tracker WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		FD0BC1511B61403B00EB9090 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD0BC1521B61403B00EB9090 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD0BC15E1B61403B00EB9090 /* Vacation-Tracker WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				FD0BC1611B61403B00EB9090 /* Interface.storyboard */,
+				FD0BC1641B61403B00EB9090 /* Images.xcassets */,
+				FD0BC15F1B61403B00EB9090 /* Supporting Files */,
+			);
+			path = "Vacation-Tracker WatchKit App";
+			sourceTree = "<group>";
+		};
+		FD0BC15F1B61403B00EB9090 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD0BC1601B61403B00EB9090 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		FD199B991B3C3DF500BC756D /* List */ = {
@@ -204,6 +323,8 @@
 			children = (
 				FD813CCD1B3A513800219108 /* Vacation-Tracker */,
 				FD813CE71B3A513900219108 /* Vacation-TrackerTests */,
+				FD0BC1501B61403B00EB9090 /* Vacation-Tracker WatchKit Extension */,
+				FD0BC15E1B61403B00EB9090 /* Vacation-Tracker WatchKit App */,
 				FD813CCC1B3A513800219108 /* Products */,
 				D57CE2D63751752DE27E2F02 /* Pods */,
 				1BECEB9B030F8B17EC2B3E1D /* Frameworks */,
@@ -215,6 +336,8 @@
 			children = (
 				FD813CCB1B3A513800219108 /* Vacation-Tracker.app */,
 				FD813CE41B3A513900219108 /* Vacation-TrackerTests.xctest */,
+				FD0BC14F1B61403B00EB9090 /* Vacation-Tracker WatchKit Extension.appex */,
+				FD0BC15A1B61403B00EB9090 /* Vacation-Tracker WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,6 +408,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FD0BC14E1B61403B00EB9090 /* Vacation-Tracker WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD0BC16E1B61403B00EB9090 /* Build configuration list for PBXNativeTarget "Vacation-Tracker WatchKit Extension" */;
+			buildPhases = (
+				6DD7A12224EC7959E0E9A1CE /* Check Pods Manifest.lock */,
+				FD0BC14B1B61403B00EB9090 /* Sources */,
+				FD0BC14C1B61403B00EB9090 /* Frameworks */,
+				FD0BC14D1B61403B00EB9090 /* Resources */,
+				0808C9ACD41FABD4FED7AA03 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD0BC15D1B61403B00EB9090 /* PBXTargetDependency */,
+			);
+			name = "Vacation-Tracker WatchKit Extension";
+			productName = "Vacation-Tracker WatchKit Extension";
+			productReference = FD0BC14F1B61403B00EB9090 /* Vacation-Tracker WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		FD0BC1591B61403B00EB9090 /* Vacation-Tracker WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD0BC16D1B61403B00EB9090 /* Build configuration list for PBXNativeTarget "Vacation-Tracker WatchKit App" */;
+			buildPhases = (
+				5523EEF6EC6F7DEEDEE2DBAA /* Check Pods Manifest.lock */,
+				FD0BC1581B61403B00EB9090 /* Resources */,
+				04C62178ACE624B461C47855 /* Frameworks */,
+				657C342B73CAF6AD989C198A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Vacation-Tracker WatchKit App";
+			productName = "Vacation-Tracker WatchKit App";
+			productReference = FD0BC15A1B61403B00EB9090 /* Vacation-Tracker WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		FD813CCA1B3A513800219108 /* Vacation-Tracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD813CEE1B3A513900219108 /* Build configuration list for PBXNativeTarget "Vacation-Tracker" */;
@@ -294,10 +455,12 @@
 				FD813CC81B3A513800219108 /* Frameworks */,
 				FD813CC91B3A513800219108 /* Resources */,
 				DAA03B5F26146BB6A1E74994 /* Copy Pods Resources */,
+				FD0BC16F1B61403B00EB9090 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FD0BC1671B61403B00EB9090 /* PBXTargetDependency */,
 			);
 			name = "Vacation-Tracker";
 			productName = "Vacation-Tracker";
@@ -331,10 +494,25 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Spencer Atkin";
 				TargetAttributes = {
-					FD813CCA1B3A513800219108 = {
-						CreatedOnToolsVersion = 6.3.2;
+					FD0BC14E1B61403B00EB9090 = {
+						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = SEU4ZY89W2;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					FD0BC1591B61403B00EB9090 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					FD813CCA1B3A513800219108 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 2W53937J44;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -361,11 +539,31 @@
 			targets = (
 				FD813CCA1B3A513800219108 /* Vacation-Tracker */,
 				FD813CE31B3A513900219108 /* Vacation-TrackerTests */,
+				FD0BC14E1B61403B00EB9090 /* Vacation-Tracker WatchKit Extension */,
+				FD0BC1591B61403B00EB9090 /* Vacation-Tracker WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FD0BC14D1B61403B00EB9090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD0BC15B1B61403B00EB9090 /* Vacation-Tracker WatchKit App.app in Resources */,
+				FD0BC1571B61403B00EB9090 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD0BC1581B61403B00EB9090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD0BC1631B61403B00EB9090 /* Interface.storyboard in Resources */,
+				FD0BC1651B61403B00EB9090 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD813CC91B3A513800219108 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,6 +601,66 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		0808C9ACD41FABD4FED7AA03 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vacation-Tracker WatchKit Extension/Pods-Vacation-Tracker WatchKit Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5523EEF6EC6F7DEEDEE2DBAA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		657C342B73CAF6AD989C198A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vacation-Tracker WatchKit App/Pods-Vacation-Tracker WatchKit App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DD7A12224EC7959E0E9A1CE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		DAA03B5F26146BB6A1E74994 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +679,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FD0BC14B1B61403B00EB9090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDDEACDB1B617FE3002F8070 /* VTTripHandler.m in Sources */,
+				FDDEACDA1B617FC4002F8070 /* VTVisitHandler.m in Sources */,
+				FDDEACD81B617FAA002F8070 /* VTTrip.m in Sources */,
+				FDDEACD91B617FAA002F8070 /* VTVisit.m in Sources */,
+				FDF482F01B61467E00EE9C3D /* VTVisitRowController.m in Sources */,
+				FD0BC1551B61403B00EB9090 /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD813CC71B3A513800219108 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,6 +730,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FD0BC15D1B61403B00EB9090 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD0BC1591B61403B00EB9090 /* Vacation-Tracker WatchKit App */;
+			targetProxy = FD0BC15C1B61403B00EB9090 /* PBXContainerItemProxy */;
+		};
+		FD0BC1671B61403B00EB9090 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD0BC14E1B61403B00EB9090 /* Vacation-Tracker WatchKit Extension */;
+			targetProxy = FD0BC1661B61403B00EB9090 /* PBXContainerItemProxy */;
+		};
 		FD813CE61B3A513900219108 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FD813CCA1B3A513800219108 /* Vacation-Tracker */;
@@ -467,6 +748,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FD0BC1611B61403B00EB9090 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD0BC1621B61403B00EB9090 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		FD813CD81B3A513800219108 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -486,6 +775,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FD0BC1691B61403B00EB9090 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5480F3ECE5FDEB32126C06A4 /* Pods-Vacation-Tracker WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Vacation-Tracker WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FD0BC16A1B61403B00EB9090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E179594E3BB4DD279F7689C /* Pods-Vacation-Tracker WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Vacation-Tracker WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FD0BC16B1B61403B00EB9090 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC902C79B195B591CCEE45E /* Pods-Vacation-Tracker WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Vacation_Tracker_WatchKit_Extension;
+				INFOPLIST_FILE = "Vacation-Tracker WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		FD0BC16C1B61403B00EB9090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 488E84313D796F74D1A95A89 /* Pods-Vacation-Tracker WatchKit App.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Vacation_Tracker_WatchKit_Extension;
+				INFOPLIST_FILE = "Vacation-Tracker WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		FD813CEC1B3A513900219108 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -635,6 +988,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FD0BC16D1B61403B00EB9090 /* Build configuration list for PBXNativeTarget "Vacation-Tracker WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD0BC16B1B61403B00EB9090 /* Debug */,
+				FD0BC16C1B61403B00EB9090 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD0BC16E1B61403B00EB9090 /* Build configuration list for PBXNativeTarget "Vacation-Tracker WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD0BC1691B61403B00EB9090 /* Debug */,
+				FD0BC16A1B61403B00EB9090 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FD813CC61B3A513800219108 /* Build configuration list for PBXProject "Vacation-Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

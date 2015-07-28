@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Vacation-Tracker WatchKit App.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Vacation-Tracker WatchKit Extension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Vacation-Tracker-Onboard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>161F0F43AD71D35B13FB5906</key>
+		<key>176B48709A51D77E2A73A0C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>947ACDB4F29DA795AE5A5BA7</key>
+		<key>81ED39FA9A88A64E17D90F00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>930FA04B95052B79BB123A22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C617EC10989EAF10F3A6DA4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
