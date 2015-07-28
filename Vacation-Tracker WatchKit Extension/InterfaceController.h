@@ -8,7 +8,11 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import "VTVisitRowController.h"
+#import "VTTripHandler.h"
 
 @interface InterfaceController : WKInterfaceController
+
+@property (weak, nonatomic) IBOutlet WKInterfaceTable *tableView;
 
 @end
