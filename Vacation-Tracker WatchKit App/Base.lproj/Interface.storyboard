@@ -5,13 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Visits-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller title="Visits" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <button width="1" alignment="left" title="Refresh" id="kwt-QA-wLc">
                             <color key="titleColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="15"/>
                             <connections>
                                 <action selector="didTapRefresh" destination="AgC-eL-Hgc" id="9aX-H7-mpB"/>
                             </connections>
@@ -21,9 +22,7 @@
                                 <tableRow identifier="rowController" id="P4M-Oe-Fe3" customClass="VTVisitRowController">
                                     <group key="rootItem" width="1" alignment="left" layout="vertical" id="swG-62-Bm2">
                                         <items>
-                                            <label height="18.5" alignment="left" text="Label" textAlignment="left" minimumScaleFactor="0.80000000000000004" id="mhK-VD-CcO">
-                                                <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </label>
+                                            <label height="18.5" alignment="left" text="Label" textAlignment="left" minimumScaleFactor="0.80000000000000004" id="mhK-VD-CcO"/>
                                             <label width="63" height="17" alignment="right" verticalAlignment="bottom" text="Label" textAlignment="right" minimumScaleFactor="0.70000000000000007" id="Ljm-b1-eWF">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                             </label>
@@ -44,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="380" y="627"/>
         </scene>
-        <!--MapController-->
+        <!--Map-->
         <scene sceneID="bf1-iS-gpG">
             <objects>
-                <controller identifier="MapController" id="BNV-2n-JQr" customClass="VTMapInterfaceController">
+                <controller identifier="MapController" title="Map" id="BNV-2n-JQr" customClass="VTMapInterfaceController">
                     <items>
                         <map height="150" alignment="left" id="tX8-c3-Yfg"/>
                     </items>
@@ -56,7 +55,8 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="592" y="627"/>
+            <point key="canvasLocation" x="583" y="627"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.97647058819999999" green="0.33333333329999998" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
 </document>
