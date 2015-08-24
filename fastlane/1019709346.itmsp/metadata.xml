@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://apple.com/itunes/importer" version="software5.2">
+    <!-- This document was generated on Jul 29, 2015 9:22:43 AM for apple2@socialradar.com <apple2@socialradar.com>. -->
+    <!-- NOTE: metadata_token is generated on lookup.  Modifying the value of this will result in an import error -->
+    <metadata_token>1438186963638-76cbf041f8986824bdce8b3950adbb3e8cd2750c1539de5bb28693d21c77694e</metadata_token>
+    <provider>SocialRadarLLC</provider>
+    <team_id>2W53937J44</team_id>
+    <software>
+        <!--Apple ID: 1019709346-->
+        <vendor_id>Vacation-Tracker</vendor_id>
+        <read_only_info>
+            <read_only_value key="apple-id">1019709346</read_only_value>
+        </read_only_info>
+        <software_metadata>
+            <versions>
+                <version string="1.0">
+                    <locales>
+                        <locale name="en-US">
+                            <title>Vacation-Tracker</title>
+                        <version_whats_new>Initial release!</version_whats_new><keywords><keyword>Vacation</keyword><keyword>Track</keyword><keyword>Geolocation</keyword><keyword>Geolog</keyword></keywords><software_screenshots><software_screenshot display_target="iOS-iPad" position="1"><size>952660</size><file_name>bd49335d9e1896dfeec99cc3f93ebc74.png</file_name><checksum type="md5">1142faf803db0e0ef4df06bb2f4d2dd9</checksum></software_screenshot><software_screenshot display_target="iOS-3.5-in" position="1"><size>375498</size><file_name>71787c5ba5e463d23f41210e342be048.png</file_name><checksum type="md5">f593becc8488e328b619e103f9757606</checksum></software_screenshot><software_screenshot display_target="iOS-4-in" position="1"><size>389077</size><file_name>9ab123cbeeda599aa8a09895c9c14fd0.png</file_name><checksum type="md5">4480a15af977f10e77ccd0776c181025</checksum></software_screenshot><software_screenshot display_target="iOS-4.7-in" position="1"><size>494156</size><file_name>ea8ba6ad915457ca2ebaf357de5f551d.png</file_name><checksum type="md5">e53ee97162e0c87e56ea1d5463ec5784</checksum></software_screenshot><software_screenshot display_target="iOS-5.5-in" position="1"><size>922365</size><file_name>07597b42ea87ec4d81a7383e82982f4a.png</file_name><checksum type="md5">8ccd32c8c05a2dae2fc481841f552535</checksum></software_screenshot></software_screenshots></locale>
+                    <locale name="de-DE"><title>Vacation-Tracker</title><software_screenshots><software_screenshot display_target="iOS-iPad" position="1"><size>952435</size><file_name>779a2cf0996ec1caf79e69fff54c01a1.png</file_name><checksum type="md5">d1a840a2ea672694f527a5c889a6ffa6</checksum></software_screenshot><software_screenshot display_target="iOS-3.5-in" position="1"><size>258334</size><file_name>b61c767e8379cc73a2229824b806fa80.png</file_name><checksum type="md5">c17303e15e776b2908be209b4345521f</checksum></software_screenshot><software_screenshot display_target="iOS-4-in" position="1"><size>323418</size><file_name>502760939212dfcaade56e4874e6e750.png</file_name><checksum type="md5">bbfee31499b4cc9e6fe7575f0204c4bd</checksum></software_screenshot><software_screenshot display_target="iOS-4.7-in" position="1"><size>606863</size><file_name>4ffd5d0b2e9e87b15821a3f2db8c6e2b.png</file_name><checksum type="md5">5ed395d3809fa915138277b1fd6377ce</checksum></software_screenshot><software_screenshot display_target="iOS-5.5-in" position="1"><size>922365</size><file_name>56f57ca31083a8ee0035ac557702018d.png</file_name><checksum type="md5">8ccd32c8c05a2dae2fc481841f552535</checksum></software_screenshot></software_screenshots></locale><locale name="it-IT"><title>Vacation-Tracker</title><software_screenshots><software_screenshot display_target="iOS-iPad" position="1"><size>666457</size><file_name>37f1f497da3eefbd850438a0ec327b8e.png</file_name><checksum type="md5">76e1117c5e03f7d79bb86bac1f0b03c0</checksum></software_screenshot><software_screenshot display_target="iOS-3.5-in" position="1"><size>375498</size><file_name>7b78bafa060b6b2238a2dcf6cad3d89e.png</file_name><checksum type="md5">f593becc8488e328b619e103f9757606</checksum></software_screenshot><software_screenshot display_target="iOS-4-in" position="1"><size>389077</size><file_name>e6e6380aecc9586ad34ea1755796b850.png</file_name><checksum type="md5">4480a15af977f10e77ccd0776c181025</checksum></software_screenshot><software_screenshot display_target="iOS-4.7-in" position="1"><size>494156</size><file_name>b0812b36a69b5c640b817957611a5671.png</file_name><checksum type="md5">e53ee97162e0c87e56ea1d5463ec5784</checksum></software_screenshot><software_screenshot display_target="iOS-5.5-in" position="1"><size>922365</size><file_name>ad2c2e0ef5bfa449ba752698e4f0994d.png</file_name><checksum type="md5">8ccd32c8c05a2dae2fc481841f552535</checksum></software_screenshot></software_screenshots></locale></locales>
+                </version>
+            </versions>
+        </software_metadata>
+    </software>
+</package>

@@ -57,7 +57,7 @@ platform :ios do
     snapshot
     sigh
     deliver(skip_deploy: true, force: true)
-    # frameit
+    frameit
   end
 
   # You can define as many lanes as you want

@@ -23,16 +23,23 @@
 # beta_ipa "./app.ipa"
 
 # The version of your app - remove this if you provide an ipa file
-version "[[APP_VERSION]]"
+version "1.0"
 
 ###################### More Options ######################
 # If you want to have even more control, check out the documentation
 # https://github.com/KrauseFx/deliver/blob/master/Deliverfile.md
 
+keywords(
+  "en-US" => ["Vacation", "Track", "Geolocation", "Geolog"]
+)
+
+changelog(
+  "en-US" => "Initial release!"
+)
 
 ###################### Automatically generated ######################
 # Feel free to remove the following lines if you use fastlane
 
-app_identifier "[[APP_IDENTIFIER]]" # The bundle identifier of your app
-apple_id "[[APPLE_ID]]" # This is NOT your Apple login ID, but the App ID of your app
-email "[[EMAIL]]" # the login email address
+app_identifier "com.socialradar.Vaction-Tracker" # The bundle identifier of your app
+apple_id "1019709346" # This is NOT your Apple login ID, but the App ID of your app
+email "apple2@socialradar.com" # the login email address
