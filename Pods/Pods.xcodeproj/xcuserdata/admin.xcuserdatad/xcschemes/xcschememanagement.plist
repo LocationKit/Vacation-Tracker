@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Onboard.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>Pods-Vacation-Tracker WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-Vacation-Tracker WatchKit Extension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-Vacation-Tracker-Onboard.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-Vacation-Tracker.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>176B48709A51D77E2A73A0C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>597634B5518F4A2BC2555D19893E4F54</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>81ED39FA9A88A64E17D90F00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>930FA04B95052B79BB123A22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C617EC10989EAF10F3A6DA4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F16948C128FAB2D7E4A29651BF584772</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
